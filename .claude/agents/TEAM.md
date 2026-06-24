@@ -1,89 +1,52 @@
-# 🎭 Équipe d'agents — Assistant IA 24/7 (RDV + communication multicanal)
+# 🎭 L'Agence — Roster complet (232 agents)
 
-Équipe ciblée de **38 agents spécialisés** installés dans `.claude/agents/`, issue du dépôt
-[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT).
+Roster **complet** des agents installés dans `.claude/agents/`, issu du dépôt
+[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (licence MIT).
 Chaque fichier `.md` est un sous-agent Claude Code activable.
 
-> **Comment activer un agent** : dans une session Claude Code, demande par exemple
+> **Activer un agent** : dans une session Claude Code, demande p. ex.
 > _« Active le Backend Architect et conçois le schéma de réservation des RDV »_,
 > ou lance-le comme sous-agent via l'outil Agent.
 
----
+## Divisions (16)
 
-## 🏗️ Ingénierie & architecture (build du produit)
+| Division | Agents | Exemples |
+|----------|:------:|----------|
+| 💻 Engineering | 33 | Backend/Software Architect, AI Engineer, Voice AI, Email Intelligence, DevOps, SRE |
+| 📣 Marketing | 36 | Email/Social Strategist, Content Creator, Multi-Platform Publisher, SEO |
+| ✨ Specialized | 53 | Customer Service/Success, Data Privacy Officer, Language Translator, Workflow Architect |
+| 🎮 Game Development | 20 | Unity, Unreal, Godot, Roblox, level design |
+| 🗺️ GIS | 13 | Cartographie, géospatial, spatial analysis |
+| 🛡️ Security | 10 | AppSec, Compliance Auditor, Pentester, Threat Detection |
+| 🎨 Design | 9 | UX Architect, UI Designer, UX Researcher, Brand Guardian |
+| 📈 Sales | 9 | Deal/Account Strategist, Sales Engineer, Pipeline Analyst |
+| 🧪 Testing | 8 | API Tester, Accessibility Auditor, Performance Benchmarker |
+| 📋 Project Management | 7 | Senior PM, Meeting Notes, Project Shepherd, Jira Steward |
+| 🎯 Paid Media | 7 | Campagnes payantes, acquisition |
+| 🛟 Support | 6 | Support Responder, Analytics Reporter, Legal Compliance |
+| 🥽 Spatial Computing | 6 | VisionOS, XR, AR/VR |
+| 🎓 Academic | 5 | Recherche, rédaction académique |
+| 💵 Finance | 5 | Modélisation financière, comptabilité |
+| 📦 Product | 5 | Product Manager, Sprint Prioritizer, Feedback Synthesizer |
 
-| Agent | Rôle |
-|-------|------|
-| Software Architect | Architecture système, trade-offs, évolutivité |
-| Backend Architect | APIs, bases de données, cloud, scalabilité |
-| AI Engineer | Modèles ML/LLM en production |
-| Prompt Engineer | Conception des prompts du cœur conversationnel |
-| Multi-Agent Systems Architect | Orchestration d'agents en production |
-| Voice AI Integration Engineer | Téléphonie / voix → texte structuré (prise de RDV vocale) |
-| Email Intelligence Engineer | Parsing email/MIME en contexte exploitable |
-| Frontend Developer | UI web responsive et accessible |
-| Mobile App Builder | Apps iOS/Android |
-| Database Optimizer | Schémas, index, requêtes |
-| DevOps Automator | CI/CD, infrastructure 24/7 |
-| SRE | Fiabilité, error budgets, observabilité |
-| Code Reviewer | Revue de code pédagogique |
-| Technical Writer | Documentation produit & API |
-| Rapid Prototyper | POC rapides |
+**Total : 232 agents.**
 
-## 📞 Communication multicanal
+## ⭐ Les plus pertinents pour CE projet (RDV + communication multicanal)
 
-| Agent | Rôle |
-|-------|------|
-| Email Marketing Strategist | Segmentation et automatisation des emails |
-| Multi-Platform Publisher | Publication coordonnée multi-plateformes |
-| Social Media Strategist | Campagnes cross-canal et engagement |
-| Content Creator | Contenu narratif par plateforme |
-| Language Translator | Communication multilingue |
+- **Conversationnel / IA** : `engineering-prompt-engineer`, `engineering-ai-engineer`, `engineering-multi-agent-systems-architect`
+- **Prise de RDV vocale / téléphonie** : `engineering-voice-ai-integration-engineer`, `engineering-backend-architect`
+- **Email / canaux** : `engineering-email-intelligence-engineer`, `marketing-email-strategist`, `marketing-multi-platform-publisher`
+- **Multilingue** : `language-translator`
+- **Support client** : `support-support-responder`, `customer-service`, `customer-success-manager`
+- **RGPD / conformité** : `data-privacy-officer`, `security-compliance-auditor`, `support-legal-compliance-checker`
+- **Fiabilité 24/7** : `engineering-sre`, `engineering-devops-automator`
+- **Cadrage** : `product-manager`, `engineering-software-architect`, `specialized-workflow-architect`
 
-## 🎧 Support & relation client
+## 🎼 Orchestration
 
-| Agent | Rôle |
-|-------|------|
-| Support Responder | Réponses support, satisfaction client |
-| Customer Service | Interactions client au quotidien |
-| Customer Success Manager | Prévention proactive, rétention |
-| Analytics Reporter | Insights à partir des données support |
-
-## 📋 Produit & gestion de projet
-
-| Agent | Rôle |
-|-------|------|
-| Product Manager | Priorisation orientée résultats |
-| Sprint Prioritizer | Valeur de sprint, focus |
-| Feedback Synthesizer | Synthèse des retours utilisateurs |
-| Senior Project Manager | Spécs → tâches réalistes |
-| Meeting Notes Specialist | Extraction fidèle de comptes-rendus |
-| Workflow Architect | Cartographie des parcours système |
-
-## 🎨 Design / UX
-
-| Agent | Rôle |
-|-------|------|
-| UX Architect | Fondations CSS et parcours |
-| UI Designer | Interfaces cohérentes et accessibles |
-
-## 🔒 Sécurité, conformité & vie privée
-
-| Agent | Rôle |
-|-------|------|
-| Application Security Engineer | Sécurité applicative |
-| Compliance Auditor | SOC 2, collecte de preuves |
-| Data Privacy Officer | RGPD, minimisation des données |
-| Legal Compliance Checker | Conformité légale multi-juridiction |
-
-## 🧪 Tests
-
-| Agent | Rôle |
-|-------|------|
-| API Tester | Casse l'API avant les utilisateurs |
-| Accessibility Auditor | Audit lecteur d'écran / a11y |
-
----
-
-_Pour ajouter d'autres agents (255 disponibles au total dans le dépôt source, 16 divisions),
-récupère le fichier `.md` voulu et dépose-le dans ce dossier._
+Le dossier [`.claude/agency/`](../agency/) contient le matériel d'orchestration du dépôt source :
+- `strategy/QUICKSTART.md` et `strategy/EXECUTIVE-BRIEF.md`
+- `strategy/playbooks/` — phases 0→6 (discovery → operate)
+- `strategy/runbooks/` — scénarios (MVP, campagne marketing, incident, feature entreprise)
+- `strategy/coordination/` — prompts d'activation & templates de passation (handoff)
+- `examples/` — workflows multi-agents de référence

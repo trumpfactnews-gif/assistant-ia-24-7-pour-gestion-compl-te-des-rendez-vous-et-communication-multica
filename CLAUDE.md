@@ -2,12 +2,13 @@
 
 ## Équipe d'agents
 
-Ce projet embarque une équipe de **38 sous-agents spécialisés** dans `.claude/agents/`
-(voir [`.claude/agents/TEAM.md`](.claude/agents/TEAM.md) pour le détail et les rôles).
+Ce projet embarque le **roster complet de 232 sous-agents** (16 divisions) dans `.claude/agents/`
+(voir [`.claude/agents/TEAM.md`](.claude/agents/TEAM.md) pour l'index par division et les agents
+les plus pertinents pour ce projet).
 
 Ils proviennent du dépôt [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
-(licence MIT) et couvrent l'ingénierie, la communication multicanal, le support,
-le produit/projet, le design/UX, la sécurité/conformité et les tests.
+(licence MIT). Le matériel d'orchestration (playbooks, runbooks, templates de passation, exemples)
+est dans [`.claude/agency/`](.claude/agency/).
 
 ### Activer un agent
 - En conversation : « Active le _<nom de l'agent>_ et … »
