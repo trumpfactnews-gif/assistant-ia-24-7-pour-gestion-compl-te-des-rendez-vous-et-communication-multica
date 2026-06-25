@@ -1,0 +1,20 @@
+{
+  "//": "Vérifie uniquement la logique PURE (API + utils), sans dépendances React Native. Permet un typecheck/CI sans installer tout l'écosystème RN.",
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2020", "DOM"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "types": [],
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/api/types.ts",
+    "src/api/client.ts",
+    "src/utils/verdict.ts",
+    "src/utils/phone.ts"
+  ]
+}

@@ -35,6 +35,13 @@ communautaire. Couvert par 44 tests, packagé pour Docker.
 - Démarrage, API et architecture : [`sentinelle-backend/README.md`](sentinelle-backend/README.md)
 - Confidentialité (Loi 25 / LPRPDE) : [`sentinelle-backend/docs/PRIVACY.md`](sentinelle-backend/docs/PRIVACY.md)
 
+### Sentinelle Mobile — app React Native (`sentinelle-mobile/`)
+Application mobile (TypeScript) qui intercepte les SMS entrants (module natif
+Android), les envoie au backend pour analyse et alerte l'utilisateur. Interface
+« bouclier » bilingue, client API typé et testé contre le vrai backend.
+
+- Intégration et exécution : [`sentinelle-mobile/README.md`](sentinelle-mobile/README.md)
+
 > Note : le nom du dépôt évoque la gestion de rendez-vous ; le produit construit
 > ici est **Sentinelle** (sécurité numérique). Renommer le dépôt si cette
 > orientation est confirmée.

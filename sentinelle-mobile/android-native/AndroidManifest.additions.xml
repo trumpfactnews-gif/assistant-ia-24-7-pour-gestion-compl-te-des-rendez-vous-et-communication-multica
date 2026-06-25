@@ -1,0 +1,35 @@
+<!--
+  À fusionner dans android/app/src/main/AndroidManifest.xml
+
+  ⚠️ Les permissions SMS sont « sensibles » au sens du Google Play Store :
+  leur usage doit être justifié (protection anti-fraude) et l'app peut être
+  soumise à une revue. Demandez le consentement explicite à l'exécution.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Interception des SMS entrants -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- Notifications (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Connexion à l'API -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      OPTIONNEL — interception même quand l'app est « tuée ».
+      Nécessite en complément une tâche Headless JS (voir README).
+      Le receiver dynamique du module suffit tant que le processus vit.
+
+      <application>
+          <receiver
+              android:name="ca.sentinelle.sms.SmsListenerStaticReceiver"
+              android:exported="true"
+              android:permission="android.permission.BROADCAST_SMS">
+              <intent-filter android:priority="999">
+                  <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+              </intent-filter>
+          </receiver>
+      </application>
+    -->
+
+</manifest>

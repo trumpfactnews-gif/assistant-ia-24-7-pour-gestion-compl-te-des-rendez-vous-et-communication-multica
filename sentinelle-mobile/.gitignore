@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# React Native / Metro
+.metro-health-check*
+*.log
+.expo/
+
+# Build (générés par le scaffold RN)
+android/app/build/
+android/build/
+android/.gradle/
+android/local.properties
+ios/Pods/
+ios/build/
+*.keystore
+!debug.keystore
+
+# Divers
+.DS_Store
+.env
+coverage/
+*.tsbuildinfo

@@ -1,0 +1,41 @@
+{
+  "name": "sentinelle-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Application mobile Sentinelle — bouclier anti-fraude SMS (React Native)",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.1.0",
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "react-native-permissions": "^5.2.1",
+    "react-native-push-notification": "^8.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.0",
+    "@babel/preset-env": "^7.25.0",
+    "@react-native/babel-preset": "0.76.5",
+    "@react-native/metro-config": "0.76.5",
+    "@react-native/typescript-config": "0.76.5",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^18.3.12",
+    "@types/react-test-renderer": "^18.3.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "react-test-renderer": "18.3.1",
+    "typescript": "5.6.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
