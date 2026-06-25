@@ -1,0 +1,19 @@
+# Ne pas envoyer ces éléments dans le contexte de build Docker.
+.venv/
+venv/
+env/
+data/
+*.db
+*.db-wal
+*.db-shm
+*.joblib
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.git/
+.gitignore
+.env
+.mypy_cache/
+.ruff_cache/

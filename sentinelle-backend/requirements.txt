@@ -1,0 +1,7 @@
+# Dépendances d'exécution de Sentinelle
+Flask>=3.0,<4.0
+gunicorn>=21.2
+
+# Apprentissage automatique (entraînement + inférence du classifieur)
+scikit-learn>=1.3
+joblib>=1.3

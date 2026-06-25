@@ -1,0 +1,21 @@
+# Déploiement local / mono-nœud de l'API Sentinelle.
+services:
+  api:
+    build: .
+    image: sentinelle-api:latest
+    ports:
+      - "8000:8000"
+    environment:
+      SENTINELLE_ENV: production
+      # À DÉFINIR en production (sel des condensés + clé applicative) :
+      SENTINELLE_SECRET_KEY: ${SENTINELLE_SECRET_KEY:-changez-moi-en-production}
+      SENTINELLE_BLOCK_THRESHOLD: ${SENTINELLE_BLOCK_THRESHOLD:-3}
+      SENTINELLE_RATE_LIMIT: ${SENTINELLE_RATE_LIMIT:-120}
+      # SENTINELLE_API_KEY: ${SENTINELLE_API_KEY}
+    volumes:
+      # Persiste la base communautaire entre les redémarrages.
+      - sentinelle-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  sentinelle-data:

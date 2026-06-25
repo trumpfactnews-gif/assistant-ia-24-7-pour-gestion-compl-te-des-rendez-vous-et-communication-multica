@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Données générées (base communautaire + modèle entraîné) — uniquement à la racine
+/data/
+*.db
+*.db-wal
+*.db-shm
+*.joblib
+
+# ... mais on garde le jeu de données seed versionné.
+!sentinelle/ml/data/
+!sentinelle/ml/data/*.csv
+
+# Secrets
+.env
+
+# Outils
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/

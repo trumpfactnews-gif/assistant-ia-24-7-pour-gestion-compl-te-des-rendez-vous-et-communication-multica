@@ -23,5 +23,18 @@ est dans [`.claude/agency/`](.claude/agency/).
 - **Fiabilité 24/7** → SRE, DevOps Automator
 
 ## Statut du projet
-Dépôt initialisé avec l'équipe d'agents. Le code applicatif reste à construire —
-commence par solliciter le **Software Architect** et le **Product Manager** pour cadrer.
+Dépôt initialisé avec l'équipe d'agents.
+
+### Sentinelle — backend de détection de fraude par SMS (`sentinelle-backend/`)
+Premier module applicatif livré : un microservice **Python/Flask** qui analyse un
+message texte et renvoie un verdict de fraude explicable (FR/EN). Il combine des
+heuristiques expertes (arnaques canadiennes/québécoises), un classifieur ML
+(TF-IDF), une analyse anti-hameçonnage des URL et une base de signalements
+communautaire. Couvert par 44 tests, packagé pour Docker.
+
+- Démarrage, API et architecture : [`sentinelle-backend/README.md`](sentinelle-backend/README.md)
+- Confidentialité (Loi 25 / LPRPDE) : [`sentinelle-backend/docs/PRIVACY.md`](sentinelle-backend/docs/PRIVACY.md)
+
+> Note : le nom du dépôt évoque la gestion de rendez-vous ; le produit construit
+> ici est **Sentinelle** (sécurité numérique). Renommer le dépôt si cette
+> orientation est confirmée.
