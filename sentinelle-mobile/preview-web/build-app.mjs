@@ -10,6 +10,8 @@ export const options = {
   outfile: 'bundle-app.js',
   format: 'iife',
   jsx: 'automatic',
+  // Config TS inline : évite qu'esbuild cherche le tsconfig de base RN (absent ici).
+  tsconfigRaw: { compilerOptions: { jsx: 'react-jsx' } },
   loader: { '.js': 'jsx' },
   define: { __DEV__: 'false', 'process.env.NODE_ENV': '"production"' },
   resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],

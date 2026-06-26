@@ -10,6 +10,8 @@ await esbuild.build({
   outfile: 'bundle.js',
   format: 'iife',
   jsx: 'automatic',
+  // Config TS inline : évite qu'esbuild cherche le tsconfig de base RN (absent ici).
+  tsconfigRaw: { compilerOptions: { jsx: 'react-jsx' } },
   loader: { '.js': 'jsx' },
   define: { __DEV__: 'true', 'process.env.NODE_ENV': '"production"' },
   resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
