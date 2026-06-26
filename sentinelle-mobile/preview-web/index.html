@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html, body { margin: 0; background: #070b14; }
+      /* En natif, Yoga met min-width:0 par défaut ; le navigateur non, ce qui
+         fait déborder les textes nowrap (numberOfLines=1). On le rétablit. */
+      #root * { min-width: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>

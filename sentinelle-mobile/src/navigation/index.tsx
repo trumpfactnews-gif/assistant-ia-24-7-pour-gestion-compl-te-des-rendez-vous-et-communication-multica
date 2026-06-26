@@ -25,8 +25,14 @@ interface NavValue {
 
 const NavContext = createContext<NavValue | null>(null);
 
-export function NavProvider({ children }: { children: React.ReactNode }) {
-  const [stack, setStack] = useState<Route[]>([{ name: 'home' }]);
+export function NavProvider({
+  children,
+  initialRoute,
+}: {
+  children: React.ReactNode;
+  initialRoute?: Route;
+}) {
+  const [stack, setStack] = useState<Route[]>([initialRoute ?? { name: 'home' }]);
 
   const navigate = useCallback((name: ScreenName, params?: Record<string, unknown>) => {
     setStack((s) => [...s, { name, params }]);
