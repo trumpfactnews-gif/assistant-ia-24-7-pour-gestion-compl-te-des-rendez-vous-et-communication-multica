@@ -1,11 +1,26 @@
-# Aperçu visuel (sans appareil) — react-native-web
+# Sentinelle dans le navigateur — démo & captures (react-native-web)
 
-Rend les **vrais écrans** de l'app (`../src/screens/*`) dans un navigateur
-headless via **react-native-web**, puis produit des captures d'écran avec
-**Playwright**. Permet une vérification visuelle / non-régression **sans
-émulateur Android ni Xcode**.
+Fait tourner les **vrais écrans** de l'app (`../src/*`) dans un navigateur via
+**react-native-web** — **sans émulateur Android ni Xcode**.
 
-## Utilisation
+## 🚀 Démo interactive (le plus simple pour essayer)
+
+Aucune configuration Android. Il te faut seulement **Node** (déjà installé).
+
+```bash
+cd sentinelle-mobile/preview-web
+npm install
+npm start
+```
+Le terminal affiche une adresse (ex. `http://localhost:5173/index-app.html`) :
+ouvre-la dans ton navigateur. L'app est **fonctionnelle** — sans serveur,
+l'analyse bascule automatiquement en **mode hors ligne** (embarqué).
+
+> C'est une démo **navigateur** : tu peux tester l'interface et l'analyse
+> manuelle de messages. L'interception **automatique** des SMS n'existe que sur
+> l'app Android native (le navigateur n'a pas accès aux SMS).
+
+## 📸 Captures d'écran (vérification visuelle)
 
 ```bash
 cd sentinelle-mobile/preview-web

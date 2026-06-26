@@ -15,6 +15,7 @@
     "src/api/types.ts",
     "src/api/client.ts",
     "src/utils/verdict.ts",
-    "src/utils/phone.ts"
+    "src/utils/phone.ts",
+    "src/detection/offline.ts"
   ]
 }

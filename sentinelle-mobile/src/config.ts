@@ -11,9 +11,12 @@ export interface AppConfig {
   lang: 'fr' | 'en';
 }
 
+import { Platform } from 'react-native';
+
 export const DEFAULT_CONFIG: AppConfig = {
-  // En développement Android (émulateur), 10.0.2.2 pointe vers le localhost de l'hôte.
-  apiBaseUrl: 'http://10.0.2.2:8000',
+  // Web (démo) : pas de serveur par défaut → analyse hors ligne instantanée.
+  // Android (émulateur) : 10.0.2.2 pointe vers le localhost de l'hôte.
+  apiBaseUrl: Platform.OS === 'web' ? '' : 'http://10.0.2.2:8000',
   apiKey: undefined,
   autoProtect: true,
   lang: 'fr',

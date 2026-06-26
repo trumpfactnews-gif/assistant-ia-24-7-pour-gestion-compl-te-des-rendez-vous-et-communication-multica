@@ -11,8 +11,9 @@ import React, {
   useState,
 } from 'react';
 
-import { SentinelleClient } from '../api/client';
+import { SentinelleApiError, SentinelleClient } from '../api/client';
 import type { ReportInput, Verdict } from '../api/types';
+import { offlineAnalyze } from '../detection/offline';
 import { AppConfig, DEFAULT_CONFIG } from '../config';
 import { shouldAlert } from '../utils/verdict';
 import { looksLikePhone } from '../utils/phone';
@@ -84,7 +85,22 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const analyzeMessage = useCallback(
     async (message: string, sender?: string, options?: { auto?: boolean }) => {
-      const verdict: Verdict = await client.analyze(message, sender, config.lang);
+      let verdict: Verdict;
+      if (!config.apiBaseUrl.trim()) {
+        // Aucun serveur configuré → analyse hors ligne immédiate (mode démo).
+        verdict = offlineAnalyze(message, config.lang);
+      } else {
+        try {
+          verdict = await client.analyze(message, sender, config.lang);
+        } catch (err) {
+          // Backend injoignable (réseau/timeout) → repli sur l'analyse hors ligne.
+          if (err instanceof SentinelleApiError && err.status === 0) {
+            verdict = offlineAnalyze(message, config.lang);
+          } else {
+            throw err;
+          }
+        }
+      }
       const item: HistoryItem = { id: newId(), at: Date.now(), message, sender, verdict };
       await persistHistory([item, ...history]);
       if (options?.auto && shouldAlert(verdict.level)) {

@@ -41,6 +41,21 @@ sentinelle-mobile/
 
 ---
 
+## 🚀 Le plus simple : essayer dans le navigateur (sans Android)
+
+Pas envie d'installer toute la chaîne Android ? Lance la **démo navigateur**
+(il te faut seulement Node) :
+
+```bash
+cd sentinelle-mobile/preview-web
+npm install
+npm start          # ouvre l'adresse http://localhost:5173/... affichée
+```
+
+L'app est fonctionnelle (analyse hors ligne intégrée, aucun serveur requis).
+Détails : [`preview-web/README.md`](preview-web/README.md). L'interception
+**automatique** des SMS, elle, nécessite l'app Android native ci-dessous.
+
 ## Mettre en route (Android)
 
 > Prérequis : Node ≥ 18, JDK 17, Android Studio + SDK, un émulateur ou appareil.

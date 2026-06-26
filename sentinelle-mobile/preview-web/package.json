@@ -4,6 +4,8 @@
   "type": "module",
   "description": "Aperçu visuel des écrans Sentinelle via react-native-web (sans appareil ni émulateur)",
   "scripts": {
+    "start": "node serve.mjs",
+    "build:app": "node build-app.mjs",
     "build": "node build.mjs",
     "shot": "node shot.mjs",
     "preview": "node build.mjs && node shot.mjs"
