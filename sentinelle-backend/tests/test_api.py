@@ -93,6 +93,27 @@ def test_stats(client):
         assert key in body
 
 
+def test_ios_filter_junk_on_fraud(client):
+    resp = client.post("/api/v1/ios-filter", json={
+        "message": "ARC: remboursement en attente, réclamez: http://arc-remboursement.top",
+        "sender": "+15145550000",
+    })
+    assert resp.status_code == 200
+    body = resp.get_json()
+    assert body["action"] == "junk"
+    assert body["level"] in ("fraud", "suspicious")
+
+
+def test_ios_filter_allow_on_benign(client):
+    resp = client.post("/api/v1/ios-filter", json={"message": "On soupe ensemble ce soir?"})
+    assert resp.get_json()["action"] == "allow"
+
+
+def test_ios_filter_none_on_empty(client):
+    resp = client.post("/api/v1/ios-filter", json={})
+    assert resp.get_json()["action"] == "none"
+
+
 def test_api_key_enforced(tmp_path):
     cfg = make_config(tmp_path, api_key="secret")
     app = create_app(cfg)

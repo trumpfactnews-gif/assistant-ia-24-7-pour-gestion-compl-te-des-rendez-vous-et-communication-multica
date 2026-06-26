@@ -163,6 +163,26 @@ Codes de raison : `url_userinfo`, `url_ip_literal`, `url_punycode`,
 
 ---
 
+## `POST /api/v1/ios-filter`
+
+Point de déféré réseau pour l'**extension de filtrage SMS iOS** (`IdentityLookup`).
+Tolérant sur le format d'entrée (`message` / `messageBody` / `text`, `sender`).
+Mappe le niveau du verdict en action de filtrage iOS.
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/v1/ios-filter \
+  -H 'Content-Type: application/json' \
+  -d '{"message":"ARC: remboursement, réclamez: http://arc-remboursement.top"}'
+```
+
+```json
+{ "action": "junk", "level": "fraud", "risk_score": 85 }
+```
+
+`action` ∈ `junk` (fraude/suspect) · `allow` (sinon) · `none` (message vide).
+
+---
+
 ## `GET /health`
 
 ```json

@@ -81,3 +81,35 @@ def check_url():
 def stats():
     """Statistiques publiques de la communauté."""
     return jsonify(_repo().get_stats())
+
+
+def _extract_ios_payload() -> tuple[str, str | None]:
+    """Extrait (message, expéditeur) de la requête de déféré iOS, de façon
+    tolérante : le format exact est défini par Apple et peut évoluer."""
+    data = request.get_json(silent=True)
+    if isinstance(data, dict):
+        msg = data.get("message") or data.get("messageBody") or data.get("text") or ""
+        sender = data.get("sender") or data.get("senderIdentifier")
+        return (msg.strip() if isinstance(msg, str) else ""), (sender if isinstance(sender, str) else None)
+    if request.form:
+        msg = request.form.get("message") or request.form.get("messageBody") or request.form.get("text") or ""
+        return msg.strip(), request.form.get("sender")
+    raw = request.get_data(as_text=True) or ""
+    return raw.strip(), None
+
+
+@bp.post("/api/v1/ios-filter")
+def ios_filter():
+    """Déféré réseau pour l'extension de filtrage SMS iOS (IdentityLookup).
+
+    Renvoie l'action de filtrage attendue par l'extension :
+    `{"action": "junk" | "allow"}`. Mappe le niveau du verdict :
+    fraude/suspect → junk ; sinon → allow.
+    """
+    message, sender = _extract_ios_payload()
+    if not message:
+        return jsonify({"action": "none"})
+    message = message[: _cfg().max_message_length]
+    verdict = _engine().analyze(message, sender=sender)
+    action = "junk" if verdict.level in ("fraud", "suspicious") else "allow"
+    return jsonify({"action": action, "level": verdict.level, "risk_score": verdict.risk_score})

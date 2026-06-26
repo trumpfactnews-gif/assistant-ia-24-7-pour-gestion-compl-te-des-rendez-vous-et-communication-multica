@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { PERMISSIONS, requestMultiple } from 'react-native-permissions';
+import { PERMISSIONS, requestMultiple, requestNotifications } from 'react-native-permissions';
 
 import { Button, ScreenContainer } from '../components/ui';
 import { colors, font, spacing } from '../theme';
@@ -17,11 +17,9 @@ interface Props {
 async function requestAndroidPermissions(): Promise<void> {
   if (Platform.OS !== 'android') return;
   try {
-    await requestMultiple([
-      PERMISSIONS.ANDROID.RECEIVE_SMS,
-      PERMISSIONS.ANDROID.READ_SMS,
-      PERMISSIONS.ANDROID.POST_NOTIFICATIONS,
-    ]);
+    await requestMultiple([PERMISSIONS.ANDROID.RECEIVE_SMS, PERMISSIONS.ANDROID.READ_SMS]);
+    // POST_NOTIFICATIONS (Android 13+) se demande via l'API dédiée.
+    await requestNotifications(['alert', 'sound']);
   } catch {
     // Permissions refusées ou lib absente : l'app reste utilisable en mode manuel.
   }

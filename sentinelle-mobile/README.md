@@ -58,7 +58,13 @@ cp -r sentinelle-mobile/src sentinelle-mobile/App.tsx sentinelle-mobile/index.js
 
 cd Sentinelle
 npm install @react-native-async-storage/async-storage react-native-permissions react-native-push-notification
+npm install -D @types/jest @types/react-native-push-notification
+# Copier aussi la config de test fournie (mocks des modules natifs) :
+cp ../sentinelle-mobile/jest.config.js ../sentinelle-mobile/jest.setup.js .
 ```
+
+> Le scaffold a été validé : `npm run typecheck`, `npm test` (12 tests) et le
+> bundle Metro de production (Android + iOS) passent avec ces fichiers.
 
 ### 2. Greffer le module natif SMS
 
@@ -108,12 +114,15 @@ Si le backend exige une clé (`SENTINELLE_API_KEY`), renseignez-la dans
 ## iOS
 
 iOS **interdit** l'interception silencieuse des SMS. Sur iOS :
-- l'analyse **automatique** n'est pas disponible ;
+- l'analyse **automatique en arrière-plan** n'est pas disponible ;
 - le flux **manuel** (coller un message dans l'app) fonctionne ;
-- pour un filtrage natif, implémenter une **SMS Filter Extension**
-  (`ILMessageFilterExtension`) — non incluse ici.
+- un **filtrage natif** est fourni via une **SMS Filter Extension**
+  (`ILMessageFilterExtension`) dans [`ios-extension/`](ios-extension/) :
+  heuristiques hors ligne + déféré réseau vers `/api/v1/ios-filter`.
 
-L'app détecte l'absence du module natif et bascule automatiquement en mode manuel.
+L'app détecte l'absence du module natif Android et bascule automatiquement en
+mode manuel ; l'extension iOS, elle, agit au niveau du système (messages
+d'expéditeurs inconnus). Voir [`ios-extension/README.md`](ios-extension/README.md).
 
 ---
 
@@ -142,8 +151,8 @@ npm run typecheck   # tsc --noEmit (nécessite npm install)
 
 ## Feuille de route
 
-- [ ] Interception en état « tué » : tâche Headless JS + receiver manifeste.
-- [ ] Extension de filtrage SMS iOS.
+- [x] Extension de filtrage SMS iOS (`ios-extension/`) — à compiler/signer dans Xcode.
+- [ ] Interception Android en état « tué » : tâche Headless JS + receiver manifeste.
 - [ ] File d'attente hors-ligne (analyse différée quand le réseau revient).
 - [ ] Caller ID en temps réel via `/check-number`.
 - [ ] Écran communautaire (stats `/stats`, tendances régionales).
