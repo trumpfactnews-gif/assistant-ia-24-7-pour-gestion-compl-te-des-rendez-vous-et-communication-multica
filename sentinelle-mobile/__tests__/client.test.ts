@@ -6,7 +6,7 @@ describe('SentinelleClient', () => {
 
   beforeEach(() => {
     fetchMock = jest.fn();
-    (global as unknown as { fetch: jest.Mock }).fetch = fetchMock;
+    (globalThis as unknown as { fetch: jest.Mock }).fetch = fetchMock;
   });
 
   function ok(body: unknown) {

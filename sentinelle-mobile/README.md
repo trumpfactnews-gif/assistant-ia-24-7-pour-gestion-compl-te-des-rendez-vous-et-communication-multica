@@ -79,9 +79,19 @@ cp ../sentinelle-mobile/android-native/java/ca/sentinelle/sms/*.java \
   ```kotlin
   add(SmsListenerPackage())   // import ca.sentinelle.sms.SmsListenerPackage
   ```
-- **Fusionner les permissions** depuis
+- **Fusionner les permissions ET les déclarations** (receiver + service) depuis
   [`android-native/AndroidManifest.additions.xml`](android-native/AndroidManifest.additions.xml)
   dans `android/app/src/main/AndroidManifest.xml`.
+
+**Deux modes d'interception** (les fichiers des deux sont fournis) :
+- *Processus vivant* (premier plan / arrière-plan) : `SmsListenerModule` émet des
+  événements JS — branché automatiquement par `App.tsx`.
+- *État « tué »* : `SmsHeadlessReceiver` (manifeste) démarre
+  `SmsHeadlessTaskService`, qui exécute la tâche JS « SentinelleSmsTask »
+  enregistrée dans `index.js` (voir `src/services/smsHeadlessTask.ts`).
+  ⚠️ Android 8+ : le service doit appeler `startForeground()` avec une
+  notification pour respecter les limites de démarrage en arrière-plan — à
+  finaliser/valider sur appareil.
 
 ### 3. Lancer
 
@@ -152,7 +162,8 @@ npm run typecheck   # tsc --noEmit (nécessite npm install)
 ## Feuille de route
 
 - [x] Extension de filtrage SMS iOS (`ios-extension/`) — à compiler/signer dans Xcode.
-- [ ] Interception Android en état « tué » : tâche Headless JS + receiver manifeste.
+- [x] Interception Android en état « tué » : tâche Headless JS + receiver manifeste
+      (à finaliser : `startForeground()` sur Android 8+).
 - [ ] File d'attente hors-ligne (analyse différée quand le réseau revient).
 - [ ] Caller ID en temps réel via `/check-number`.
 - [ ] Écran communautaire (stats `/stats`, tendances régionales).
