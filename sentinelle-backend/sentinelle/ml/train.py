@@ -14,7 +14,14 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 from pathlib import Path
+
+# Console Windows (cp1252) : éviter un crash sur les caractères non-ASCII des logs.
+try:  # pragma: no cover - dépend de la plateforme
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 DEFAULT_DATA = Path(__file__).resolve().parent / "data" / "seed_dataset.csv"
 
@@ -82,7 +89,7 @@ def train(data_path: str | Path = DEFAULT_DATA, output_path: str | Path = "data/
     output_path.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(pipeline, output_path)
     if verbose:
-        print(f"Modèle entraîné sur {len(texts)} exemples → {output_path}")
+        print(f"Modele entraine sur {len(texts)} exemples -> {output_path}")
     return str(output_path)
 
 
