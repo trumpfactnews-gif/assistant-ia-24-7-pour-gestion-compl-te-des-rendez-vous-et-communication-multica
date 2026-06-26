@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sentinelle — Console analyste fraude</title>
+<style>
+  :root{
+    --bg:#0E1726;--surface:#16213A;--surface2:#1E2C48;--border:#26344F;
+    --text:#F2F5FA;--muted:#9AA8BF;--primary:#2D7FF9;
+    --safe:#1FA463;--caution:#E6A700;--suspicious:#E8730C;--fraud:#D7263D;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:20px}
+  header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  header .shield{font-size:30px}
+  h1{font-size:20px;margin:0;flex:1;min-width:220px}
+  .conn{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .conn input{background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:8px 10px;font-size:13px}
+  #url{width:210px}#key{width:130px}
+  button{background:var(--primary);border:0;color:#fff;border-radius:8px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer}
+  button.sec{background:var(--surface2);border:1px solid var(--border)}
+  button:disabled{opacity:.5;cursor:default}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--muted);display:inline-block}
+  .dot.ok{background:var(--safe)}.dot.bad{background:var(--fraud)}
+  .badge{font-size:12px;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
+  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px}
+  .stat .v{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+  .stat .k{color:var(--muted);font-size:12px;margin-top:2px}
+  .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  @media(max-width:920px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:18px}
+  .card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  textarea,.card input[type=text]{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px;font-size:14px;font-family:inherit}
+  textarea{min-height:90px;resize:vertical}
+  .row{display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap}
+  select{background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:9px}
+  .verdict{border-radius:12px;border:1.5px solid var(--border);padding:14px;margin-top:14px}
+  .verdict .top{display:flex;align-items:center;gap:10px}
+  .verdict .lvl{font-size:18px;font-weight:800}
+  .verdict .score{margin-left:auto;font-size:30px;font-weight:900}
+  .gauge{height:8px;background:var(--surface2);border-radius:999px;overflow:hidden;margin:10px 0}
+  .gauge>div{height:8px;border-radius:999px}
+  .sig{background:var(--surface2);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:13px}
+  .sig em{color:var(--muted);font-style:italic}
+  .muted{color:var(--muted);font-size:13px}
+  .err{color:var(--fraud);font-size:13px;margin-top:8px}
+  .action{background:var(--surface2);border-left:4px solid var(--border);border-radius:8px;padding:10px;margin-top:10px;font-size:13px}
+  .foot{color:var(--muted);font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="shield">🛡️</span>
+    <h1>Sentinelle — Console analyste fraude</h1>
+    <div class="conn">
+      <input id="url" type="text" placeholder="http://127.0.0.1:8000" />
+      <input id="key" type="text" placeholder="Clé d'API (option.)" />
+      <button id="connect" class="sec">Connecter</button>
+      <span class="dot" id="dot"></span><span class="badge" id="status">non connecté</span>
+    </div>
+  </header>
+
+  <div class="stats" id="stats">
+    <div class="stat"><div class="v" id="s_reports">—</div><div class="k">Signalements</div></div>
+    <div class="stat"><div class="v" id="s_bnum">—</div><div class="k">Numéros bloqués</div></div>
+    <div class="stat"><div class="v" id="s_tnum">—</div><div class="k">Numéros suivis</div></div>
+    <div class="stat"><div class="v" id="s_bdom">—</div><div class="k">Domaines bloqués</div></div>
+    <div class="stat"><div class="v" id="s_bthr">—</div><div class="k">Seuil de blocage</div></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Analyser un message</h2>
+        <textarea id="msg" placeholder="Collez ici un SMS à analyser…"></textarea>
+        <div class="row">
+          <input id="sender" type="text" style="flex:1" placeholder="Expéditeur (optionnel)" />
+          <select id="lang"><option value="">Langue auto</option><option value="fr">FR</option><option value="en">EN</option></select>
+          <button id="analyze">Analyser</button>
+        </div>
+        <div id="verdict"></div>
+        <div class="err" id="msgErr"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>Vérifier une URL (anti-hameçonnage)</h2>
+        <input id="urlIn" type="text" placeholder="http://desjardins-secure.xyz/login" />
+        <div class="row"><button id="checkUrl">Vérifier l'URL</button></div>
+        <div id="urlOut" class="muted"></div>
+      </div>
+      <div class="card">
+        <h2>Réputation d'un numéro (caller ID)</h2>
+        <input id="numIn" type="text" placeholder="+1 514 555-0199" />
+        <div class="row"><button id="checkNum">Vérifier le numéro</button></div>
+        <div id="numOut" class="muted"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Console de démonstration. Outil d'aide à la décision — ne remplace pas le Centre antifraude du Canada (1-888-495-8501).</p>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const LEVEL_COLOR = { safe:'#1FA463', caution:'#E6A700', suspicious:'#E8730C', fraud:'#D7263D' };
+const EMOJI = { safe:'✅', caution:'🟡', suspicious:'⚠️', fraud:'🛑' };
+let API = '', KEY = '';
+
+function headers(){ const h={'Content-Type':'application/json'}; if(KEY) h['X-API-Key']=KEY; return h; }
+async function api(path, opts={}){
+  const res = await fetch(API+path, { headers:headers(), ...opts });
+  const t = await res.text(); const d = t?JSON.parse(t):null;
+  if(!res.ok) throw new Error(d&&d.error?d.error.message:('Erreur '+res.status));
+  return d;
+}
+
+async function connect(){
+  API = $('url').value.trim().replace(/\/+$/,'') || 'http://127.0.0.1:8000';
+  KEY = $('key').value.trim();
+  localStorage.setItem('snt.url',API); localStorage.setItem('snt.key',KEY);
+  try{
+    const h = await api('/health');
+    $('dot').className='dot ok';
+    $('status').textContent = `connecté · IA ${h.ml_available?'✓':'✗'}`;
+    await loadStats();
+  }catch(e){
+    $('dot').className='dot bad'; $('status').textContent='hors ligne';
+  }
+}
+
+async function loadStats(){
+  try{
+    const s = await api('/api/v1/stats');
+    $('s_reports').textContent = s.total_reports;
+    $('s_bnum').textContent = s.blocked_numbers;
+    $('s_tnum').textContent = s.tracked_numbers;
+    $('s_bdom').textContent = s.blocked_domains;
+    $('s_bthr').textContent = s.block_threshold;
+  }catch(e){}
+}
+
+function renderVerdict(v){
+  const c = LEVEL_COLOR[v.level]||'#9AA8BF';
+  const sigs = (v.signals||[]).map(s=>`<div class="sig">• ${s.label.fr}${s.evidence?` <em>« ${s.evidence} »</em>`:''}</div>`).join('');
+  return `<div class="verdict" style="border-color:${c}">
+    <div class="top"><span style="font-size:26px">${EMOJI[v.level]||''}</span>
+      <span class="lvl" style="color:${c}">${v.level_label.fr}</span>
+      <span class="score" style="color:${c}">${v.risk_score}</span></div>
+    <div class="gauge"><div style="width:${v.risk_score}%;background:${c}"></div></div>
+    <div class="muted">Catégorie : <b style="color:var(--text)">${v.category_label.fr}</b></div>
+    <div style="margin-top:8px">${v.explanation.fr}</div>
+    <div class="action" style="border-left-color:${c}"><b>Que faire ?</b><br>${v.recommended_action.fr}</div>
+    ${sigs?`<div style="margin-top:10px">${sigs}</div>`:''}
+  </div>`;
+}
+
+async function analyze(){
+  $('msgErr').textContent=''; $('verdict').innerHTML='<div class="muted">Analyse…</div>';
+  try{
+    const body = { message:$('msg').value, sender:$('sender').value||undefined, lang:$('lang').value||undefined };
+    const v = await api('/api/v1/analyze',{method:'POST',body:JSON.stringify(body)});
+    $('verdict').innerHTML = renderVerdict(v);
+  }catch(e){ $('verdict').innerHTML=''; $('msgErr').textContent=e.message; }
+}
+
+async function checkUrl(){
+  $('urlOut').textContent='…';
+  try{
+    const r = await api('/api/v1/check-url',{method:'POST',body:JSON.stringify({url:$('urlIn').value})});
+    const reasons = (r.reasons||[]).map(x=>'• '+x.fr).join('<br>') || 'aucun indice';
+    $('urlOut').innerHTML = `<b style="color:${r.is_official?'var(--safe)':'var(--fraud)'}">${r.is_official?'Domaine officiel ✓':'Non officiel — score '+r.score}</b>`
+      + `<br>${r.registrable_domain}${r.community_blocked?' · <b style="color:var(--fraud)">signalé par la communauté</b>':''}<br>${reasons}`;
+  }catch(e){ $('urlOut').textContent=e.message; }
+}
+
+async function checkNum(){
+  $('numOut').textContent='…';
+  try{
+    const r = await api('/api/v1/check-number?number='+encodeURIComponent($('numIn').value));
+    $('numOut').innerHTML = `<b style="color:${r.blocked?'var(--fraud)':'var(--safe)'}">${r.blocked?'BLOQUÉ':'Non bloqué'}</b>`
+      + ` · ${r.report_count} signalement(s)${r.category?' · '+r.category:''}<br>${r.display||''}`;
+  }catch(e){ $('numOut').textContent=e.message; }
+}
+
+$('connect').onclick = connect;
+$('analyze').onclick = analyze;
+$('checkUrl').onclick = checkUrl;
+$('checkNum').onclick = checkNum;
+
+// Restaure la dernière connexion et tente de se connecter.
+$('url').value = localStorage.getItem('snt.url') || 'http://127.0.0.1:8000';
+$('key').value = localStorage.getItem('snt.key') || '';
+connect();
+</script>
+</body>
+</html>
