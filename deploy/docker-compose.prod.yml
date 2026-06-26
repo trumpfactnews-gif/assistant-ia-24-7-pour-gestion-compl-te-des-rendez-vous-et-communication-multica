@@ -1,0 +1,47 @@
+# Déploiement production Sentinelle : API (gunicorn) derrière Caddy (HTTPS auto).
+# À lancer sur un serveur en région CANADIENNE (résidence des données).
+#   cp .env.prod.example .env  &&  édite  &&  docker compose -f docker-compose.prod.yml up -d --build
+services:
+  api:
+    build: ../sentinelle-backend
+    image: sentinelle-api:prod
+    restart: unless-stopped
+    environment:
+      SENTINELLE_ENV: production
+      # OBLIGATOIRE : sel des condensés de numéros + clé d'app (openssl rand -hex 32).
+      SENTINELLE_SECRET_KEY: ${SENTINELLE_SECRET_KEY:?définir dans .env}
+      # Clé d'API exigée sur /api/ si définie.
+      SENTINELLE_API_KEY: ${SENTINELLE_API_KEY:-}
+      # En prod, restreindre à l'origine de la console/app (pas « * »).
+      SENTINELLE_CORS_ORIGIN: ${SENTINELLE_CORS_ORIGIN:-*}
+      SENTINELLE_BLOCK_THRESHOLD: ${SENTINELLE_BLOCK_THRESHOLD:-3}
+      SENTINELLE_RATE_LIMIT: ${SENTINELLE_RATE_LIMIT:-120}
+    volumes:
+      - sentinelle-data:/app/data        # base communautaire + modèle (persistant)
+    expose:
+      - "8000"                            # interne seulement : non publié à l'hôte
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?définir dans .env}   # ex. api.sentinelle.ca
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data                  # certificats Let's Encrypt
+      - caddy-config:/config
+
+volumes:
+  sentinelle-data:
+  caddy-data:
+  caddy-config:

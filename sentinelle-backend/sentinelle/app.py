@@ -85,7 +85,7 @@ def create_app(config: Config | None = None) -> Flask:
 
     @app.after_request
     def _cors(response):
-        response.headers.setdefault("Access-Control-Allow-Origin", "*")
+        response.headers.setdefault("Access-Control-Allow-Origin", cfg.cors_origin)
         response.headers.setdefault(
             "Access-Control-Allow-Headers", "Content-Type, X-API-Key")
         response.headers.setdefault(

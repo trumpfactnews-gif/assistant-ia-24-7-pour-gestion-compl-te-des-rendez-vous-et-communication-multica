@@ -1,0 +1,23 @@
+# HTTPS automatique (Let's Encrypt) + proxy inverse vers l'API.
+# {$DOMAIN} est lu depuis la variable d'environnement (voir .env).
+{$DOMAIN} {
+	encode gzip
+
+	# Sonde de santé publique (pratique pour les load balancers / monitoring).
+	handle /health {
+		reverse_proxy api:8000
+	}
+
+	handle {
+		reverse_proxy api:8000
+	}
+
+	# En-têtes de sécurité de base.
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "no-referrer"
+		-Server
+	}
+}

@@ -69,6 +69,9 @@ class Config:
 
     # --- API ---------------------------------------------------------------
     api_key: str | None = field(default_factory=lambda: os.getenv("SENTINELLE_API_KEY") or None)
+    # Origine CORS autorisée. En production, restreindre à l'origine de la console/app
+    # (ex. https://console.sentinelle.ca) au lieu de « * ».
+    cors_origin: str = field(default_factory=lambda: os.getenv("SENTINELLE_CORS_ORIGIN", "*"))
     # Limite de débit (requêtes/minute par IP) ; 0 = désactivé.
     rate_limit_per_minute: int = field(
         default_factory=lambda: _env_int("SENTINELLE_RATE_LIMIT", 120)
