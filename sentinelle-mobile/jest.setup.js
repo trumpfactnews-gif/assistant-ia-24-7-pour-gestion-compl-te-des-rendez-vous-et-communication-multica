@@ -5,11 +5,29 @@
 
 /* eslint-env jest */
 
-// AsyncStorage : mock officiel fourni par la librairie.
-jest.mock(
-  '@react-native-async-storage/async-storage',
-  () => require('@react-native-async-storage/async-storage/jest/async-storage-mock'),
-);
+// AsyncStorage : mock en mémoire (indépendant de la version de la librairie).
+jest.mock('@react-native-async-storage/async-storage', () => {
+  let store = {};
+  return {
+    __esModule: true,
+    default: {
+      getItem: jest.fn((k) => Promise.resolve(k in store ? store[k] : null)),
+      setItem: jest.fn((k, v) => {
+        store[k] = v;
+        return Promise.resolve();
+      }),
+      removeItem: jest.fn((k) => {
+        delete store[k];
+        return Promise.resolve();
+      }),
+      clear: jest.fn(() => {
+        store = {};
+        return Promise.resolve();
+      }),
+      getAllKeys: jest.fn(() => Promise.resolve(Object.keys(store))),
+    },
+  };
+});
 
 // react-native-permissions : pas de pont natif en test.
 jest.mock('react-native-permissions', () => ({

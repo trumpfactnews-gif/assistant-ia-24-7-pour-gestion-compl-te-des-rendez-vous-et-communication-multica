@@ -45,6 +45,20 @@ sentinelle-mobile/
 
 > Prérequis : Node ≥ 18, JDK 17, Android Studio + SDK, un émulateur ou appareil.
 
+### Méthode rapide (script)
+
+```bash
+cd sentinelle-mobile
+./scaffold.sh            # monte un projet exécutable dans ../SentinelleApp
+```
+
+Le script scaffold le projet, copie le code, installe les dépendances, met en
+place le module natif, puis exécute typecheck + tests. Il reste **2 éditions
+manuelles** (enregistrement du package natif dans `MainApplication.kt` + fusion
+du manifeste) qu'il affiche à la fin. Ensuite : `npm start` puis `npm run android`.
+
+### Méthode manuelle (détaillée)
+
 ### 1. Générer le projet natif puis y greffer le code
 
 ```bash
