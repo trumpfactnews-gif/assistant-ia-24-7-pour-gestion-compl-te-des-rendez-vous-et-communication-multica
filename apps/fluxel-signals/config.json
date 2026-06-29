@@ -1,0 +1,37 @@
+{
+  "execution": {
+    "mode": "paper"
+  },
+  "capital": {
+    "baseCurrency": "USD",
+    "allocated": 100000
+  },
+  "signal": {
+    "horizon": 5,
+    "smaFast": 10,
+    "smaSlow": 30
+  },
+  "verification": {
+    "minConfidence": 0.35,
+    "minScore": 0.15,
+    "maxVolatility": 1.2
+  },
+  "risk": {
+    "maxDailyLossPct": 2.0,
+    "maxPositionPct": 5.0,
+    "riskPerTradePct": 0.5,
+    "stopLossPct": 0.03
+  },
+  "predictor": {
+    "backend": "local",
+    "vertex": {
+      "endpointUrl": "",
+      "accessToken": ""
+    }
+  },
+  "watchlist": ["BTC", "ETH", "AAPL", "NVDA", "TSLA"],
+  "server": {
+    "port": 8787,
+    "corsOrigin": "*"
+  }
+}
