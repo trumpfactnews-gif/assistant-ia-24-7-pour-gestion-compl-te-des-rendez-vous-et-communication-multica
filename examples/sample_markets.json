@@ -1,0 +1,1475 @@
+{
+  "markets": [
+    {
+      "id": "mkt-0000",
+      "question": "Marché culture n°0 se réalise ?",
+      "type": "categorical",
+      "category": "culture",
+      "liquidity": 140022.93,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.122629,
+          "model_prob": 0.091934,
+          "hist_wins": 2,
+          "hist_trials": 13
+        },
+        {
+          "name": "Option B",
+          "price": 0.095042,
+          "model_prob": 0.126832,
+          "hist_wins": 10,
+          "hist_trials": 195
+        },
+        {
+          "name": "Option C",
+          "price": 0.342181,
+          "hist_wins": 9,
+          "hist_trials": 30
+        },
+        {
+          "name": "Option D",
+          "price": 0.146145,
+          "model_prob": 0.139404
+        },
+        {
+          "name": "Option E",
+          "price": 0.297562,
+          "hist_wins": 24,
+          "hist_trials": 69
+        }
+      ]
+    },
+    {
+      "id": "mkt-0001",
+      "question": "Marché politique n°1 se réalise ?",
+      "type": "binary",
+      "category": "politique",
+      "liquidity": 244287.42,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.232044,
+          "model_prob": 0.383986
+        },
+        {
+          "name": "Non",
+          "price": 0.694043,
+          "model_prob": 0.687021,
+          "hist_wins": 130,
+          "hist_trials": 232
+        }
+      ]
+    },
+    {
+      "id": "mkt-0002",
+      "question": "Marché sport n°2 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 245919.85,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.410887,
+          "model_prob": 0.2614
+        },
+        {
+          "name": "Non",
+          "price": 0.655433
+        }
+      ]
+    },
+    {
+      "id": "mkt-0003",
+      "question": "Marché politique n°3 se réalise ?",
+      "type": "categorical",
+      "category": "politique",
+      "liquidity": 357443.46,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.190897,
+          "model_prob": 0.189212,
+          "hist_wins": 58,
+          "hist_trials": 284
+        },
+        {
+          "name": "Option B",
+          "price": 0.516555
+        },
+        {
+          "name": "Option C",
+          "price": 0.353516,
+          "hist_wins": 50,
+          "hist_trials": 190
+        },
+        {
+          "name": "Option D",
+          "price": 0.077903,
+          "hist_wins": 28,
+          "hist_trials": 157
+        }
+      ]
+    },
+    {
+      "id": "mkt-0004",
+      "question": "Marché science n°4 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 320257.17,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.090343
+        },
+        {
+          "name": "Non",
+          "price": 0.937639,
+          "model_prob": 0.904921,
+          "hist_wins": 272,
+          "hist_trials": 295
+        }
+      ]
+    },
+    {
+      "id": "mkt-0005",
+      "question": "Marché crypto n°5 se réalise ?",
+      "type": "binary",
+      "category": "crypto",
+      "liquidity": 140580.62,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.052318,
+          "hist_wins": 5,
+          "hist_trials": 92
+        },
+        {
+          "name": "Non",
+          "price": 0.94754
+        }
+      ]
+    },
+    {
+      "id": "mkt-0006",
+      "question": "Marché science n°6 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 397692.78,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.244624,
+          "model_prob": 0.309681,
+          "hist_wins": 53,
+          "hist_trials": 270
+        },
+        {
+          "name": "Non",
+          "price": 0.729425,
+          "model_prob": 0.744419,
+          "hist_wins": 92,
+          "hist_trials": 127
+        }
+      ]
+    },
+    {
+      "id": "mkt-0007",
+      "question": "Marché crypto n°7 se réalise ?",
+      "type": "categorical",
+      "category": "crypto",
+      "liquidity": 133238.96,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.105374,
+          "model_prob": 0.083509
+        },
+        {
+          "name": "Option B",
+          "price": 0.307556,
+          "hist_wins": 131,
+          "hist_trials": 282
+        },
+        {
+          "name": "Option C",
+          "price": 0.06407,
+          "model_prob": 0.058261,
+          "hist_wins": 7,
+          "hist_trials": 166
+        },
+        {
+          "name": "Option D",
+          "price": 0.091587,
+          "model_prob": 0.116655
+        },
+        {
+          "name": "Option E",
+          "price": 0.08117,
+          "model_prob": 0.087911,
+          "hist_wins": 3,
+          "hist_trials": 78
+        },
+        {
+          "name": "Option F",
+          "price": 0.153032,
+          "hist_wins": 26,
+          "hist_trials": 135
+        }
+      ]
+    },
+    {
+      "id": "mkt-0008",
+      "question": "Marché politique n°8 se réalise ?",
+      "type": "categorical",
+      "category": "politique",
+      "liquidity": 248567.07,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.663239,
+          "model_prob": 0.582173
+        },
+        {
+          "name": "Option B",
+          "price": 0.03017,
+          "model_prob": 0.029348
+        },
+        {
+          "name": "Option C",
+          "price": 0.091482,
+          "hist_wins": 4,
+          "hist_trials": 16
+        },
+        {
+          "name": "Option D",
+          "price": 0.115428,
+          "model_prob": 0.027113
+        },
+        {
+          "name": "Option E",
+          "price": 0.312602,
+          "model_prob": 0.225615
+        }
+      ]
+    },
+    {
+      "id": "mkt-0009",
+      "question": "Marché economie n°9 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 27724.32,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.508568,
+          "hist_wins": 79,
+          "hist_trials": 161
+        },
+        {
+          "name": "Non",
+          "price": 0.513051
+        }
+      ]
+    },
+    {
+      "id": "mkt-0010",
+      "question": "Marché sport n°10 se réalise ?",
+      "type": "categorical",
+      "category": "sport",
+      "liquidity": 343184.27,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.215435,
+          "model_prob": 0.208061
+        },
+        {
+          "name": "Option B",
+          "price": 0.373387,
+          "model_prob": 0.397085,
+          "hist_wins": 71,
+          "hist_trials": 159
+        },
+        {
+          "name": "Option C",
+          "price": 0.085173
+        },
+        {
+          "name": "Option D",
+          "price": 0.178084,
+          "model_prob": 0.342108,
+          "hist_wins": 52,
+          "hist_trials": 166
+        }
+      ]
+    },
+    {
+      "id": "mkt-0011",
+      "question": "Marché politique n°11 se réalise ?",
+      "type": "binary",
+      "category": "politique",
+      "liquidity": 286944.43,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.873328,
+          "model_prob": 0.773667
+        },
+        {
+          "name": "Non",
+          "price": 0.215994,
+          "model_prob": 0.249774,
+          "hist_wins": 21,
+          "hist_trials": 112
+        }
+      ]
+    },
+    {
+      "id": "mkt-0012",
+      "question": "Marché politique n°12 se réalise ?",
+      "type": "binary",
+      "category": "politique",
+      "liquidity": 87651.48,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.498905,
+          "model_prob": 0.420846,
+          "hist_wins": 22,
+          "hist_trials": 56
+        },
+        {
+          "name": "Non",
+          "price": 0.600594
+        }
+      ]
+    },
+    {
+      "id": "mkt-0013",
+      "question": "Marché crypto n°13 se réalise ?",
+      "type": "categorical",
+      "category": "crypto",
+      "liquidity": 454021.58,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.131638,
+          "hist_wins": 26,
+          "hist_trials": 158
+        },
+        {
+          "name": "Option B",
+          "price": 0.049292
+        },
+        {
+          "name": "Option C",
+          "price": 0.086663,
+          "model_prob": 0.129372,
+          "hist_wins": 7,
+          "hist_trials": 70
+        },
+        {
+          "name": "Option D",
+          "price": 0.298718,
+          "hist_wins": 49,
+          "hist_trials": 171
+        },
+        {
+          "name": "Option E",
+          "price": 0.361304,
+          "model_prob": 0.279197
+        }
+      ]
+    },
+    {
+      "id": "mkt-0014",
+      "question": "Marché culture n°14 se réalise ?",
+      "type": "binary",
+      "category": "culture",
+      "liquidity": 183456.4,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.206527,
+          "model_prob": 0.218314,
+          "hist_wins": 4,
+          "hist_trials": 12
+        },
+        {
+          "name": "Non",
+          "price": 0.710188
+        }
+      ]
+    },
+    {
+      "id": "mkt-0015",
+      "question": "Marché sport n°15 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 478397.97,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.442142,
+          "model_prob": 0.437376
+        },
+        {
+          "name": "Non",
+          "price": 0.502478,
+          "model_prob": 0.576418,
+          "hist_wins": 47,
+          "hist_trials": 70
+        }
+      ]
+    },
+    {
+      "id": "mkt-0016",
+      "question": "Marché science n°16 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 497104.82,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.431292,
+          "model_prob": 0.334368
+        },
+        {
+          "name": "Non",
+          "price": 0.704176,
+          "model_prob": 0.658343
+        }
+      ]
+    },
+    {
+      "id": "mkt-0017",
+      "question": "Marché culture n°17 se réalise ?",
+      "type": "binary",
+      "category": "culture",
+      "liquidity": 186327.93,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.25352,
+          "hist_wins": 79,
+          "hist_trials": 293
+        },
+        {
+          "name": "Non",
+          "price": 0.813761,
+          "model_prob": 0.746402
+        }
+      ]
+    },
+    {
+      "id": "mkt-0018",
+      "question": "Marché politique n°18 se réalise ?",
+      "type": "categorical",
+      "category": "politique",
+      "liquidity": 302751.17,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.019767
+        },
+        {
+          "name": "Option B",
+          "price": 0.553284,
+          "model_prob": 0.556807,
+          "hist_wins": 18,
+          "hist_trials": 30
+        },
+        {
+          "name": "Option C",
+          "price": 0.074598,
+          "hist_wins": 24,
+          "hist_trials": 174
+        },
+        {
+          "name": "Option D",
+          "price": 0.124156
+        },
+        {
+          "name": "Option E",
+          "price": 0.046481,
+          "model_prob": 0.031507,
+          "hist_wins": 7,
+          "hist_trials": 129
+        },
+        {
+          "name": "Option F",
+          "price": 0.154765,
+          "model_prob": 0.248791
+        }
+      ]
+    },
+    {
+      "id": "mkt-0019",
+      "question": "Marché culture n°19 se réalise ?",
+      "type": "binary",
+      "category": "culture",
+      "liquidity": 419169.2,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.288356
+        },
+        {
+          "name": "Non",
+          "price": 0.807172,
+          "hist_wins": 86,
+          "hist_trials": 113
+        }
+      ]
+    },
+    {
+      "id": "mkt-0020",
+      "question": "Marché sport n°20 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 316296.95,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.091,
+          "hist_wins": 4,
+          "hist_trials": 28
+        },
+        {
+          "name": "Non",
+          "price": 0.737061,
+          "model_prob": 0.812783
+        }
+      ]
+    },
+    {
+      "id": "mkt-0021",
+      "question": "Marché economie n°21 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 465500.77,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.767081
+        },
+        {
+          "name": "Non",
+          "price": 0.344191,
+          "model_prob": 0.365594,
+          "hist_wins": 48,
+          "hist_trials": 189
+        }
+      ]
+    },
+    {
+      "id": "mkt-0022",
+      "question": "Marché science n°22 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 273014.28,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.234708,
+          "model_prob": 0.294087
+        },
+        {
+          "name": "Non",
+          "price": 0.696713,
+          "hist_wins": 31,
+          "hist_trials": 41
+        }
+      ]
+    },
+    {
+      "id": "mkt-0023",
+      "question": "Marché culture n°23 se réalise ?",
+      "type": "categorical",
+      "category": "culture",
+      "liquidity": 289391.31,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.054181,
+          "model_prob": 0.100197
+        },
+        {
+          "name": "Option B",
+          "price": 0.071245,
+          "model_prob": 0.01
+        },
+        {
+          "name": "Option C",
+          "price": 0.431887,
+          "model_prob": 0.407278
+        },
+        {
+          "name": "Option D",
+          "price": 0.555977,
+          "model_prob": 0.443552
+        }
+      ]
+    },
+    {
+      "id": "mkt-0024",
+      "question": "Marché culture n°24 se réalise ?",
+      "type": "categorical",
+      "category": "culture",
+      "liquidity": 384534.59,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.192281
+        },
+        {
+          "name": "Option B",
+          "price": 0.218896,
+          "model_prob": 0.138634,
+          "hist_wins": 5,
+          "hist_trials": 55
+        },
+        {
+          "name": "Option C",
+          "price": 0.320338,
+          "model_prob": 0.203198,
+          "hist_wins": 71,
+          "hist_trials": 235
+        },
+        {
+          "name": "Option D",
+          "price": 0.058649,
+          "model_prob": 0.074872,
+          "hist_wins": 4,
+          "hist_trials": 99
+        },
+        {
+          "name": "Option E",
+          "price": 0.600347,
+          "model_prob": 0.381561
+        }
+      ]
+    },
+    {
+      "id": "mkt-0025",
+      "question": "Marché politique n°25 se réalise ?",
+      "type": "binary",
+      "category": "politique",
+      "liquidity": 44711.72,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.438903,
+          "model_prob": 0.366493,
+          "hist_wins": 87,
+          "hist_trials": 193
+        },
+        {
+          "name": "Non",
+          "price": 0.567413
+        }
+      ]
+    },
+    {
+      "id": "mkt-0026",
+      "question": "Marché culture n°26 se réalise ?",
+      "type": "binary",
+      "category": "culture",
+      "liquidity": 72676.0,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.78768
+        },
+        {
+          "name": "Non",
+          "price": 0.283773
+        }
+      ]
+    },
+    {
+      "id": "mkt-0027",
+      "question": "Marché sport n°27 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 203738.12,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.967523,
+          "hist_wins": 209,
+          "hist_trials": 219
+        },
+        {
+          "name": "Non",
+          "price": 0.032992,
+          "model_prob": 0.037501,
+          "hist_wins": 9,
+          "hist_trials": 260
+        }
+      ]
+    },
+    {
+      "id": "mkt-0028",
+      "question": "Marché politique n°28 se réalise ?",
+      "type": "categorical",
+      "category": "politique",
+      "liquidity": 486987.02,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.528968
+        },
+        {
+          "name": "Option B",
+          "price": 0.084121,
+          "hist_wins": 40,
+          "hist_trials": 290
+        },
+        {
+          "name": "Option C",
+          "price": 0.571715,
+          "model_prob": 0.443698
+        }
+      ]
+    },
+    {
+      "id": "mkt-0029",
+      "question": "Marché sport n°29 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 261355.14,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.089794,
+          "model_prob": 0.094451,
+          "hist_wins": 11,
+          "hist_trials": 133
+        },
+        {
+          "name": "Non",
+          "price": 0.940963,
+          "hist_wins": 184,
+          "hist_trials": 200
+        }
+      ]
+    },
+    {
+      "id": "mkt-0030",
+      "question": "Marché economie n°30 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 29601.51,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.039764,
+          "model_prob": 0.073182
+        },
+        {
+          "name": "Non",
+          "price": 0.99,
+          "hist_wins": 273,
+          "hist_trials": 283
+        }
+      ]
+    },
+    {
+      "id": "mkt-0031",
+      "question": "Marché science n°31 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 439740.46,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.633076,
+          "model_prob": 0.630855,
+          "hist_wins": 170,
+          "hist_trials": 253
+        },
+        {
+          "name": "Non",
+          "price": 0.246936
+        }
+      ]
+    },
+    {
+      "id": "mkt-0032",
+      "question": "Marché economie n°32 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 322554.3,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.792523,
+          "hist_wins": 78,
+          "hist_trials": 99
+        },
+        {
+          "name": "Non",
+          "price": 0.243673,
+          "model_prob": 0.320317,
+          "hist_wins": 48,
+          "hist_trials": 175
+        }
+      ]
+    },
+    {
+      "id": "mkt-0033",
+      "question": "Marché economie n°33 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 325505.16,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.424603,
+          "model_prob": 0.583309,
+          "hist_wins": 137,
+          "hist_trials": 282
+        },
+        {
+          "name": "Non",
+          "price": 0.494054
+        }
+      ]
+    },
+    {
+      "id": "mkt-0034",
+      "question": "Marché sport n°34 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 347169.2,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.719031
+        },
+        {
+          "name": "Non",
+          "price": 0.234233
+        }
+      ]
+    },
+    {
+      "id": "mkt-0035",
+      "question": "Marché politique n°35 se réalise ?",
+      "type": "binary",
+      "category": "politique",
+      "liquidity": 498401.78,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.252327,
+          "hist_wins": 9,
+          "hist_trials": 42
+        },
+        {
+          "name": "Non",
+          "price": 0.868438,
+          "model_prob": 0.851536
+        }
+      ]
+    },
+    {
+      "id": "mkt-0036",
+      "question": "Marché science n°36 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 267245.22,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.636113,
+          "hist_wins": 98,
+          "hist_trials": 193
+        },
+        {
+          "name": "Non",
+          "price": 0.30778,
+          "model_prob": 0.444301,
+          "hist_wins": 59,
+          "hist_trials": 111
+        }
+      ]
+    },
+    {
+      "id": "mkt-0037",
+      "question": "Marché crypto n°37 se réalise ?",
+      "type": "categorical",
+      "category": "crypto",
+      "liquidity": 257230.36,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.240317
+        },
+        {
+          "name": "Option B",
+          "price": 0.182566,
+          "model_prob": 0.148606
+        },
+        {
+          "name": "Option C",
+          "price": 0.351199,
+          "model_prob": 0.488075
+        },
+        {
+          "name": "Option D",
+          "price": 0.266738,
+          "model_prob": 0.292334
+        }
+      ]
+    },
+    {
+      "id": "mkt-0038",
+      "question": "Marché politique n°38 se réalise ?",
+      "type": "categorical",
+      "category": "politique",
+      "liquidity": 180797.86,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.290202,
+          "hist_wins": 21,
+          "hist_trials": 85
+        },
+        {
+          "name": "Option B",
+          "price": 0.326377
+        },
+        {
+          "name": "Option C",
+          "price": 0.032175,
+          "model_prob": 0.015776
+        },
+        {
+          "name": "Option D",
+          "price": 0.297103,
+          "model_prob": 0.168056
+        },
+        {
+          "name": "Option E",
+          "price": 0.104099,
+          "model_prob": 0.150704
+        },
+        {
+          "name": "Option F",
+          "price": 0.127133,
+          "hist_wins": 30,
+          "hist_trials": 222
+        }
+      ]
+    },
+    {
+      "id": "mkt-0039",
+      "question": "Marché economie n°39 se réalise ?",
+      "type": "categorical",
+      "category": "economie",
+      "liquidity": 218167.58,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.055479,
+          "hist_wins": 2,
+          "hist_trials": 46
+        },
+        {
+          "name": "Option B",
+          "price": 0.237091,
+          "model_prob": 0.13361,
+          "hist_wins": 22,
+          "hist_trials": 172
+        },
+        {
+          "name": "Option C",
+          "price": 0.140329,
+          "model_prob": 0.168757
+        },
+        {
+          "name": "Option D",
+          "price": 0.497887,
+          "hist_wins": 79,
+          "hist_trials": 143
+        },
+        {
+          "name": "Option E",
+          "price": 0.1205
+        },
+        {
+          "name": "Option F",
+          "price": 0.054799
+        }
+      ]
+    },
+    {
+      "id": "mkt-0040",
+      "question": "Marché sport n°40 se réalise ?",
+      "type": "categorical",
+      "category": "sport",
+      "liquidity": 227836.29,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.706926,
+          "hist_wins": 7,
+          "hist_trials": 12
+        },
+        {
+          "name": "Option B",
+          "price": 0.066629,
+          "model_prob": 0.136919
+        },
+        {
+          "name": "Option C",
+          "price": 0.148058,
+          "model_prob": 0.219866
+        }
+      ]
+    },
+    {
+      "id": "mkt-0041",
+      "question": "Marché culture n°41 se réalise ?",
+      "type": "binary",
+      "category": "culture",
+      "liquidity": 64469.0,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.505989,
+          "model_prob": 0.489118,
+          "hist_wins": 119,
+          "hist_trials": 198
+        },
+        {
+          "name": "Non",
+          "price": 0.314675,
+          "model_prob": 0.420112,
+          "hist_wins": 125,
+          "hist_trials": 276
+        }
+      ]
+    },
+    {
+      "id": "mkt-0042",
+      "question": "Marché science n°42 se réalise ?",
+      "type": "categorical",
+      "category": "science",
+      "liquidity": 221067.69,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.399476,
+          "hist_wins": 104,
+          "hist_trials": 275
+        },
+        {
+          "name": "Option B",
+          "price": 0.465855
+        },
+        {
+          "name": "Option C",
+          "price": 0.223791,
+          "model_prob": 0.235719
+        }
+      ]
+    },
+    {
+      "id": "mkt-0043",
+      "question": "Marché sport n°43 se réalise ?",
+      "type": "categorical",
+      "category": "sport",
+      "liquidity": 75050.89,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.398745,
+          "model_prob": 0.485056
+        },
+        {
+          "name": "Option B",
+          "price": 0.07909
+        },
+        {
+          "name": "Option C",
+          "price": 0.223298,
+          "model_prob": 0.1955
+        },
+        {
+          "name": "Option D",
+          "price": 0.103659
+        },
+        {
+          "name": "Option E",
+          "price": 0.191109,
+          "model_prob": 0.218208
+        }
+      ]
+    },
+    {
+      "id": "mkt-0044",
+      "question": "Marché economie n°44 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 295189.51,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.864114,
+          "hist_wins": 24,
+          "hist_trials": 27
+        },
+        {
+          "name": "Non",
+          "price": 0.074119
+        }
+      ]
+    },
+    {
+      "id": "mkt-0045",
+      "question": "Marché science n°45 se réalise ?",
+      "type": "categorical",
+      "category": "science",
+      "liquidity": 202230.91,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.208174,
+          "model_prob": 0.303307,
+          "hist_wins": 69,
+          "hist_trials": 184
+        },
+        {
+          "name": "Option B",
+          "price": 0.502311
+        },
+        {
+          "name": "Option C",
+          "price": 0.152546,
+          "hist_wins": 34,
+          "hist_trials": 154
+        }
+      ]
+    },
+    {
+      "id": "mkt-0046",
+      "question": "Marché sport n°46 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 336819.99,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.557981,
+          "hist_wins": 145,
+          "hist_trials": 277
+        },
+        {
+          "name": "Non",
+          "price": 0.522408,
+          "model_prob": 0.510328,
+          "hist_wins": 92,
+          "hist_trials": 177
+        }
+      ]
+    },
+    {
+      "id": "mkt-0047",
+      "question": "Marché sport n°47 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 244302.64,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.954923,
+          "hist_wins": 255,
+          "hist_trials": 281
+        },
+        {
+          "name": "Non",
+          "price": 0.089386
+        }
+      ]
+    },
+    {
+      "id": "mkt-0048",
+      "question": "Marché sport n°48 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 325565.89,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.827487,
+          "hist_wins": 172,
+          "hist_trials": 236
+        },
+        {
+          "name": "Non",
+          "price": 0.33735,
+          "model_prob": 0.229438
+        }
+      ]
+    },
+    {
+      "id": "mkt-0049",
+      "question": "Marché economie n°49 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 211492.83,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.048275,
+          "model_prob": 0.051812,
+          "hist_wins": 4,
+          "hist_trials": 275
+        },
+        {
+          "name": "Non",
+          "price": 0.99
+        }
+      ]
+    },
+    {
+      "id": "mkt-0050",
+      "question": "Marché economie n°50 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 14953.59,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.082923,
+          "hist_wins": 18,
+          "hist_trials": 214
+        },
+        {
+          "name": "Non",
+          "price": 0.834939,
+          "model_prob": 0.818785,
+          "hist_wins": 86,
+          "hist_trials": 96
+        }
+      ]
+    },
+    {
+      "id": "mkt-0051",
+      "question": "Marché sport n°51 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 466467.48,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.130359
+        },
+        {
+          "name": "Non",
+          "price": 0.860437,
+          "hist_wins": 92,
+          "hist_trials": 119
+        }
+      ]
+    },
+    {
+      "id": "mkt-0052",
+      "question": "Marché sport n°52 se réalise ?",
+      "type": "categorical",
+      "category": "sport",
+      "liquidity": 318712.09,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.250576,
+          "model_prob": 0.173617
+        },
+        {
+          "name": "Option B",
+          "price": 0.763378,
+          "model_prob": 0.845807
+        },
+        {
+          "name": "Option C",
+          "price": 0.031205,
+          "model_prob": 0.07608
+        }
+      ]
+    },
+    {
+      "id": "mkt-0053",
+      "question": "Marché economie n°53 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 123757.55,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.287479
+        },
+        {
+          "name": "Non",
+          "price": 0.671642,
+          "hist_wins": 15,
+          "hist_trials": 20
+        }
+      ]
+    },
+    {
+      "id": "mkt-0054",
+      "question": "Marché culture n°54 se réalise ?",
+      "type": "categorical",
+      "category": "culture",
+      "liquidity": 265288.72,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.409323,
+          "model_prob": 0.254646,
+          "hist_wins": 52,
+          "hist_trials": 182
+        },
+        {
+          "name": "Option B",
+          "price": 0.145524
+        },
+        {
+          "name": "Option C",
+          "price": 0.294501,
+          "model_prob": 0.268052
+        },
+        {
+          "name": "Option D",
+          "price": 0.367091,
+          "model_prob": 0.270042,
+          "hist_wins": 25,
+          "hist_trials": 111
+        }
+      ]
+    },
+    {
+      "id": "mkt-0055",
+      "question": "Marché sport n°55 se réalise ?",
+      "type": "binary",
+      "category": "sport",
+      "liquidity": 88116.06,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.821957,
+          "model_prob": 0.761287,
+          "hist_wins": 148,
+          "hist_trials": 177
+        },
+        {
+          "name": "Non",
+          "price": 0.221096,
+          "hist_wins": 15,
+          "hist_trials": 67
+        }
+      ]
+    },
+    {
+      "id": "mkt-0056",
+      "question": "Marché politique n°56 se réalise ?",
+      "type": "categorical",
+      "category": "politique",
+      "liquidity": 289158.47,
+      "outcomes": [
+        {
+          "name": "Option A",
+          "price": 0.324095,
+          "model_prob": 0.34242,
+          "hist_wins": 67,
+          "hist_trials": 231
+        },
+        {
+          "name": "Option B",
+          "price": 0.660657,
+          "model_prob": 0.61846,
+          "hist_wins": 190,
+          "hist_trials": 289
+        },
+        {
+          "name": "Option C",
+          "price": 0.03149,
+          "hist_wins": 1,
+          "hist_trials": 57
+        },
+        {
+          "name": "Option D",
+          "price": 0.065792
+        }
+      ]
+    },
+    {
+      "id": "mkt-0057",
+      "question": "Marché culture n°57 se réalise ?",
+      "type": "binary",
+      "category": "culture",
+      "liquidity": 294623.19,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.617245,
+          "model_prob": 0.598117
+        },
+        {
+          "name": "Non",
+          "price": 0.439201,
+          "hist_wins": 64,
+          "hist_trials": 163
+        }
+      ]
+    },
+    {
+      "id": "mkt-0058",
+      "question": "Marché economie n°58 se réalise ?",
+      "type": "binary",
+      "category": "economie",
+      "liquidity": 169427.39,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.226697,
+          "hist_wins": 13,
+          "hist_trials": 52
+        },
+        {
+          "name": "Non",
+          "price": 0.751203,
+          "hist_wins": 119,
+          "hist_trials": 168
+        }
+      ]
+    },
+    {
+      "id": "mkt-0059",
+      "question": "Marché science n°59 se réalise ?",
+      "type": "binary",
+      "category": "science",
+      "liquidity": 169503.06,
+      "outcomes": [
+        {
+          "name": "Oui",
+          "price": 0.899458,
+          "model_prob": 0.968999,
+          "hist_wins": 187,
+          "hist_trials": 208
+        },
+        {
+          "name": "Non",
+          "price": 0.118027,
+          "model_prob": 0.090228,
+          "hist_wins": 21,
+          "hist_trials": 247
+        }
+      ]
+    }
+  ]
+}
