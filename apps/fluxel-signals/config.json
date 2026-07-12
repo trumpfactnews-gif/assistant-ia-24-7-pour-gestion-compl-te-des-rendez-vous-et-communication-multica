@@ -29,7 +29,7 @@
       "accessToken": ""
     }
   },
-  "watchlist": ["BTC", "ETH", "AAPL", "NVDA", "TSLA"],
+  "watchlist": ["BTC", "ETH", "AAPL", "NVDA", "TSLA", "AFM"],
   "server": {
     "port": 8787,
     "corsOrigin": "*"
