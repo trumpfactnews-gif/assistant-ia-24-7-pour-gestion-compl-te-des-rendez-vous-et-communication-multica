@@ -1,14 +1,23 @@
-"""Connecteur SEC EDGAR : résolution ticker→CIK, filings récents, faits XBRL.
+"""Connecteur SEC EDGAR : ticker→CIK, filings (avec items 8-K), séries XBRL.
 
 Points de sécurité :
 
 * Toutes les URL sont **construites** à partir d'un CIK validé (10 chiffres),
   jamais concaténées avec une chaîne utilisateur.
 * Les réponses distantes sont traitées comme hostiles : typage vérifié champ
-  par champ, listes plafonnées, chaînes tronquées. L'original faisait confiance
-  à la structure JSON et réinjectait le contenu dans le HTML et dans les
-  invites LLM.
+  par champ, listes plafonnées, chaînes tronquées.
 * Le cache disque est écrit atomiquement dans un répertoire confiné.
+
+Ce que ce module apporte par rapport à la version précédente, pour honorer les
+règles annoncées dans le guide :
+
+* la colonne ``items`` des 8-K est lue, ce qui rend réellement calculable
+  « SI 8-K ET items ∈ {1.01, 2.01, 7.01, 8.01} → ALERTE FORTE » et
+  « item 3.02 → dilution » ;
+* les faits XBRL sont extraits en **séries temporelles** et non plus seulement
+  en dernière valeur, ce qui permet la croissance du chiffre d'affaires, le
+  suivi du nombre d'actions (dilution) et le flux de trésorerie disponible du
+  DCF.
 """
 
 from __future__ import annotations
@@ -29,7 +38,7 @@ log = get_logger(__name__)
 
 TICKER_MAP_URL = "https://www.sec.gov/files/company_tickers.json"
 _CACHE_TTL_SECONDS = 24 * 3600
-_MAX_FILINGS = 40
+_MAX_FILINGS = 60
 _MAX_STR = 300
 
 #: Formulaires porteurs de signal, avec leur poids d'attention (cf. §5 du guide).
@@ -44,6 +53,55 @@ FILING_SIGNAL = {
     "144": 1,
 }
 
+#: Items 8-K déclenchant une alerte forte (§5 du guide).
+ALERT_ITEMS = frozenset({"1.01", "2.01", "7.01", "8.01"})
+#: Item 8-K signalant une émission de titres non enregistrée (dilution).
+DILUTION_ITEM = "3.02"
+#: Libellés des items les plus significatifs, pour l'affichage.
+ITEM_LABELS = {
+    "1.01": "accord important conclu",
+    "1.02": "résiliation d'un accord important",
+    "2.01": "acquisition ou cession d'actifs",
+    "2.02": "résultats publiés",
+    "3.02": "émission de titres non enregistrée (dilution)",
+    "4.01": "changement de commissaire aux comptes",
+    "5.02": "changement de dirigeant",
+    "7.01": "communication réglementée",
+    "8.01": "autre événement important",
+}
+
+#: Concepts XBRL exploités, par ordre de préférence.
+CONCEPTS: dict[str, tuple[str, ...]] = {
+    "assets": ("Assets",),
+    "liabilities": ("Liabilities",),
+    "assets_current": ("AssetsCurrent",),
+    "liabilities_current": ("LiabilitiesCurrent",),
+    "equity": ("StockholdersEquity",),
+    "revenue": (
+        "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "Revenues",
+        "SalesRevenueNet",
+    ),
+    "net_income": ("NetIncomeLoss",),
+    "eps": ("EarningsPerShareDiluted", "EarningsPerShareBasic"),
+    "cash": ("CashAndCashEquivalentsAtCarryingValue",),
+    "long_term_debt": ("LongTermDebtNoncurrent", "LongTermDebt"),
+    "operating_cash_flow": (
+        "NetCashProvidedByUsedInOperatingActivities",
+        "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations",
+    ),
+    "capex": (
+        "PaymentsToAcquirePropertyPlantAndEquipment",
+        "PaymentsToAcquireProductiveAssets",
+    ),
+    "shares": (
+        "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "CommonStockSharesOutstanding",
+    ),
+}
+
+_UNITLESS_KEYS = frozenset({"shares"})
+
 
 @dataclass(frozen=True)
 class Filing:
@@ -53,10 +111,38 @@ class Filing:
     primary_document: str
     description: str
     url: str | None
+    items: tuple[str, ...] = ()
 
     @property
     def signal_weight(self) -> int:
         return FILING_SIGNAL.get(self.form.upper(), 0)
+
+    @property
+    def is_alert(self) -> bool:
+        """8-K portant au moins un item d'alerte forte."""
+        return self.form.upper() == "8-K" and bool(ALERT_ITEMS.intersection(self.items))
+
+    @property
+    def is_dilution(self) -> bool:
+        return self.form.upper() == "8-K" and DILUTION_ITEM in self.items
+
+    def item_labels(self) -> list[str]:
+        return [f"{code} — {ITEM_LABELS[code]}" for code in self.items if code in ITEM_LABELS]
+
+
+@dataclass(frozen=True)
+class FactPoint:
+    """Une observation XBRL datée."""
+
+    end: str
+    value: float
+    form: str
+    fiscal_year: int | None = None
+    fiscal_period: str | None = None
+
+    @property
+    def is_annual(self) -> bool:
+        return self.form.upper().startswith("10-K")
 
 
 @dataclass
@@ -68,6 +154,7 @@ class SecProfile:
     filings: list[Filing] = field(default_factory=list)
     facts: dict[str, float] = field(default_factory=dict)
     fact_dates: dict[str, str] = field(default_factory=dict)
+    series: dict[str, list[FactPoint]] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
 
 
@@ -107,6 +194,23 @@ def _parse_date(value: Any) -> date | None:
         return datetime.strptime(text[:10], "%Y-%m-%d").date()
     except ValueError:
         return None
+
+
+def _parse_items(raw: Any) -> tuple[str, ...]:
+    """Découpe la colonne ``items`` (« 1.01,9.01 » ou « Item 1.01 »)."""
+    text = _as_str(raw, 200)
+    if not text:
+        return ()
+    codes: list[str] = []
+    for chunk in text.replace(";", ",").split(","):
+        token = chunk.strip().lower().removeprefix("item").strip()
+        # Un item est de la forme N.NN.
+        parts = token.split(".")
+        if len(parts) == 2 and parts[0].isdigit() and parts[1].isdigit():
+            code = f"{int(parts[0])}.{parts[1][:2].ljust(2, '0')}"
+            if code not in codes:
+                codes.append(code)
+    return tuple(codes[:12])
 
 
 class SecClient:
@@ -180,16 +284,20 @@ class SecClient:
         accessions = column("accessionNumber")
         documents = column("primaryDocument")
         descriptions = column("primaryDocDescription")
+        items = column("items")
+
+        def at(values: list[Any], index: int) -> Any:
+            return values[index] if index < len(values) else None
 
         count = min(len(forms), _MAX_FILINGS)
         cik_int = str(int(cik))
         filings: list[Filing] = []
         for index in range(count):
-            form = _as_str(forms[index], 24)
+            form = _as_str(at(forms, index), 24)
             if not form:
                 continue
-            accession = _as_str(accessions[index] if index < len(accessions) else "", 32)
-            document = _as_str(documents[index] if index < len(documents) else "", 160)
+            accession = _as_str(at(accessions, index), 32)
+            document = _as_str(at(documents, index), 160)
             url = None
             # Construction contrôlée : aucun fragment distant n'est repris tel
             # quel dans l'URL, uniquement des caractères sûrs.
@@ -201,13 +309,12 @@ class SecClient:
             filings.append(
                 Filing(
                     form=form,
-                    filed_at=_parse_date(dates[index] if index < len(dates) else None),
+                    filed_at=_parse_date(at(dates, index)),
                     accession=accession,
                     primary_document=document,
-                    description=_as_str(
-                        descriptions[index] if index < len(descriptions) else "", 200
-                    ),
+                    description=_as_str(at(descriptions, index), 200),
                     url=url,
+                    items=_parse_items(at(items, index)),
                 )
             )
         return filings
@@ -224,79 +331,122 @@ class SecClient:
         return payload
 
     @staticmethod
-    def extract_facts(payload: dict[str, Any]) -> tuple[dict[str, float], dict[str, str]]:
-        """Extrait les agrégats utiles du bloc us-gaap, avec leur date.
+    def extract_series(payload: dict[str, Any]) -> dict[str, list[FactPoint]]:
+        """Extrait les séries temporelles des concepts utiles.
 
-        On garde la valeur annuelle la plus récente pour chaque concept, en
-        privilégiant les formulaires 10-K puis 10-Q.
+        Les faits sont dédupliqués par (date de fin, formulaire) et triés par
+        date croissante. Le premier concept disponible dans
+        :data:`CONCEPTS` l'emporte : on ne mélange jamais deux définitions
+        comptables dans une même série.
         """
-        wanted = {
-            "assets": ("Assets",),
-            "liabilities": ("Liabilities",),
-            "revenue": (
-                "RevenueFromContractWithCustomerExcludingAssessedTax",
-                "Revenues",
-                "SalesRevenueNet",
-            ),
-            "net_income": ("NetIncomeLoss",),
-            "eps": ("EarningsPerShareDiluted", "EarningsPerShareBasic"),
-            "cash": ("CashAndCashEquivalentsAtCarryingValue",),
-            "long_term_debt": ("LongTermDebtNoncurrent", "LongTermDebt"),
-        }
-        gaap = payload.get("facts", {})
-        gaap = gaap.get("us-gaap", {}) if isinstance(gaap, dict) else {}
-        if not isinstance(gaap, dict):
-            return {}, {}
+        facts = payload.get("facts")
+        if not isinstance(facts, dict):
+            return {}
+        namespaces = [ns for ns in ("us-gaap", "dei", "ifrs-full") if isinstance(facts.get(ns), dict)]
 
+        series: dict[str, list[FactPoint]] = {}
+        for key, concepts in CONCEPTS.items():
+            for concept in concepts:
+                node = None
+                for namespace in namespaces:
+                    candidate = facts[namespace].get(concept)
+                    if isinstance(candidate, dict):
+                        node = candidate
+                        break
+                if node is None:
+                    continue
+                points = _series_from_node(node, unitless=key in _UNITLESS_KEYS)
+                if points:
+                    series[key] = points
+                    break
+        return series
+
+    @staticmethod
+    def extract_facts(
+        payload: dict[str, Any]
+    ) -> tuple[dict[str, float], dict[str, str], dict[str, list[FactPoint]]]:
+        """Dernière valeur connue de chaque concept, plus les séries complètes."""
+        series = SecClient.extract_series(payload)
         values: dict[str, float] = {}
         dates: dict[str, str] = {}
-        for key, concepts in wanted.items():
-            for concept in concepts:
-                node = gaap.get(concept)
-                if not isinstance(node, dict):
-                    continue
-                best = _latest_unit_value(node)
-                if best is not None:
-                    values[key], dates[key] = best
-                    break
-        return values, dates
+        for key, points in series.items():
+            best = latest_point(points)
+            if best is not None:
+                values[key] = best.value
+                dates[key] = best.end
+        return values, dates, series
 
 
-def _latest_unit_value(node: dict[str, Any]) -> tuple[float, str] | None:
+def _series_from_node(node: dict[str, Any], unitless: bool = False) -> list[FactPoint]:
     units = node.get("units")
     if not isinstance(units, dict):
-        return None
-    best_value: float | None = None
-    best_end = ""
-    best_rank = -1
+        return []
+
+    accepted = ("USD", "USD/shares") if not unitless else ("shares", "pure")
+    collected: dict[tuple[str, str], FactPoint] = {}
     for unit_name, entries in units.items():
-        if unit_name not in ("USD", "USD/shares"):
+        if unit_name not in accepted:
             continue
         if not isinstance(entries, list):
             continue
-        for entry in entries[-400:]:
+        for entry in entries[-600:]:
             if not isinstance(entry, dict):
                 continue
             value = _as_float(entry.get("val"))
             end = _as_str(entry.get("end"), 12)
-            if value is None or not end:
+            if value is None or len(end) < 10:
                 continue
             form = _as_str(entry.get("form"), 16).upper()
-            rank = 2 if form == "10-K" else 1 if form == "10-Q" else 0
-            if (end, rank) > (best_end, best_rank):
-                best_value, best_end, best_rank = value, end, rank
-    if best_value is None:
+            fiscal_year = entry.get("fy")
+            point = FactPoint(
+                end=end,
+                value=value,
+                form=form,
+                fiscal_year=int(fiscal_year) if isinstance(fiscal_year, int) else None,
+                fiscal_period=_as_str(entry.get("fp"), 4) or None,
+            )
+            collected[(end, form)] = point
+    return sorted(collected.values(), key=lambda p: (p.end, p.form))
+
+
+def latest_point(points: list[FactPoint]) -> FactPoint | None:
+    """Dernier point, en privilégiant l'annuel à date égale."""
+    if not points:
         return None
-    return best_value, best_end
+    return max(points, key=lambda p: (p.end, 2 if p.is_annual else 1))
+
+
+def annual_points(points: list[FactPoint]) -> list[FactPoint]:
+    """Points annuels (10-K), un par exercice, du plus ancien au plus récent."""
+    by_year: dict[str, FactPoint] = {}
+    for point in points:
+        if point.is_annual:
+            by_year[point.end[:4]] = point
+    return [by_year[year] for year in sorted(by_year)]
 
 
 def _is_safe_doc_name(name: str) -> bool:
-    """Autorise uniquement un nom de fichier plat pour l'URL d'archive."""
+    """Autorise un nom de fichier plat, éventuellement préfixé par un dossier XSL.
+
+    EDGAR référence les Form 3/4/5 via leur rendu (``xslF345X03/doc.xml``). On
+    accepte ce préfixe précis, et rien d'autre : ni ``..``, ni chemin absolu,
+    ni second niveau arbitraire.
+    """
     if not name or len(name) > 160:
         return False
-    if "/" in name or "\\" in name or ".." in name:
+    if "\\" in name or ".." in name:
         return False
-    return all(ch.isalnum() or ch in "._-" for ch in name)
+    parts = name.split("/")
+    if len(parts) == 2:
+        if not parts[0].startswith("xsl") or not parts[0].isalnum():
+            return False
+        parts = parts[1:]
+    elif len(parts) != 1:
+        return False
+    leaf = parts[0]
+    if not leaf:
+        return False
+    return all(ch.isalnum() or ch in "._-" for ch in leaf)
 
 
 def fetch_profile(client: SecClient, ticker: str) -> SecProfile:
@@ -313,7 +463,7 @@ def fetch_profile(client: SecClient, ticker: str) -> SecProfile:
 
     try:
         facts_payload = client.company_facts(cik)
-        profile.facts, profile.fact_dates = SecClient.extract_facts(facts_payload)
+        profile.facts, profile.fact_dates, profile.series = SecClient.extract_facts(facts_payload)
     except OsintError as exc:
         profile.warnings.append(f"XBRL indisponible : {exc}")
 

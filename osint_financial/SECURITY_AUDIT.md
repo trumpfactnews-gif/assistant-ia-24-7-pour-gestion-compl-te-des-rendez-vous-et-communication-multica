@@ -188,29 +188,48 @@ Tests : `TestMissingData`, `TestFalsyValues`, `TestDivisionGuards`,
 
 ## 3. Écarts entre la documentation et ce qui est réalisable
 
-Le guide annonce des capacités que les sources décrites ne permettent pas. Je
-les signale plutôt que de les simuler.
+Le premier audit listait ici six promesses du guide sans implémentation. Cinq
+sont désormais tenues ; le suivi complet, promesse par promesse, est dans
+[`PROMESSES.md`](PROMESSES.md).
 
-* **« SI filing = Form 4 ET transaction = ACHAT initié → SIGNAL BULLISH »** —
-  les métadonnées EDGAR (`submissions.json`) donnent le formulaire et sa date,
-  pas le sens de la transaction. Il faut parser le XML du Form 4. Non
-  implémenté ; `metrics._strong_signals` se limite à ce qui est observable et
-  le dit.
-* **« SI 10-Q ET revenue > attentes »** — le consensus d'analystes n'est dans
-  aucune des sources listées. Non implémentable en l'état.
-* **« Direction du prix (7j) », « prédictions quantitatives »** — rien dans le
-  pipeline ne produit de prédiction : il n'y a ni série temporelle, ni modèle,
-  ni backtest. Le §8 du guide l'admet (« pas de backtesting ») tout en
-  promettant des prédictions au §3.
-* **« Score de résilience : 50 % fondamentaux + 25 % position marché + 25 %
-  macro »** — les deux derniers termes n'ont aucune source. Non implémenté.
-* **Prix cible DCF** — un DCF exige projections de flux, taux d'actualisation et
-  valeur terminale, tous absents. Seul le prix cible par PE sectoriel est
-  produit, avec ses limites affichées.
-* **Conformité** — un outil qui émet « STRONG_BUY » vers un canal de diffusion
-  peut, selon l'usage et la juridiction, relever de la recommandation
-  d'investissement. Un avertissement figure désormais dans le rapport, l'alerte
-  et la CLI. Ce n'est pas un avis juridique.
+| Écart initial | État |
+|---|---|
+| Sens des transactions Form 4 non déterminable depuis les métadonnées | **corrigé** — `sources/forms.py` lit le XML, distingue achat de marché (`P`), vente (`S`) et rémunération |
+| Aucune série temporelle, donc pas de « direction 7j » | **corrigé** — `sources/prices.py` + `technical.py` |
+| Pas de backtesting, alors que le §3 promettait des prédictions | **corrigé** — `backtest.py` mesure la règle exacte utilisée |
+| Score de résilience 50/25/25 sans source pour deux termes | **corrigé** — position marché (cours) et macro (indice, VIX, taux 10 ans) |
+| Prix cible DCF annoncé, jamais calculé | **corrigé** — `valuation.py`, hypothèses nommées et bornées, 3 scénarios |
+| PE sectoriels codés en dur | **corrigé** — `--peers` calcule une médiane de comparables mesurés ; la table statique reste le repli, affiché comme tel |
+| « revenue > attentes » (consensus d'analystes) | **non tenu** — aucune source publique dans le périmètre ; remplacé par la croissance mesurée contre la trajectoire propre de l'entreprise |
+| Moat, disruption, régulation, géopolitique, concentration | **non tenus** — non quantifiables depuis EDGAR ; déclarés « non mesurables » dans la checklist plutôt qu'approximés |
+
+Deux précisions qui conditionnent la lecture des nouveaux chiffres :
+
+* **Le DCF est un modèle d'hypothèses, pas une mesure.** Deux points de WACC
+  déplacent la valeur de dizaines de pourcents. C'est pourquoi trois scénarios
+  sont produits et les hypothèses listées dans le rapport.
+* **Le backtest ne couvre que le volet technique.** Backtester le volet
+  fondamental exigerait des données XBRL « telles que connues à la date » ; les
+  faits SEC étant retraités a posteriori, le mesurer sur les données actuelles
+  produirait un résultat flatteur et faux. C'est écrit dans le module et dans
+  le rapport.
+
+**Conformité** — un outil qui émet « STRONG_BUY » vers un canal de diffusion
+peut, selon l'usage et la juridiction, relever de la recommandation
+d'investissement. Un avertissement figure dans le rapport, l'alerte et la CLI.
+Ce n'est pas un avis juridique.
+
+## 3 bis. Surface d'attaque des ajouts
+
+Les nouvelles sources ont été traitées avec les mêmes contraintes que le reste.
+
+| Ajout | Risque | Mesure |
+|---|---|---|
+| Parsing XML des Form 4 | XXE (lecture de fichiers locaux, SSRF par entité externe), expansion récursive d'entités | tout `<!DOCTYPE` ou `<!ENTITY` fait rejeter le document ; taille déjà plafonnée par le client HTTP ; nombre de transactions borné (`test_features.TestForm4`) |
+| URL d'archive des Form 4 | traversée via `primaryDocument` | un seul préfixe de dossier admis (`xsl*`), nom de fichier validé caractère par caractère |
+| Séries de prix et indices | volumétrie, valeurs aberrantes | plafond d'octets, points invalides écartés, symboles d'indices encodés (jamais des entrées utilisateur) |
+| Comparables `--peers` | amplification du nombre d'appels | maximum 6 comparables, chacun validé par `validate_ticker` |
+| Mode `watch` | boucle sans fin, martèlement des API | intervalle borné à [60 s, 24 h], arrêt propre sur SIGINT/SIGTERM, alerte seulement au changement de recommandation |
 
 ## 4. Points non traités
 

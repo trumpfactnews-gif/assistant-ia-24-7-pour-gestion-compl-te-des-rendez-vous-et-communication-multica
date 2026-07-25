@@ -24,6 +24,7 @@ from .errors import OsintError
 from .httpclient import HttpClient
 from .logging_setup import get_logger
 from .metrics import Metrics
+from .portfolio import PositionPlan
 from .scoring import ScoreResult
 
 log = get_logger(__name__)
@@ -39,12 +40,16 @@ def _sanitize_plain(text: str, limit: int) -> str:
     return cleaned
 
 
-def build_message(metrics: Metrics, scores: ScoreResult) -> str:
+def build_message(
+    metrics: Metrics, scores: ScoreResult, plan: PositionPlan | None = None
+) -> str:
     lines = [
         f"OSINT — {metrics.company_name} ({metrics.ticker})",
         f"Recommandation : {scores.recommendation} (confiance {scores.confidence:.0%})",
         f"Risque {scores.risk_score}/100 · Opportunité {scores.opportunity_score}/100",
     ]
+    if scores.resilience_score is not None:
+        lines.append(f"Résilience : {scores.resilience_score}/100")
     if metrics.price is not None:
         lines.append(f"Cours : {metrics.price:.2f} {metrics.currency} ({metrics.price_source})")
     if metrics.target_price_pe is not None:
@@ -54,6 +59,21 @@ def build_message(metrics: Metrics, scores: ScoreResult) -> str:
             if metrics.upside_pe_pct is not None
             else f"Prix cible PE : {metrics.target_price_pe:.2f} {metrics.currency}"
         )
+    if metrics.dcf.available and metrics.dcf.upside_pct is not None:
+        lines.append(
+            f"Valeur DCF : {metrics.dcf.value_per_share:.2f} {metrics.currency} "
+            f"({metrics.dcf.upside_pct:+.1f} %)"
+        )
+    if metrics.technical is not None and metrics.technical.has_signal:
+        lines.append(
+            f"Technique : {metrics.technical.signal} "
+            f"(momentum 20 j {metrics.technical.momentum_20d_pct:+.1f} %)"
+        )
+    if metrics.insider is not None and metrics.insider.available:
+        lines.append(f"Initiés : {metrics.insider.verdict()}")
+    if plan is not None and plan.suggested_weight_pct > 0:
+        stop = f", stop {plan.stop_loss_price}" if plan.stop_loss_price else ""
+        lines.append(f"Taille suggérée : {plan.suggested_weight_pct:.2f} % du portefeuille{stop}")
 
     risks = scores.risk_factors[:3]
     if risks:
@@ -109,5 +129,7 @@ class TelegramNotifier:
         log.warning("Telegram a refusé le message (réponse inattendue)")
         return False
 
-    def send_analysis(self, metrics: Metrics, scores: ScoreResult) -> bool:
-        return self.send(build_message(metrics, scores))
+    def send_analysis(
+        self, metrics: Metrics, scores: ScoreResult, plan: PositionPlan | None = None
+    ) -> bool:
+        return self.send(build_message(metrics, scores, plan))
