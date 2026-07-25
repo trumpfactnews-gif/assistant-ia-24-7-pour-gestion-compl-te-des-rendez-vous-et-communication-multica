@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osint-financial"
+version = "4.0.0"
+description = "Analyse financière OSINT sur sources publiques (SEC EDGAR, marché)"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+osint = "osint_financial.cli:main"
+
+[tool.setuptools]
+packages = ["osint_financial", "osint_financial.sources"]
+
+[tool.setuptools.package-data]
+osint_financial = ["README.md", "SECURITY_AUDIT.md", ".env.example"]

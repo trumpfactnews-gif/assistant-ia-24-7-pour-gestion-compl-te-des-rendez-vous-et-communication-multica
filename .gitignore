@@ -1,0 +1,25 @@
+# Secrets — ne jamais committer
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Données et sorties
+osint_reports/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
