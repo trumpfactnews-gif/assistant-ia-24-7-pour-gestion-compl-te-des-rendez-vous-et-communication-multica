@@ -22,6 +22,15 @@ est dans [`.claude/agency/`](.claude/agency/).
 - **RGPD / conformité** → Data Privacy Officer, Compliance Auditor, Legal Compliance Checker
 - **Fiabilité 24/7** → SRE, DevOps Automator
 
+## Skills
+
+- **browser-use** (`.claude/skills/browser-use/`) — parcourir Internet et
+  automatiser un vrai navigateur avec un agent IA (ouvrir des pages, cliquer,
+  remplir des formulaires, prendre des RDV en ligne, extraire des données sur
+  des sites dynamiques ou nécessitant une session). À utiliser quand
+  `WebFetch`/`WebSearch` ne suffisent pas. Source :
+  [browser-use/browser-use](https://github.com/browser-use/browser-use) (MIT).
+
 ## Statut du projet
 Dépôt initialisé avec l'équipe d'agents. Le code applicatif reste à construire —
 commence par solliciter le **Software Architect** et le **Product Manager** pour cadrer.
