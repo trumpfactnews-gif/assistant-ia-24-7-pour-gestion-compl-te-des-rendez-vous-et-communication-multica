@@ -1,4 +1,4 @@
-<title>Visible Pro Artisans</title>
+<title>Artisans trouvés sur Google</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -163,6 +163,8 @@ section + section{border-top:1px solid var(--line)}
 .svc dd.strong{color:var(--ink)}
 .svc .price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .svc .price b{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800}
+.svc .price a{white-space:nowrap;font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--accent);text-decoration:none}
+.svc .price a:hover{color:var(--accent-deep)}
 .svc .price b small{font-size:13px;font-family:"IBM Plex Sans",sans-serif;font-weight:500;color:var(--muted);margin-right:4px;text-transform:uppercase;letter-spacing:.06em}
 .svc .price span{font-size:13px;color:var(--muted)}
 .svc.free{border-color:var(--accent);border-width:2px}
@@ -173,7 +175,8 @@ section + section{border-top:1px solid var(--line)}
 .packs tr:last-child td{border-bottom:0}
 .packs th{background:var(--surface-2);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .packs td:first-child{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800}
-.packs td:last-child{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800;white-space:nowrap}
+.packs td:last-child{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:.02em}
+.packs td:last-child a{color:var(--accent);text-decoration:none}
 .packs td:last-child small{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
 .packs tr.hl td{background:var(--accent-soft)}
 
@@ -266,6 +269,31 @@ section + section{border-top:1px solid var(--line)}
 .final .sub{font-size:14px;opacity:.75}
 .footer{padding-block:24px;font-size:13.5px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.final-list{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:16px}
+.final-list li{padding-left:26px;position:relative}
+.final-list li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.lead{background:var(--surface);color:var(--ink);border-radius:8px;padding:26px;display:grid;gap:14px;border:1px solid var(--line)}
+.lead label{display:grid;gap:6px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.lead .opt{text-transform:none;letter-spacing:0;font-weight:400}
+.lead input,.lead select,.lead textarea{font:inherit;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:11px 12px;width:100%}
+.lead input:focus,.lead select:focus,.lead textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.lead input:user-invalid,.lead select:user-invalid{border-color:var(--bad)}
+.lead .f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lead fieldset{border:1px solid var(--line);border-radius:4px;padding:10px 12px 12px;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+.lead legend{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:0 6px}
+.lead .ck{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-weight:400;font-size:15px;color:var(--ink)}
+.lead .ck input{width:18px;height:18px;accent-color:var(--accent);margin:0}
+.lead .btn{justify-content:center;width:100%}
+.lead .btn[disabled]{opacity:.6;cursor:wait}
+.lead .consent{font-size:12.5px;color:var(--muted);line-height:1.4}
+.lead .status{font-size:15px;font-weight:500;min-height:1em}
+.lead .status.err{color:var(--bad)}
+.lead .done{display:grid;gap:10px;padding:10px 0}
+.lead .done .display{font-size:32px;color:var(--ok)}
+@media (max-width:980px){.final-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.lead .f2,.lead fieldset{grid-template-columns:1fr}.lead{padding:18px}}
+
 .demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
 .demo-note b{color:var(--ink-2)}
 
@@ -294,14 +322,15 @@ section + section{border-top:1px solid var(--line)}
 
 <div class="hazard"></div>
 <header class="wrap nav">
-  <div class="brand"><i></i> Visible Pro</div>
+  <div class="brand"><i></i> Freelances vérifiés · Bâtiment</div>
   <ul>
     <li><a href="#probleme">Le problème</a></li>
     <li><a href="#seo">Le référencement</a></li>
     <li><a href="#chiffres">Les chiffres</a></li>
-    <li><a href="#services">Services et tarifs</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#freelances">Nos freelances</a></li>
     <li><a href="#faq">Questions</a></li>
+    <li><a href="#soumission" style="color:var(--accent);font-weight:600">Demander une soumission</a></li>
   </ul>
 </header>
 
@@ -313,16 +342,16 @@ section + section{border-top:1px solid var(--line)}
         <h1>Vos concurrents sont en première page de Google. <em>Vous, non.</em> On règle ça.</h1>
         <p class="lead">Des freelances vérifiés, spécialisés dans le bâtiment, rendent votre entreprise visible au moment où un client cherche un artisan près de chez lui. Vous, vous restez sur vos chantiers.</p>
         <div class="ctas">
-          <a class="btn btn-primary" href="#diagnostic">Recevoir mon diagnostic gratuit</a>
-          <a class="btn btn-ghost" href="#services">Voir les services et les tarifs</a>
+          <a class="btn btn-primary" href="#soumission">Demander une soumission gratuite</a>
+          <a class="btn btn-ghost" href="#comment">Comment ça se passe</a>
         </div>
       </div>
       <aside class="hero-card" aria-label="Exemple de recherche Google">
         <div class="k">Ce que voit votre client à 19 h</div>
         <div class="phone">
-          <div class="q"><i></i><span>plombier urgence nantes</span></div>
+          <div class="q"><i></i><span>plombier urgence laval</span></div>
           <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58) · Ouvert 24h/24</small></div><span class="call">Appeler</span></div>
-          <div class="res"><div class="pin"></div><div><b>Dépann'Eau 44</b><small>★ 4,5 (31) · Ouvert</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau Laval</b><small>★ 4,5 (31) · Ouvert</small></div><span class="call">Appeler</span></div>
           <div class="res you"><div class="pin you"></div><div><b>Votre entreprise</b><small>★ 4,9 (42) · Ouvert 24h/24</small></div><span class="call">Appeler</span></div>
           <div class="res ghost"><div class="pin"></div><div><b>Le 4e, le 5e, le 6e…</b><small>Personne ne descend jusque-là</small></div></div>
         </div>
@@ -332,7 +361,7 @@ section + section{border-top:1px solid var(--line)}
     <div class="trust">
       <div><strong class="num"><span class="stars">★</span> 4,9 / 5</strong>sur 1 240 avis d'artisans</div>
       <div><strong>Vérifiés</strong>chaque freelance, un par un</div>
-      <div><strong>24 h</strong>réponse sous 24 h ouvrées</div>
+      <div><strong>24 h</strong>réponse sous 24 h ouvrables</div>
       <div><strong>Prix fixe</strong>fixé avant de commencer</div>
     </div>
   </div>
@@ -340,12 +369,12 @@ section + section{border-top:1px solid var(--line)}
 
 <section id="probleme">
   <div class="wrap">
-    <p class="demo-note"><b>Version de démonstration.</b> Le nom « Visible Pro », les notes, le nombre d'avis, les chiffres avant/après, les tarifs, les freelances, les témoignages et les entreprises clientes sont des exemples plausibles pour le secteur. À remplacer par vos données réelles avant mise en ligne.</p>
+    <p class="demo-note"><b>Version de démonstration.</b> Les notes, le nombre d'avis, les chiffres avant/après, les freelances, les témoignages et les entreprises clientes sont des exemples plausibles pour le secteur. À remplacer par vos données réelles avant mise en ligne.</p>
     <div class="two">
       <div class="prose">
         <div class="sec-head">
           <span class="eyebrow">Le problème</span>
-          <h2>Vous faites du bon boulot. Le problème, c'est que personne ne le sait.</h2>
+          <h2>Vous faites du bon travail. Le problème, c'est que personne ne le sait.</h2>
         </div>
         <p>Un client a une fuite à 19 h. Il ne fouille pas dans ses contacts. Il prend son téléphone et tape « plombier urgence » avec le nom de sa ville.</p>
         <p>Google lui montre trois entreprises sur la carte, puis une liste en dessous. Il appelle la première. Si elle ne répond pas, il appelle la deuxième. Il ne descend presque jamais plus bas.</p>
@@ -385,7 +414,7 @@ section + section{border-top:1px solid var(--line)}
     <table class="glossary">
       <thead><tr><th>Le mot</th><th>Ce que ça veut dire pour vous</th></tr></thead>
       <tbody>
-        <tr><td>Référencement local</td><td>Être affiché sur la carte Google quand un client de votre ville cherche votre métier. C'est la priorité numéro un pour un artisan. « Électricien Villeurbanne » doit sortir votre fiche, pas celle d'une franchise nationale.</td></tr>
+        <tr><td>Référencement local</td><td>Être affiché sur la carte Google quand un client de votre ville cherche votre métier. C'est la priorité numéro un pour un artisan. « Électricien Longueuil » doit sortir votre fiche, pas celle d'une grande bannière.</td></tr>
         <tr><td>Fiche Google<small>Google Business Profile, l'ancien Google My Business</small></td><td>Votre vitrine gratuite sur Google et Google Maps. Photos, horaires, avis, bouton « Appeler ». C'est là qu'un client vous juge en dix secondes.</td></tr>
         <tr><td>Mots-clés</td><td>Ce que tapent vraiment vos clients. Pas « solutions de couverture », mais « réparation toiture fuite » ou « remplacement tuiles ». On construit votre site autour de ces mots-là.</td></tr>
         <tr><td>Page de service</td><td>Une page de votre site dédiée à une seule prestation. « Dépannage chaudière » a sa page. « Salle de bain clé en main » a la sienne. Google sait alors exactement quoi montrer à qui.</td></tr>
@@ -397,26 +426,26 @@ section + section{border-top:1px solid var(--line)}
 
     <div class="ba">
       <div class="serp before">
-        <div class="tag"><span>Avant</span><span>Recherche « plombier urgence Nantes »</span></div>
-        <div class="q"><span>plombier urgence nantes</span><span>🔍</span></div>
+        <div class="tag"><span>Avant</span><span>Recherche « plombier urgence Laval »</span></div>
+        <div class="q"><span>plombier urgence laval</span><span>🔍</span></div>
         <div class="map"><i style="left:22%;top:30%"></i><i style="left:55%;top:50%"></i><i style="left:78%;top:25%"></i></div>
         <div class="list">
           <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58)</small></div><span class="call">Appeler</span></div>
-          <div class="res"><div class="pin"></div><div><b>Dépann'Eau 44</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
-          <div class="res"><div class="pin"></div><div><b>SOS Plombier Nantes</b><small>★ 4,3 (19)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau Laval</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>SOS Plombier Laval</b><small>★ 4,3 (19)</small></div><span class="call">Appeler</span></div>
         </div>
         <div class="note">Votre entreprise n'apparaît pas dans les trois résultats de la carte. Elle est en page 2, ou nulle part. Le client appelle un concurrent.</div>
       </div>
       <div class="serp after">
         <div class="tag"><span>Après 3 mois</span><span>Même recherche</span></div>
-        <div class="q"><span>plombier urgence nantes</span><span>🔍</span></div>
+        <div class="q"><span>plombier urgence laval</span><span>🔍</span></div>
         <div class="map"><i class="you" style="left:48%;top:38%"></i><i style="left:22%;top:30%"></i><i style="left:78%;top:25%"></i></div>
         <div class="list">
           <div class="res you"><div class="pin you"></div><div><b>Votre entreprise</b><small>★ 4,9 (40) · photos récentes</small></div><span class="call">Appeler</span></div>
           <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58)</small></div><span class="call">Appeler</span></div>
-          <div class="res"><div class="pin"></div><div><b>Dépann'Eau 44</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau Laval</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
         </div>
-        <div class="web"><b>Dépannage plomberie urgence Nantes · Votre entreprise</b><small>Intervention en moins d'une heure, devis annoncé avant de commencer…</small></div>
+        <div class="web"><b>Dépannage plomberie urgence Laval · Votre entreprise</b><small>Intervention en moins d'une heure, prix annoncé avant de commencer…</small></div>
         <div class="note">Votre fiche est dans les trois premiers sur la carte. Votre page « dépannage plomberie urgence » sort juste en dessous. Le client vous voit deux fois. Il vous appelle.</div>
       </div>
     </div>
@@ -433,16 +462,16 @@ section + section{border-top:1px solid var(--line)}
     </div>
     <div class="cases">
       <article class="case">
-        <div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · agglomération de 150 000 habitants</div></div>
+        <div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · ville de 150 000 habitants</div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
             <tr><td>Carte Google<br><small style="color:var(--muted)">« plombier + ville »</small></td><td>Non classé</td><td class="after">Top 3</td></tr>
             <tr><td>Vues de la fiche Google</td><td>210</td><td class="after">2 900</td></tr>
             <tr><td>Appels venant de Google</td><td>4</td><td class="after">38</td></tr>
-            <tr><td>Demandes de devis</td><td>2</td><td class="after">19</td></tr>
+            <tr><td>Demandes de soumission</td><td>2</td><td class="after">19</td></tr>
             <tr><td>Chantiers signés via le web</td><td>1</td><td class="after">11</td></tr>
-            <tr class="total"><td>CA mensuel en plus</td><td>0 €</td><td class="after">≈ 14 000 €</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 $</td><td class="after">≈ 14 000 $</td></tr>
           </tbody>
         </table>
       </article>
@@ -453,9 +482,9 @@ section + section{border-top:1px solid var(--line)}
           <tbody>
             <tr><td>Vues de la fiche Google</td><td>90</td><td class="after">1 400</td></tr>
             <tr><td>Appels venant de Google</td><td>2</td><td class="after">17</td></tr>
-            <tr><td>Demandes de devis</td><td>1</td><td class="after">9</td></tr>
+            <tr><td>Demandes de soumission</td><td>1</td><td class="after">9</td></tr>
             <tr><td>Chantiers signés</td><td>0 à 1</td><td class="after">4</td></tr>
-            <tr class="total"><td>CA mensuel en plus</td><td>0 €</td><td class="after">≈ 26 000 €</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 $</td><td class="after">≈ 26 000 $</td></tr>
           </tbody>
         </table>
         <p class="fine">Le panier moyen est élevé en couverture. Une seule rénovation de toiture rembourse l'année entière.</p>
@@ -466,25 +495,25 @@ section + section{border-top:1px solid var(--line)}
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
             <tr><td>Appels venant de Google</td><td>3</td><td class="after">22</td></tr>
-            <tr><td>Demandes de devis</td><td>2</td><td class="after">12</td></tr>
+            <tr><td>Demandes de soumission</td><td>2</td><td class="after">12</td></tr>
             <tr><td>Chantiers signés</td><td>1</td><td class="after">7</td></tr>
-            <tr class="total"><td>CA mensuel en plus</td><td>0 €</td><td class="after">≈ 6 500 €</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 $</td><td class="after">≈ 6 500 $</td></tr>
           </tbody>
         </table>
       </article>
     </div>
     <div class="roi">
       <div class="box">
-        <h3 style="margin-bottom:16px">Ce que ça coûte, en face</h3>
+        <h3 style="margin-bottom:16px">Et ce que ça coûte, en face</h3>
         <div class="kpis">
-          <div class="kpi"><strong class="num">2 400 à 4 500 €</strong><span>investissement moyen sur six mois, selon les services choisis</span></div>
-          <div class="kpi"><strong class="num">3 à 9 ×</strong><span>retour observé sur la première année</span></div>
-          <div class="kpi"><strong>1 chantier</strong><span>de rénovation couvre souvent la totalité</span></div>
+          <div class="kpi"><strong>Sur mesure</strong><span>chaque soumission dépend de votre métier, de votre ville et de ce que vous avez déjà</span></div>
+          <div class="kpi"><strong>Prix fixe</strong><span>annoncé dans la soumission, avant de commencer</span></div>
+          <div class="kpi"><strong>1 chantier</strong><span>de rénovation couvre souvent l'investissement de l'année</span></div>
         </div>
       </div>
       <div class="box prose">
         <h3 style="margin-bottom:10px">Pourquoi ces chiffres ne sont pas gonflés</h3>
-        <p>Un client qui tape « chaudière en panne » a déjà décidé d'acheter. Vous n'avez personne à convaincre. Vous avez juste à être là. C'est pour ça qu'un appel venant de Google se transforme en chantier bien plus souvent qu'un prospectus dans une boîte aux lettres.</p>
+        <p>Un client qui tape « chaudière en panne » a déjà décidé d'acheter. Vous n'avez personne à convaincre. Vous avez juste à être là. C'est pour ça qu'un appel venant de Google se transforme en chantier bien plus souvent qu'une circulaire dans une boîte aux lettres.</p>
       </div>
     </div>
   </div>
@@ -493,19 +522,19 @@ section + section{border-top:1px solid var(--line)}
 <section id="services">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Services et tarifs</span>
+      <span class="eyebrow">Services</span>
       <h2>Nos services, et ce qu'ils changent pour vous</h2>
-      <p>Chaque service est réalisé par un freelance vérifié, spécialisé dans les métiers du bâtiment. Prix fixé avant de commencer. Vous restez propriétaire de tout ce qui est créé.</p>
+      <p>Chaque service est réalisé par un freelance vérifié, spécialisé dans les métiers du bâtiment. Chaque soumission est faite sur mesure, selon votre métier, votre ville et ce que vous avez déjà. Le prix est fixé avant de commencer, et vous restez propriétaire de tout ce qui est créé.</p>
     </div>
     <div class="services">
       <article class="svc free">
         <div class="display">Diagnostic de visibilité</div>
         <dl>
           <dt>Ce que c'est</dt><dd>On regarde où vous apparaissez (ou pas) sur Google pour vos prestations et votre zone, et où sont vos concurrents.</dd>
-          <dt>Ce que ça change</dt><dd class="strong">Vous savez exactement ce qui vous manque avant de dépenser un euro.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous savez exactement ce qui vous manque avant de dépenser un dollar.</dd>
           <dt>Idéal si</dt><dd>Vous ne savez pas par où commencer.</dd>
         </dl>
-        <div class="price"><b>Offert</b><span>48 h</span></div>
+        <div class="price"><b>Offert</b><span>réponse sous 48 h</span></div>
       </article>
       <article class="svc">
         <div class="display">Fiche Google optimisée</div>
@@ -514,16 +543,16 @@ section + section{border-top:1px solid var(--line)}
           <dt>Ce que ça change</dt><dd class="strong">Vous apparaissez sur la carte Google avec le bouton « Appeler » sous votre nom. C'est le service qui fait sonner le téléphone le plus vite.</dd>
           <dt>Idéal si</dt><dd>Vous n'avez pas de fiche, ou une fiche vide avec deux photos floues.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>290 €</b><span>7 jours</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>7 jours</span></div>
       </article>
       <article class="svc">
         <div class="display">Référencement local</div>
         <dl>
-          <dt>Ce que c'est</dt><dd>Tout ce qui fait monter votre entreprise dans les résultats de votre ville : fiche Google, pages par prestation et par commune, annuaires professionnels, coordonnées cohérentes partout.</dd>
-          <dt>Ce que ça change</dt><dd class="strong">Vous passez devant les concurrents sur « votre métier + votre ville » et sur les communes autour.</dd>
+          <dt>Ce que c'est</dt><dd>Tout ce qui fait monter votre entreprise dans les résultats de votre ville : fiche Google, pages par prestation et par ville, annuaires professionnels, coordonnées cohérentes partout.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous passez devant les concurrents sur « votre métier + votre ville » et sur les villes autour.</dd>
           <dt>Idéal si</dt><dd>Vous avez déjà un site mais il ne ramène rien.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>490 € / mois</b><span>3 mois minimum · résultats entre 6 et 12 semaines</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>3 mois minimum · résultats entre 6 et 12 semaines</span></div>
       </article>
       <article class="svc">
         <div class="display">Création de site web artisan</div>
@@ -532,7 +561,7 @@ section + section{border-top:1px solid var(--line)}
           <dt>Ce que ça change</dt><dd class="strong">Un client qui vous cherche trouve en dix secondes ce que vous faites, où, et comment vous joindre. Il appelle au lieu de continuer à chercher.</dd>
           <dt>Idéal si</dt><dd>Vous n'avez pas de site, ou un site fait il y a huit ans qui ne s'affiche pas sur mobile.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>1 490 €</b><span>3 semaines</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>3 semaines</span></div>
       </article>
       <article class="svc">
         <div class="display">Refonte d'un site existant</div>
@@ -541,7 +570,7 @@ section + section{border-top:1px solid var(--line)}
           <dt>Ce que ça change</dt><dd class="strong">Votre site actuel commence enfin à apparaître dans Google au lieu de servir de carte de visite que personne ne voit.</dd>
           <dt>Idéal si</dt><dd>Vous avez payé un site et il ne vous a jamais ramené un client.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>790 €</b><span>2 semaines</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>2 semaines</span></div>
       </article>
       <article class="svc">
         <div class="display">Pages par prestation</div>
@@ -550,16 +579,16 @@ section + section{border-top:1px solid var(--line)}
           <dt>Ce que ça change</dt><dd class="strong">Vous sortez sur des recherches précises, celles où le client est prêt à signer.</dd>
           <dt>Idéal si</dt><dd>Votre site dit « tous travaux » sans jamais détailler.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>150 € / page</b><span>5 jours par lot</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>5 jours par lot</span></div>
       </article>
       <article class="svc">
         <div class="display">Collecte d'avis clients</div>
         <dl>
-          <dt>Ce que c'est</dt><dd>Un système simple pour demander un avis à chaque fin de chantier : un SMS ou un QR code sur la facture, un message qui part tout seul, un suivi des réponses.</dd>
+          <dt>Ce que c'est</dt><dd>Un système simple pour demander un avis à chaque fin de chantier : un texto ou un code QR sur la facture, un message qui part tout seul, un suivi des réponses.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Vous passez de 6 avis à 60 en quelques mois. Google vous fait monter, et les clients vous choisissent.</dd>
           <dt>Idéal si</dt><dd>Vos clients sont contents mais ne le disent nulle part.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>190 €</b><span>3 jours</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>3 jours</span></div>
       </article>
       <article class="svc">
         <div class="display">Notoriété locale (backlinks)</div>
@@ -568,7 +597,7 @@ section + section{border-top:1px solid var(--line)}
           <dt>Ce que ça change</dt><dd class="strong">Google considère que d'autres vous recommandent. Votre site monte plus vite et tient sa place.</dd>
           <dt>Idéal si</dt><dd>Vous êtes bien placé mais un concurrent vous passe devant régulièrement.</dd>
         </dl>
-        <div class="price"><b><small>à partir de</small>350 € / mois</b><span>effet progressif sur 3 à 6 mois</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>effet progressif sur 3 à 6 mois</span></div>
       </article>
       <article class="svc">
         <div class="display">Option : publicité Google urgences</div>
@@ -577,17 +606,17 @@ section + section{border-top:1px solid var(--line)}
           <dt>Ce que ça change</dt><dd class="strong">Des appels dès la première semaine, le temps que le référencement naturel prenne le relais.</dd>
           <dt>Idéal si</dt><dd>Vous faites de l'urgence (plomberie, serrurerie, électricité) et vous voulez du volume tout de suite.</dd>
         </dl>
-        <div class="price"><b><small>gestion dès</small>300 € / mois</b><span>+ budget pub fixé avec vous · en ligne sous 5 jours</span></div>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>+ budget pub fixé avec vous · en ligne sous 5 jours</span></div>
       </article>
     </div>
 
     <div class="packs tablewrap">
       <table>
-        <thead><tr><th>Pack</th><th>Ce qu'il contient</th><th>Pour qui</th><th>Prix</th></tr></thead>
+        <thead><tr><th>Pack</th><th>Ce qu'il contient</th><th>Pour qui</th><th></th></tr></thead>
         <tbody>
-          <tr><td>Démarrage</td><td>Diagnostic, fiche Google optimisée, collecte d'avis</td><td>L'artisan seul qui veut être trouvé sur la carte</td><td>590 €</td></tr>
-          <tr class="hl"><td>Visibilité</td><td>Démarrage + site web artisan + 5 pages par prestation</td><td>L'entreprise de 2 à 5 personnes qui veut un vrai outil</td><td>2 490 €</td></tr>
-          <tr><td>Croissance</td><td>Visibilité + référencement local 6 mois + notoriété locale</td><td>L'entreprise qui veut dominer sa zone</td><td>4 900 €<small>payable en 6 fois</small></td></tr>
+          <tr><td>Démarrage</td><td>Diagnostic, fiche Google optimisée, collecte d'avis</td><td>L'artisan seul qui veut être trouvé sur la carte</td><td><a href="#soumission">Sur soumission</a></td></tr>
+          <tr class="hl"><td>Visibilité</td><td>Démarrage + site web artisan + 5 pages par prestation</td><td>L'entreprise de 2 à 5 personnes qui veut un vrai outil</td><td><a href="#soumission">Sur soumission</a></td></tr>
+          <tr><td>Croissance</td><td>Visibilité + référencement local 6 mois + notoriété locale</td><td>L'entreprise qui veut dominer sa zone</td><td><a href="#soumission">Sur soumission</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -598,14 +627,14 @@ section + section{border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Concrètement</span>
-      <h2>Comment ça se passe</h2>
+      <h2>Comment ça se passe, de la soumission au premier appel</h2>
     </div>
     <div class="steps">
-      <div class="step"><div class="n">1</div><b>Vous remplissez le formulaire</b><p>Trois minutes. Votre métier, votre ville, ce que vous avez déjà (site, fiche Google, rien du tout).</p></div>
+      <div class="step"><div class="n">1</div><b>Vous demandez une soumission</b><p>Trois minutes. Votre métier, votre ville, ce que vous avez déjà (site, fiche Google, rien du tout).</p></div>
       <div class="step"><div class="n">2</div><b>On vous rappelle sous 24 h</b><p>Diagnostic gratuit : où vous en êtes, où sont vos concurrents, ce qui manque.</p></div>
-      <div class="step"><div class="n">3</div><b>Vous choisissez votre freelance</b><p>Deux ou trois profils vérifiés, adaptés à votre métier et à votre budget. Vous voyez leurs avis et leurs résultats.</p></div>
-      <div class="step"><div class="n">4</div><b>Le freelance bosse, vous suivez</b><p>Un point mensuel en français clair : vues, appels, devis. Pas de rapport de 40 pages.</p></div>
-      <div class="step"><div class="n">5</div><b>Vous payez ce qui était prévu</b><p>Prix fixé avant de commencer. Rien ne bouge sans votre accord.</p></div>
+      <div class="step"><div class="n">3</div><b>Vous recevez une soumission claire</b><p>Un prix fixe, ce qui est inclus, le délai, et deux ou trois freelances vérifiés adaptés à votre métier. Vous choisissez.</p></div>
+      <div class="step"><div class="n">4</div><b>Le freelance bosse, vous suivez</b><p>Un point mensuel en français clair : vues, appels, soumissions. Pas de rapport de 40 pages.</p></div>
+      <div class="step"><div class="n">5</div><b>Vous payez ce qui était prévu</b><p>Le prix de la soumission, pas un dollar de plus. Rien ne bouge sans votre accord.</p></div>
     </div>
   </div>
 </section>
@@ -627,7 +656,7 @@ section + section{border-top:1px solid var(--line)}
           <li>Un entretien technique avec notre équipe.</li>
           <li>Des références clients appelées une par une.</li>
           <li>Une note moyenne maintenue au-dessus de 4,7 / 5.</li>
-          <li>Une réponse à vos messages sous 24 h ouvrées.</li>
+          <li>Une réponse à vos messages sous 24 h ouvrables.</li>
           <li>Une façon d'expliquer sans jargon. Si on ne comprend pas, vous ne comprendrez pas.</li>
         </ul>
       </div>
@@ -645,9 +674,9 @@ section + section{border-top:1px solid var(--line)}
         <div class="meta"><span class="rate num"><span class="stars">★</span>4,9 <u>(312 avis)</u></span><span class="badge top">Top noté</span><span class="rt">Répond en 2 h</span></div>
         <div><h4>Vérifié pour</h4><div class="vfor"><span>Référencement local</span><span>Fiche Google</span></div></div>
         <div><h4>Compétences</h4><div class="chips"><span class="chip">pages par prestation</span><span class="chip">avis clients</span><span class="chip">annuaires pros</span><span class="chip">coordonnées cohérentes</span></div></div>
-        <div><h4>Parmi ses clients</h4><div class="clients"><span>Plomberie Girard &amp; Fils</span><span>Chauffage Martin</span><span>SOS Dépannage 44</span></div></div>
+        <div><h4>Parmi ses clients</h4><div class="clients"><span>Plomberie Girard &amp; Fils</span><span>Chauffage Martin</span><span>SOS Dépannage Laval</span></div></div>
         <div class="rec">Recommandé par d'autres freelances de la plateforme</div>
-        <a class="btn btn-ghost" href="#diagnostic">Contacter Julien</a>
+        <a class="btn btn-ghost" href="#soumission">Demander une soumission</a>
       </article>
       <article class="pro">
         <div class="top">
@@ -659,10 +688,10 @@ section + section{border-top:1px solid var(--line)}
         </div>
         <div class="meta"><span class="rate num"><span class="stars">★</span>5,0 <u>(148 avis)</u></span><span class="badge top">Top notée</span><span class="rt">Répond en 1 h</span></div>
         <div><h4>Vérifiée pour</h4><div class="vfor"><span>Création de site</span><span>Référencement</span></div></div>
-        <div><h4>Compétences</h4><div class="chips"><span class="chip">sites rapides mobile</span><span class="chip">photos de chantiers</span><span class="chip">formulaires de devis</span><span class="chip">refonte de sites anciens</span></div></div>
-        <div><h4>Parmi ses clients</h4><div class="clients"><span>Toitures de l'Ouest</span><span>Rénov'Habitat Occitanie</span><span>Élec'Pro Rennes</span></div></div>
+        <div><h4>Compétences</h4><div class="chips"><span class="chip">sites rapides mobile</span><span class="chip">photos de chantiers</span><span class="chip">formulaires de soumission</span><span class="chip">refonte de sites anciens</span></div></div>
+        <div><h4>Parmi ses clients</h4><div class="clients"><span>Toitures Rive-Nord</span><span>Réno-Habitat Québec</span><span>Élec'Pro Sherbrooke</span></div></div>
         <div class="rec">Recommandée par d'autres freelances de la plateforme</div>
-        <a class="btn btn-ghost" href="#diagnostic">Contacter Sophie</a>
+        <a class="btn btn-ghost" href="#soumission">Demander une soumission</a>
       </article>
       <article class="pro">
         <div class="top">
@@ -675,9 +704,9 @@ section + section{border-top:1px solid var(--line)}
         <div class="meta"><span class="rate num"><span class="stars">★</span>4,8 <u>(96 avis)</u></span><span class="rt">Répond en 3 h</span></div>
         <div><h4>Vérifié pour</h4><div class="vfor"><span>Publicité Google</span><span>Collecte d'avis</span></div></div>
         <div><h4>Compétences</h4><div class="chips"><span class="chip">campagnes urgence</span><span class="chip">réponses aux avis négatifs</span><span class="chip">suivi des appels</span><span class="chip">serrurerie / plomberie</span></div></div>
-        <div><h4>Parmi ses clients</h4><div class="clients"><span>Serrurerie Express Lyon</span><span>Plomberie Nord Isère</span><span>Dépann'Élec 31</span></div></div>
+        <div><h4>Parmi ses clients</h4><div class="clients"><span>Serrurerie Express Montréal</span><span>Plomberie des Laurentides</span><span>Dépann'Élec Estrie</span></div></div>
         <div class="rec">Recommandé par d'autres freelances de la plateforme</div>
-        <a class="btn btn-ghost" href="#diagnostic">Contacter Karim</a>
+        <a class="btn btn-ghost" href="#soumission">Demander une soumission</a>
       </article>
     </div>
   </div>
@@ -690,12 +719,210 @@ section + section{border-top:1px solid var(--line)}
       <h2>Ce qu'en disent les artisans</h2>
     </div>
     <div class="testis">
-      <article class="testi"><div class="stars">★★★★★</div><p>Je pensais que c'était un truc pour les grosses boîtes. En trois mois je suis passé de trois ou quatre appels par mois à vingt-cinq, trente. J'ai dû embaucher un gars.</p><footer><b>Nicolas</b>plombier chauffagiste, Angers</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Ce que j'ai apprécié : on m'a expliqué ce qu'on faisait sans me prendre pour une idiote. Chaque mois j'ai un tableau avec mes appels et mes devis. C'est concret, je vois où va l'argent.</p><footer><b>Sandrine</b>entreprise de rénovation, 8 salariés, Toulouse</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Serrurier, mon métier c'est l'urgence. Avant, les gens tombaient sur des plateformes qui prennent 40 % de commission et me refilent les clients au compte-gouttes. Maintenant ils tombent sur moi. Directement.</p><footer><b>Mehdi</b>serrurier, Lyon</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Toiture à 18 000 € signée via le site, deux mois après la mise en ligne. Le site était remboursé dix fois. Depuis j'ai arrêté les prospectus.</p><footer><b>Patrick</b>couvreur, Vendée</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>J'avais un site fait par mon neveu. Joli, mais invisible. Ils ont refait les pages par prestation. Trois semaines après, on sort sur « électricien mise aux normes » dans ma ville. Je n'y croyais pas.</p><footer><b>Laurent</b>électricien, Rennes</footer></article>
-      <article class="testi" style="background:var(--accent-soft);border-color:var(--accent)"><div class="stars">★★★★★</div><p>Ils m'ont dit clairement ce qui ne marcherait pas chez moi et ce qui marcherait. Pas de vente forcée. J'ai pris le pack Démarrage, puis le site six mois plus tard, quand j'ai vu les appels.</p><footer><b>Farid</b>rénovation et carrelage, Marseille</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Je pensais que c'était un truc pour les grosses boîtes. En trois mois je suis passé de trois ou quatre appels par mois à vingt-cinq, trente. J'ai dû embaucher un gars.</p><footer><b>Nicolas</b>plombier chauffagiste, Gatineau</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+</article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Ce que j'ai apprécié : on m'a expliqué ce qu'on faisait sans me prendre pour une imbécile. Chaque mois j'ai un tableau avec mes appels et mes soumissions. C'est concret, je vois où va l'argent.</p><footer><b>Sandrine</b>entreprise de rénovation, 8 employés, Québec</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+</article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Serrurier, mon métier c'est l'urgence. Avant, les gens tombaient sur des plateformes qui prennent 40 % de commission et me refilent les clients au compte-gouttes. Maintenant ils tombent sur moi. Directement.</p><footer><b>Mehdi</b>serrurier, Montréal</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+</article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Toiture à 18 000 $ signée via le site, deux mois après la mise en ligne. Le site était remboursé dix fois. Depuis j'ai arrêté les circulaires.</p><footer><b>Patrick</b>couvreur, Terrebonne</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+</article>
+      <article class="testi"><div class="stars">★★★★★</div><p>J'avais un site fait par mon neveu. Joli, mais invisible. Ils ont refait les pages par prestation. Trois semaines après, on sort sur « électricien mise aux normes » dans ma ville. Je n'y croyais pas.</p><footer><b>Laurent</b>électricien, Sherbrooke</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+</article>
+      <article class="testi" style="background:var(--accent-soft);border-color:var(--accent)"><div class="stars">★★★★★</div><p>Ils m'ont dit clairement ce qui ne marcherait pas chez moi et ce qui marcherait. Pas de vente forcée. J'ai pris le pack Démarrage, puis le site six mois plus tard, quand j'ai vu les appels.</p><footer><b>Farid</b>rénovation et céramique, Trois-Rivières</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+</article>
     </div>
     <div class="band">
       <span><b class="num"><span class="stars">★</span> 4,9 / 5</b></span>
@@ -712,14 +939,14 @@ section + section{border-top:1px solid var(--line)}
       <h2>Ils nous ont fait confiance</h2>
     </div>
     <div class="logos">
-      <div class="logo"><i>PG</i><div><b>Plomberie Girard &amp; Fils</b><small>plomberie · Nantes</small></div></div>
-      <div class="logo"><i>TO</i><div><b>Toitures de l'Ouest</b><small>couverture · Vendée</small></div></div>
-      <div class="logo"><i>EP</i><div><b>Élec'Pro Rennes</b><small>électricité · Rennes</small></div></div>
-      <div class="logo"><i>SE</i><div><b>Serrurerie Express Lyon</b><small>serrurerie · Lyon</small></div></div>
-      <div class="logo"><i>RH</i><div><b>Rénov'Habitat Occitanie</b><small>rénovation · Toulouse</small></div></div>
-      <div class="logo"><i>CM</i><div><b>Chauffage Martin</b><small>chauffage · Angers</small></div></div>
-      <div class="logo"><i>DE</i><div><b>Dépann'Élec 31</b><small>électricité · Haute-Garonne</small></div></div>
-      <div class="logo"><i>PN</i><div><b>Plomberie Nord Isère</b><small>plomberie · Isère</small></div></div>
+      <div class="logo"><i>PG</i><div><b>Plomberie Girard &amp; Fils</b><small>plomberie · Laval</small></div></div>
+      <div class="logo"><i>TR</i><div><b>Toitures Rive-Nord</b><small>couverture · Rive-Nord de Montréal</small></div></div>
+      <div class="logo"><i>EP</i><div><b>Élec'Pro Sherbrooke</b><small>électricité · Sherbrooke</small></div></div>
+      <div class="logo"><i>SE</i><div><b>Serrurerie Express Montréal</b><small>serrurerie · Montréal</small></div></div>
+      <div class="logo"><i>RQ</i><div><b>Réno-Habitat Québec</b><small>rénovation · Québec</small></div></div>
+      <div class="logo"><i>CM</i><div><b>Chauffage Martin</b><small>chauffage · Gatineau</small></div></div>
+      <div class="logo"><i>DE</i><div><b>Dépann'Élec Estrie</b><small>électricité · Estrie</small></div></div>
+      <div class="logo"><i>PL</i><div><b>Plomberie des Laurentides</b><small>plomberie · Laurentides</small></div></div>
     </div>
     <p class="logos-foot">Emplacements de logos à remplacer par vos vrais clients, avec leur accord d'usage. Ne mentionnez un réseau ou une fédération que si l'accord existe.</p>
   </div>
@@ -737,7 +964,7 @@ section + section{border-top:1px solid var(--line)}
       <div class="g"><b>Pas d'engagement au-delà de la mission</b><p>Les services mensuels s'arrêtent quand vous le décidez, avec un mois de préavis.</p></div>
       <div class="g"><b>Un freelance qui ne livre pas est remplacé</b><p>Sans frais, sans repartir de zéro.</p></div>
       <div class="g"><b>Pas de commission sur vos chantiers</b><p>Les clients que vous gagnez sont à vous.</p></div>
-      <div class="g"><b>Un rapport mensuel lisible</b><p>Vues, appels, devis. En français, sur une page.</p></div>
+      <div class="g"><b>Un rapport mensuel lisible</b><p>Vues, appels, soumissions. En français, sur une page.</p></div>
     </div>
   </div>
 </section>
@@ -753,27 +980,110 @@ section + section{border-top:1px solid var(--line)}
       <details><summary>Combien de temps avant de voir des résultats ?</summary><p>La fiche Google et la publicité donnent des appels en quelques jours. Le référencement naturel prend entre six et douze semaines pour monter, puis continue de progresser. C'est plus lent, mais ça ne s'arrête pas quand vous cessez de payer.</p></details>
       <details><summary>Je suis seul, je n'ai pas le temps de m'occuper de ça.</summary><p>C'est justement pour ça que le freelance s'en charge. Ce qu'on vous demande : une heure au départ pour faire le point, des photos de chantiers de temps en temps, et de répondre au téléphone quand il sonne.</p></details>
       <details><summary>Est-ce que je dois payer Google ?</summary><p>Non, sauf si vous choisissez l'option publicité. La fiche Google est gratuite. Le référencement naturel ne coûte rien à Google, seulement le travail du freelance.</p></details>
-      <details><summary>Quelle différence avec les sites de mise en relation type « demande de devis » ?</summary><p>Ces sites vendent la même demande à trois, quatre ou cinq artisans en même temps. Vous payez chaque contact et vous vous battez sur le prix. Ici, le client vous trouve directement, vous appelle directement, et il est à vous.</p></details>
+      <details><summary>Quelle différence avec les sites de mise en relation type « demandes de soumission » ?</summary><p>Ces sites vendent la même demande à trois, quatre ou cinq artisans en même temps. Vous payez chaque contact et vous vous battez sur le prix. Ici, le client vous trouve directement, vous appelle directement, et il est à vous.</p></details>
       <details><summary>Que se passe-t-il si j'arrête ?</summary><p>Vous gardez votre site, votre fiche et vos avis. Ce qui a été construit reste. Seuls les services mensuels s'arrêtent.</p></details>
       <details><summary>Vous prenez une commission sur mes chantiers ?</summary><p>Non. Jamais.</p></details>
-      <details><summary>Vous travaillez dans quelles villes ?</summary><p>Partout en France métropolitaine. Le référencement local se fait à distance, avec vos photos et votre connaissance du terrain.</p></details>
+      <details><summary>Vous travaillez dans quelles villes ?</summary><p>Partout au Québec. Le référencement local se fait à distance, avec vos photos et votre connaissance du terrain.</p></details>
     </div>
   </div>
 </section>
 
-<section class="final" id="diagnostic">
+<section class="final" id="soumission">
   <div class="wrap">
-    <span class="eyebrow">Diagnostic gratuit</span>
-    <h2 style="margin-top:14px">Le prochain client qui cherche votre métier dans votre ville, <em>il vous trouve.</em> Ou il trouve un autre.</h2>
-    <p>Trois minutes pour remplir le formulaire. Un diagnostic gratuit sous 24 h ouvrées. Aucun engagement.</p>
-    <div class="ctas">
-      <a class="btn btn-primary" href="#diagnostic">Recevoir mon diagnostic gratuit</a>
-      <span class="sub num"><span class="stars">★</span> 4,9 / 5 · 1 240 avis · Freelances vérifiés · Prix fixé avant de commencer</span>
+    <div class="final-grid">
+      <div>
+        <span class="eyebrow">Soumission gratuite</span>
+        <h2 style="margin-top:14px">Le prochain client qui cherche votre métier dans votre ville, <em>il vous trouve.</em> Ou il trouve un autre.</h2>
+        <p>Trois minutes pour remplir le formulaire. On vous rappelle sous 24 h ouvrables avec un diagnostic gratuit de votre visibilité, puis une soumission claire. Aucun engagement.</p>
+        <ul class="final-list">
+          <li>Un diagnostic gratuit : où vous en êtes, où sont vos concurrents.</li>
+          <li>Une soumission à prix fixe, en français clair.</li>
+          <li>Des freelances vérifiés, choisis pour votre métier.</li>
+          <li>Pas de commission sur vos chantiers. Jamais.</li>
+        </ul>
+        <p class="sub num" style="margin-top:22px"><span class="stars">★</span> 4,9 / 5 · 1 240 avis · Freelances vérifiés · Prix fixé avant de commencer</p>
+      </div>
+      <form class="lead" id="lead-form" novalidate>
+        <div class="f2">
+          <label>Prénom et nom<input id="f-nom" name="nom" type="text" autocomplete="name" required></label>
+          <label>Entreprise<input id="f-entreprise" name="entreprise" type="text" autocomplete="organization" required></label>
+        </div>
+        <div class="f2">
+          <label>Métier
+            <select id="f-metier" name="metier" required>
+              <option value="">Choisir…</option>
+              <option>Plomberie / chauffage</option>
+              <option>Couverture / toiture</option>
+              <option>Électricité</option>
+              <option>Serrurerie</option>
+              <option>Rénovation générale</option>
+              <option>Autre métier du bâtiment</option>
+            </select>
+          </label>
+          <label>Ville<input id="f-ville" name="ville" type="text" autocomplete="address-level2" placeholder="Ex. : Laval" required></label>
+        </div>
+        <div class="f2">
+          <label>Téléphone<input id="f-tel" name="telephone" type="tel" autocomplete="tel" placeholder="514 555 0100" required></label>
+          <label>Courriel<input id="f-courriel" name="courriel" type="email" autocomplete="email" required></label>
+        </div>
+        <fieldset>
+          <legend>Vous avez déjà</legend>
+          <label class="ck"><input id="f-a-site" type="checkbox" name="deja" value="site web"> Un site web</label>
+          <label class="ck"><input id="f-a-fiche" type="checkbox" name="deja" value="fiche Google"> Une fiche Google</label>
+          <label class="ck"><input id="f-a-avis" type="checkbox" name="deja" value="avis Google"> Des avis Google</label>
+          <label class="ck"><input id="f-a-rien" type="checkbox" name="deja" value="rien"> Rien de tout ça</label>
+        </fieldset>
+        <fieldset>
+          <legend>Ce que vous voulez</legend>
+          <label class="ck"><input id="f-v-google" type="checkbox" name="veut" value="être trouvé sur Google"> Être trouvé sur Google dans ma ville</label>
+          <label class="ck"><input id="f-v-site" type="checkbox" name="veut" value="site web"> Un site web qui ramène des appels</label>
+          <label class="ck"><input id="f-v-avis" type="checkbox" name="veut" value="avis"> Plus d'avis clients</label>
+          <label class="ck"><input id="f-v-pub" type="checkbox" name="veut" value="publicité urgences"> Des appels d'urgence tout de suite (publicité)</label>
+        </fieldset>
+        <label>Un mot sur votre situation <span class="opt">(facultatif)</span><textarea id="f-message" name="message" rows="3" placeholder="Ex. : je suis seul, je fais surtout du dépannage, mon téléphone sonne moins depuis l'hiver."></textarea></label>
+        <button class="btn btn-primary" type="submit" id="f-submit">Demander ma soumission gratuite</button>
+        <p class="consent">En envoyant ce formulaire, vous acceptez qu'on vous rappelle au sujet de votre demande. Vos coordonnées ne sont jamais revendues.</p>
+        <p class="status" id="f-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
+
 <div class="hazard"></div>
 <footer class="wrap footer">
-  <span>Visible Pro · freelances vérifiés pour artisans du bâtiment</span>
+  <span>Freelances vérifiés pour artisans du bâtiment · Québec</span>
   <span>Page de démonstration. Chiffres et noms à remplacer par vos données réelles.</span>
 </footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    dbp.then(function(db){
+      if(!db){throw {code:'unavailable'};}
+      return db.collection('soumissions').add(data);
+    }).then(function(){
+      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+      form.scrollIntoView({block:'nearest'});
+    }).catch(function(err){
+      submit.disabled=false;status.className='status err';
+      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
+    });
+  });
+})();
+</script>
+
