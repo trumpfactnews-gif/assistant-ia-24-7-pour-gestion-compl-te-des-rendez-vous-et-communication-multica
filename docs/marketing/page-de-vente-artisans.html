@@ -313,6 +313,35 @@ section + section{border-top:1px solid var(--line)}
 .testi-src{margin-top:14px;font-size:13px;color:var(--muted)}
 @media (max-width:980px){.pro-featured{grid-template-columns:1fr}.pro-side{border-left:0;border-top:1px solid var(--line)}}
 
+/* trade chips (hero) */
+.trade-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.trade-chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 13px 6px 9px}
+.trade-chip svg{width:16px;height:16px;color:var(--accent);flex:none}
+
+/* icon badges (services, case studies) */
+.icon-badge{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:var(--accent-soft);color:var(--accent);flex:none}
+.icon-badge svg{width:19px;height:19px}
+.svc .icon-badge{margin-bottom:10px}
+.case-head{display:flex;gap:12px;align-items:flex-start}
+
+/* problem-section illustration */
+.scene{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px}
+.scene-svg{display:block;width:100%;height:auto}
+.scene-cap{margin:0;padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line-2)}
+:root{--scene-sky-top:#1b2735;--scene-sky-bot:#0f1620;--scene-moon:#e7ecf2;--scene-star:#e7ecf2;--scene-house:#2a3644;--scene-window-off:#1a232d}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--scene-sky-top:#0c1319;--scene-sky-bot:#070b0f;--scene-moon:#cfd8e0;--scene-star:#cfd8e0;--scene-house:#1a232c;--scene-window-off:#0f151b}
+}
+:root[data-theme="dark"]{--scene-sky-top:#0c1319;--scene-sky-bot:#070b0f;--scene-moon:#cfd8e0;--scene-star:#cfd8e0;--scene-house:#1a232c;--scene-window-off:#0f151b}
+.scene-lit{filter:drop-shadow(0 0 6px var(--accent))}
+@media (prefers-reduced-motion: no-preference){
+  .scene-rings path{stroke-dasharray:60;stroke-dashoffset:60;animation:ring 1.8s ease-out infinite}
+  .scene-rings path:nth-child(2){animation-delay:.3s}
+  .scene-lit{animation:flicker 3s ease-in-out infinite}
+}
+@keyframes ring{0%{stroke-dashoffset:60;opacity:0}30%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes flicker{0%,100%{opacity:1}50%{opacity:.82}}
+
 .demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
 .demo-note b{color:var(--ink-2)}
 
@@ -357,7 +386,7 @@ section + section{border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Plombiers · Couvreurs · Électriciens · Serruriers · Rénovation</span>
+        <span class="eyebrow">Pour les artisans du bâtiment</span><div class="trade-row"><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg>Plombiers</span><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/><path d="M10 19v-4h4v4"/></svg>Couvreurs</span><span class="trade-chip"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg>Électriciens</span><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.3"/><path d="M10.3 12.8 19.5 3.5"/><path d="M16.3 6.5 19 9.2"/><path d="M13.8 9 16.5 11.7"/></svg>Serruriers</span><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(45 12 12)"><rect x="9.5" y="2.5" width="5" height="7.5" rx="1.2"/><rect x="7.5" y="10" width="9" height="4" rx="1.2"/></g></svg>Rénovation</span></div>
         <h1>Vos concurrents sont en première page de Google. <em>Vous, non.</em> On règle ça.</h1>
         <p class="lead">Des freelances vérifiés, spécialisés dans le bâtiment, rendent votre entreprise visible au moment où un client cherche un artisan près de chez lui. Vous, vous restez sur vos chantiers.</p>
         <div class="ctas">
@@ -405,6 +434,33 @@ section + section{border-top:1px solid var(--line)}
             <li><span class="n">3</span><span>Le bouche-à-oreille marche toujours. Mais même un client recommandé tape votre nom sur Google avant d'appeler. S'il ne trouve rien, ou deux avis à une étoile, il hésite.</span></li>
           </ul>
         </div>
+      </div>
+      <div class="scene" role="img" aria-label="Illustration : une maison le soir, un téléphone qui sonne, personne ne répond côté artisan">
+        <svg viewBox="0 0 340 170" class="scene-svg">
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--scene-sky-top)"/>
+              <stop offset="1" stop-color="var(--scene-sky-bot)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="340" height="170" fill="url(#skyGrad)"/>
+          <circle cx="288" cy="34" r="16" fill="var(--scene-moon)"/>
+          <g fill="var(--scene-star)">
+            <circle cx="40" cy="24" r="1.6"/><circle cx="90" cy="16" r="1.3"/><circle cx="150" cy="30" r="1.6"/>
+            <circle cx="200" cy="18" r="1.3"/><circle cx="240" cy="42" r="1.3"/><circle cx="60" cy="50" r="1.3"/>
+          </g>
+          <path d="M0 170V96l40-22 34 14 30-20 40 18 36-24 44 20 40-16 40 14 36-12v112z" fill="var(--scene-house)"/>
+          <rect x="150" y="112" width="22" height="28" rx="1.5" fill="var(--scene-window-off)"/>
+          <rect x="214" y="104" width="20" height="20" rx="1.5" fill="var(--accent)" class="scene-lit"/>
+          <g stroke="var(--accent)" stroke-width="2.4" fill="none" stroke-linecap="round" class="scene-rings">
+            <path d="M258 70a20 20 0 0 1 20 20"/>
+            <path d="M258 58a32 32 0 0 1 32 32"/>
+          </g>
+          <circle cx="252" cy="96" r="9" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+          <path d="M248.5 92.5 255.5 99.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M255.5 92.5 248.5 99.5" stroke="var(--ink-2)" stroke-width="0" />
+        </svg>
+        <p class="scene-cap">19 h. Un client tape « plombier urgence » près de chez vous. Votre fenêtre reste dans le noir.</p>
       </div>
       <div class="quote">
         <div class="display">« Je n'ai pas besoin de site, j'ai déjà trop de boulot. »</div>
@@ -481,7 +537,7 @@ section + section{border-top:1px solid var(--line)}
     </div>
     <div class="cases">
       <article class="case">
-        <div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · ville de 150 000 habitants</div></div>
+        <div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg></span><div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · ville de 150 000 habitants</div></div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
@@ -495,7 +551,7 @@ section + section{border-top:1px solid var(--line)}
         </table>
       </article>
       <article class="case">
-        <div><div class="display">Couverture</div><div class="who">6 personnes · ville moyenne et zone rurale</div></div>
+        <div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/><path d="M10 19v-4h4v4"/></svg></span><div><div class="display">Couverture</div><div class="who">6 personnes · ville moyenne et zone rurale</div></div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
@@ -509,7 +565,7 @@ section + section{border-top:1px solid var(--line)}
         <p class="fine">Le panier moyen est élevé en couverture. Une seule rénovation de toiture rembourse l'année entière.</p>
       </article>
       <article class="case">
-        <div><div class="display">Électricien indépendant</div><div class="who">Seul · ville de 60 000 habitants</div></div>
+        <div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg></span><div><div class="display">Électricien indépendant</div><div class="who">Seul · ville de 60 000 habitants</div></div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
@@ -547,7 +603,7 @@ section + section{border-top:1px solid var(--line)}
     </div>
     <div class="services">
       <article class="svc free">
-        <div class="display">Diagnostic de visibilité</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg></span><div class="display">Diagnostic de visibilité</div>
         <dl>
           <dt>Ce que c'est</dt><dd>On regarde où vous apparaissez (ou pas) sur Google pour vos prestations et votre zone, et où sont vos concurrents.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Vous savez exactement ce qui vous manque avant de dépenser un dollar.</dd>
@@ -556,7 +612,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><b>Offert</b><span>réponse sous 48 h</span></div>
       </article>
       <article class="svc">
-        <div class="display">Fiche Google optimisée</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></span><div class="display">Fiche Google optimisée</div>
         <dl>
           <dt>Ce que c'est</dt><dd>Création ou remise à niveau de votre fiche Google : catégories, zones, horaires, photos de chantiers, réponses aux avis, mise à jour hebdomadaire pendant trois mois.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Vous apparaissez sur la carte Google avec le bouton « Appeler » sous votre nom. C'est le service qui fait sonner le téléphone le plus vite.</dd>
@@ -565,7 +621,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>7 jours</span></div>
       </article>
       <article class="svc">
-        <div class="display">Référencement local</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/></svg></span><div class="display">Référencement local</div>
         <dl>
           <dt>Ce que c'est</dt><dd>Tout ce qui fait monter votre entreprise dans les résultats de votre ville : fiche Google, pages par prestation et par ville, annuaires professionnels, coordonnées cohérentes partout.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Vous passez devant les concurrents sur « votre métier + votre ville » et sur les villes autour.</dd>
@@ -574,7 +630,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>3 mois minimum · résultats entre 6 et 12 semaines</span></div>
       </article>
       <article class="svc">
-        <div class="display">Création de site web artisan</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><div class="display">Création de site web artisan</div>
         <dl>
           <dt>Ce que c'est</dt><dd>Un site clair et rapide, pensé pour le téléphone : vos prestations, vos zones, vos photos de chantiers, vos avis, un bouton d'appel visible partout. Bases du référencement déjà en place.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Un client qui vous cherche trouve en dix secondes ce que vous faites, où, et comment vous joindre. Il appelle au lieu de continuer à chercher.</dd>
@@ -583,7 +639,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>3 semaines</span></div>
       </article>
       <article class="svc">
-        <div class="display">Refonte d'un site existant</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg></span><div class="display">Refonte d'un site existant</div>
         <dl>
           <dt>Ce que c'est</dt><dd>On garde ce qui marche, on corrige ce qui bloque : lenteur, affichage mobile, pages sans titre, textes qui ne parlent d'aucune prestation précise.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Votre site actuel commence enfin à apparaître dans Google au lieu de servir de carte de visite que personne ne voit.</dd>
@@ -592,7 +648,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>2 semaines</span></div>
       </article>
       <article class="svc">
-        <div class="display">Pages par prestation</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></svg></span><div class="display">Pages par prestation</div>
         <dl>
           <dt>Ce que c'est</dt><dd>Une page dédiée pour chaque service que vous vendez, écrite avec les mots que tapent vos clients. « Recherche de fuite », « Mise aux normes tableau électrique », « Ouverture de porte claquée ».</dd>
           <dt>Ce que ça change</dt><dd class="strong">Vous sortez sur des recherches précises, celles où le client est prêt à signer.</dd>
@@ -601,7 +657,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>5 jours par lot</span></div>
       </article>
       <article class="svc">
-        <div class="display">Collecte d'avis clients</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L12 17l-5.6 3.1 1.4-6.3-4.8-4.3 6.4-.6z"/></svg></span><div class="display">Collecte d'avis clients</div>
         <dl>
           <dt>Ce que c'est</dt><dd>Un système simple pour demander un avis à chaque fin de chantier : un texto ou un code QR sur la facture, un message qui part tout seul, un suivi des réponses.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Vous passez de 6 avis à 60 en quelques mois. Google vous fait monter, et les clients vous choisissent.</dd>
@@ -610,7 +666,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>3 jours</span></div>
       </article>
       <article class="svc">
-        <div class="display">Notoriété locale (backlinks)</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="9" height="6" rx="3"/><rect x="13" y="9" width="9" height="6" rx="3"/><path d="M9 12h6"/></svg></span><div class="display">Notoriété locale (backlinks)</div>
         <dl>
           <dt>Ce que c'est</dt><dd>On fait parler de vous sur des sites sérieux de votre secteur : fournisseurs, presse locale, associations, annuaires professionnels reconnus. Pas de liens en masse depuis des profils ou des annuaires sans valeur.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Google considère que d'autres vous recommandent. Votre site monte plus vite et tient sa place.</dd>
@@ -619,7 +675,7 @@ section + section{border-top:1px solid var(--line)}
         <div class="price"><a href="#soumission">Demander une soumission</a><span>effet progressif sur 3 à 6 mois</span></div>
       </article>
       <article class="svc">
-        <div class="display">Option : publicité Google urgences</div>
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l6 4V6l-6 4H3z"/><path d="M15 9a4 4 0 0 1 0 6"/></svg></span><div class="display">Option : publicité Google urgences</div>
         <dl>
           <dt>Ce que c'est</dt><dd>Des annonces payantes en haut de Google sur les recherches d'urgence de votre zone. Vous payez seulement quand quelqu'un clique.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Des appels dès la première semaine, le temps que le référencement naturel prenne le relais.</dd>
