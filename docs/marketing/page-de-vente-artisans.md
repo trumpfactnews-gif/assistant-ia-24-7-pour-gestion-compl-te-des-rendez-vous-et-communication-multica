@@ -2,19 +2,17 @@
 
 > **Avant publication, relis l'annexe en fin de document.** La page ne porte aucun nom
 > de plateforme et n'affiche aucun prix : la seule action demandée au lecteur est de
-> demander une soumission gratuite. Contexte : artisans du Québec. La note, le nombre
-> d'avis, la répartition des étoiles, les badges, les sous-notes et les témoignages viennent
-> du profil Fiverr public de la freelance (miranda_davis), relevé le 13 septembre 2026.
-> Seuls les trois cas chiffrés « avant / après » restent des exemples types pour le secteur.
-> Les noms de grands comptes et les chiffres de croissance du portfolio sont volontairement
-> absents : ils sont auto-déclarés et non vérifiés par Fiverr.
+> demander une soumission gratuite. Contexte : artisans du Québec. La page ne nomme aucun
+> freelance et ne cite aucune plateforme de recrutement : le message se limite à « nos
+> freelances sont vérifiés et triés sur le volet ». Les trois cas chiffrés « avant / après »
+> restent des exemples types pour le secteur, pas des résultats mesurés.
 
 ---
 
 ## 0. Balises de la page
 
 - **Title (moins de 60 caractères) :** Artisans : soyez trouvés sur Google. Soumission gratuite
-- **Meta description :** Plombiers, couvreurs, électriciens, serruriers : une freelance vérifiée Fiverr Pro rend votre entreprise visible sur Google et fait sonner votre téléphone. Demandez une soumission gratuite.
+- **Meta description :** Plombiers, couvreurs, électriciens, serruriers : des freelances vérifiés rendent votre entreprise visible sur Google et font sonner votre téléphone. Demandez une soumission gratuite.
 - **URL conseillée :** /artisans
 
 ---
@@ -31,12 +29,12 @@
 **Bouton secondaire :** Comment ça se passe
 
 **Bandeau de confiance (sous les boutons) :**
-- ★ 4,9 / 5 sur 9 219 avis vérifiés
-- Pro vérifié : badge Fiverr Pro + Top Rated
-- 1 h de délai de réponse moyen
+- Freelances vérifiés, triés sur le volet, pas au hasard
+- Sélection rigoureuse : historique, entretien, références
+- Réponse rapide, sous 24 h ouvrables
 - Prix fixé avant de commencer
 
-**Encadré de transparence (petit, sous le hero) :** Ce qui est réel, ce qui ne l'est pas. La note, le nombre d'avis, la répartition des étoiles, les badges et les témoignages viennent du profil Fiverr public de la freelance, relevés le 13 septembre 2026. Les trois cas chiffrés « avant / après » restent des exemples types pour le secteur, pas des résultats mesurés.
+**Encadré de transparence (petit, sous le hero) :** Ce qui est réel, ce qui ne l'est pas. Les trois cas chiffrés « avant / après » plus bas sont des exemples types pour le secteur, pas des résultats mesurés sur un client précis.
 
 ---
 
@@ -248,11 +246,11 @@ Chaque service est réalisé par un freelance vérifié, spécialisé dans les m
 
 ---
 
-## 7. Pourquoi cette freelance
+## 7. Pourquoi nos freelances
 
-**Titre :** Une freelance vérifiée, pas une inconnue trouvée sur un forum
+**Titre :** Des freelances vérifiés, pas des inconnus trouvés sur un forum
 
-Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. La freelance qui réalise vos travaux a été sélectionnée par l'équipe Fiverr Pro et vérifiée sur le référencement local et le SEO. En plus, on applique nos propres contrôles. Un freelance qui descend sous ces exigences perd sa place. Simple.
+Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. Chaque freelance qui travaille avec nous a été trié sur le volet avant d'obtenir sa place : historique de clients vérifié, entretien technique, références appelées une par une. Celui qui descend sous nos exigences perd sa place. Simple.
 
 **Ce qu'on vérifie avant de donner le badge :**
 
@@ -263,55 +261,15 @@ Le référencement est plein de gens qui promettent la première place en une se
 - Une réponse à vos messages sous 24 h ouvrables.
 - Une façon d'expliquer les choses sans jargon. Si on ne comprend pas, vous ne comprendrez pas.
 
-### Fiche de la freelance (données Fiverr, relevées le 13 septembre 2026)
+**Bandeau visuel (4 cases) :** Historique vérifié · Entretien technique · Références appelées · Suivi continu (un freelance qui descend sous nos exigences perd sa place).
 
-**Miranda** · Pro vérifié · Top Rated
-Référencement local, fiche Google, SEO et sites web · 19 services
-★ 4,9 (9 219 avis) · Répond en 1 h en moyenne
-Vérifiée par l'équipe Fiverr Pro pour : référencement local, optimisation pour les moteurs de recherche (SEO)
-Sous-notes de ses clients : communication 4,9 · qualité de la livraison 4,9 · rapport qualité-prix 4,9
-Compétences : fiche Google et référencement local, SEO on-page, sites WordPress, rédaction de contenu, réseaux sociaux
-Au portfolio public : Performanceplumb (plomberie, SEO local) · Islandrheumatology (clinique, SEO local) · X-Ring Supply (commerce en ligne) · Gava Coffee (réseaux sociaux)
-Bouton : Demander une soumission
-
-**Encadré « Les 9 219 avis, tous comptés » :**
-98,5 % à 4 ou 5 étoiles. 395 avis avec fichiers joints.
-
-| Étoiles | Nombre |
-|---|---|
-| 5 ★ | 8 747 |
-| 4 ★ | 336 |
-| 3 ★ | 60 |
-| 2 ★ | 36 |
-| 1 ★ | 40 |
-
-On affiche tout, y compris les 76 avis à une ou deux étoiles. Un freelance qui cache ses mauvais avis, c'est un freelance qu'on ne prend pas.
-Source : profil public Fiverr, relevé le 13 septembre 2026.
-
-**Sous la fiche :** Chaque freelance ajouté à la plateforme passe les mêmes contrôles avant de porter le badge. Pas d'exception.
-
----
-
-## 8. Témoignages
-
-**Titre :** Ce qu'en disent ses clients
-
-- ★★★★★ « Professionnelle, compétente et patiente, elle se soucie réellement de la croissance de mon entreprise. Elle a contribué à l'amélioration de mon site web, de mon référencement, de ma fiche Google My Business et de ma visibilité dans les résultats de recherche locaux. » **pokaro**, États-Unis · fiche Google et référencement local · collaboration en cours
-- ★★★★★ « Sa réflexion stratégique en référencement était de premier ordre, et sa réactivité et sa communication proactive ont rendu le projet facile. Livraison pile à l'heure. » **puremagicmaids**, entreprise de services à domicile
-- ★★★★★ « Je m'attendais à un bon référencement de la part d'un développeur de haut niveau, et c'est exactement ce que j'ai obtenu. Rien à redire. J'ai même reçu un guide pour continuer à travailler sur mon référencement. » **ksol3950**
-- ★★★★★ « Livraison rapide, comme toujours. Le trafic remonte doucement, c'est bon à voir. » **sandralee487**, client régulier
-- ★★★★★ « Un plaisir de travailler avec elle. Livraison ultra rapide. Excellent service client. » **rusulaw**, cabinet juridique
-- ★★★★★ « Livré en avance, avec des bonus en plus. Très professionnelle, je recommande. » **bluenotary121**, services de notariat
-
-**Mention sous les témoignages :** Avis publiés sur Fiverr, reproduits tels qu'affichés par la plateforme (traduction Fiverr pour les avis en anglais). Noms d'utilisateur Fiverr.
-
-**Bandeau :** ★ 4,9 / 5 · 9 219 avis vérifiés sur Fiverr · 98,5 % à 4 ou 5 étoiles · 1 h de réponse en moyenne
+**Sous le bandeau :** On ne travaille qu'avec des freelances qui ont passé ce tri. Pas d'exception, pas de raccourci.
 
 ---
 
 ## 9. Références clients
 
-Section retirée de la page. Les noms de grands comptes affichés sur le profil (Huawei, LECHERY, Nile Cruisers, Master Mobile) sont saisis par la freelance dans un champ libre que Fiverr ne vérifie pas, et aucun projet du portfolio ne les confirme. Ne les affiche pas sans confirmation écrite de sa part (contrat, contact, cas d'usage). Les projets du portfolio public figurent déjà dans sa fiche, section 7.
+Section retirée de la page. Ne jamais afficher un nom de grand compte ou un logo client sans confirmation écrite (contrat, contact, cas d'usage vérifiable). La page ne nomme aucun freelance ni aucune plateforme de recrutement : c'est volontaire, pas un oubli.
 
 ---
 
@@ -365,7 +323,7 @@ Partout au Québec. Le référencement local se fait à distance, avec vos photo
 **Ce que vous obtenez :**
 - Un diagnostic gratuit : où vous en êtes, où sont vos concurrents.
 - Une soumission à prix fixe, en français clair.
-- Une freelance vérifiée par Fiverr Pro pour le référencement local.
+- Des freelances vérifiés, triés sur le volet pour le référencement local.
 - Pas de commission sur vos chantiers. Jamais.
 
 **Formulaire (champs) :**
@@ -383,7 +341,7 @@ Partout au Québec. Le référencement local se fait à distance, avec vos photo
 
 **Message après envoi :** Demande reçue. Merci [Prénom]. On vous rappelle sous 24 h ouvrables au [téléphone] avec votre diagnostic gratuit, puis votre soumission.
 
-**Rappel de confiance :** ★ 4,9 / 5 · 9 219 avis vérifiés · Fiverr Pro vérifié · Prix fixé avant de commencer
+**Rappel de confiance :** Freelances vérifiés · Sélection rigoureuse · Prix fixé avant de commencer
 
 ---
 
@@ -391,8 +349,8 @@ Partout au Québec. Le référencement local se fait à distance, avec vos photo
 
 | Élément | État | À faire |
 |---|---|---|
-| Note, nombre d'avis, répartition, badges, sous-notes | Réels, Fiverr, 13 sept. 2026 | Rafraîchir le relevé avant mise en ligne, les compteurs bougent |
-| Témoignages | Réels, avis Fiverr | Vérifier que la freelance accepte leur reprise hors Fiverr |
+| Nom du freelance, plateforme de recrutement | Volontairement absents de la page | Ne jamais les ajouter publiquement |
+| Témoignages clients | Retirés | En ajouter uniquement avec l'accord écrit du client, sans lien vers une plateforme externe |
 | Chiffres avant/après (3 cas) | Exemples types | Remplacer par des résultats mesurés (accès Search Console) dès qu'il y en a |
 | Grands comptes (Huawei, etc.) | Auto-déclarés, non vérifiés | Ne pas afficher sans confirmation écrite |
 | Chiffres de croissance du portfolio (+2 000 %, 900 K → 1,7 M) | Visuels de la freelance | Ne pas afficher sans captures brutes |

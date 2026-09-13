@@ -342,6 +342,14 @@ section + section{border-top:1px solid var(--line)}
 @keyframes ring{0%{stroke-dashoffset:60;opacity:0}30%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
 @keyframes flicker{0%,100%{opacity:1}50%{opacity:.82}}
 
+.vet-strip{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.vet{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px}
+.vet .icon-badge{margin-bottom:10px}
+.vet b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;margin-bottom:4px}
+.vet p{font-size:14px;color:var(--ink-2);margin:0}
+@media (max-width:900px){.vet-strip{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.vet-strip{grid-template-columns:1fr}}
+
 .demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
 .demo-note b{color:var(--ink-2)}
 
@@ -407,9 +415,9 @@ section + section{border-top:1px solid var(--line)}
       </aside>
     </div>
     <div class="trust">
-      <div><strong class="num"><span class="stars">★</span> 4,9 / 5</strong>sur 9 219 avis vérifiés</div>
-      <div><strong>Pro vérifié</strong>badge Fiverr Pro + Top Rated</div>
-      <div><strong>1 h</strong>délai de réponse moyen</div>
+      <div><strong>Freelances vérifiés</strong>triés sur le volet, pas au hasard</div>
+      <div><strong>Sélection rigoureuse</strong>historique, entretien, références</div>
+      <div><strong>Réponse rapide</strong>sous 24 h ouvrables</div>
       <div><strong>Prix fixe</strong>fixé avant de commencer</div>
     </div>
   </div>
@@ -417,7 +425,7 @@ section + section{border-top:1px solid var(--line)}
 
 <section id="probleme">
   <div class="wrap">
-    <p class="demo-note"><b>Ce qui est réel, ce qui ne l'est pas.</b> La note, le nombre d'avis, la répartition des étoiles, les badges et les témoignages viennent du profil Fiverr public de la freelance, relevés le 13 septembre 2026. Les trois cas chiffrés « avant / après » restent des exemples types pour le secteur, pas des résultats mesurés.</p>
+    <p class="demo-note"><b>Ce qui est réel, ce qui ne l'est pas.</b> Les trois cas chiffrés « avant / après » plus bas sont des exemples types pour le secteur, pas des résultats mesurés sur un client précis.</p>
     <div class="two">
       <div class="prose">
         <div class="sec-head">
@@ -720,9 +728,9 @@ section + section{border-top:1px solid var(--line)}
       <div class="prose">
         <div class="sec-head" style="margin-bottom:8px">
           <span class="eyebrow">Le badge Pro vérifié</span>
-          <h2>Une freelance vérifiée, pas une inconnue trouvée sur un forum</h2>
+          <h2>Des freelances vérifiés, pas des inconnus trouvés sur un forum</h2>
         </div>
-        <p>Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. La freelance qui réalise vos travaux a été sélectionnée par l'équipe Fiverr Pro et vérifiée sur le référencement local et le SEO. En plus, on applique nos propres contrôles. Un freelance qui descend sous ces exigences perd sa place. Simple.</p>
+        <p>Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. Chaque freelance qui travaille avec nous a été trié sur le volet avant d'obtenir sa place : historique de clients vérifié, entretien technique, références appelées une par une. Celui qui descend sous nos exigences perd sa place. Simple.</p>
       </div>
       <div>
         <h3 style="font-size:16px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-family:'IBM Plex Sans',sans-serif;font-weight:600">Ce qu'on vérifie avant de donner le badge</h3>
@@ -737,66 +745,15 @@ section + section{border-top:1px solid var(--line)}
       </div>
     </div>
 
-    <div class="featured">
-      <article class="pro pro-featured">
-        <div class="pro-main">
-          <div class="top">
-            <div class="avatar" aria-hidden="true">M</div>
-            <div>
-              <div class="name">Miranda <span class="badge vp">Pro vérifié</span> <span class="badge top">Top Rated</span></div>
-              <div class="role">Référencement local, fiche Google, SEO et sites web · 19 services</div>
-            </div>
-          </div>
-          <div class="meta"><span class="rate num"><span class="stars">★</span>4,9 <u>(9 219 avis)</u></span><span class="rt">Répond en 1 h en moyenne</span></div>
-          <div><h4>Vérifiée par l'équipe Fiverr Pro pour</h4><div class="vfor"><span>Référencement local</span><span>Optimisation pour les moteurs de recherche (SEO)</span></div></div>
-          <div><h4>Sous-notes de ses clients</h4><div class="chips"><span class="chip">Communication <b class="num">4,9</b></span><span class="chip">Qualité de la livraison <b class="num">4,9</b></span><span class="chip">Rapport qualité-prix <b class="num">4,9</b></span></div></div>
-          <div><h4>Compétences</h4><div class="chips"><span class="chip">fiche Google et référencement local</span><span class="chip">SEO on-page</span><span class="chip">sites WordPress</span><span class="chip">rédaction de contenu</span><span class="chip">réseaux sociaux</span></div></div>
-          <div><h4>Au portfolio public</h4><div class="clients"><span>Performanceplumb · plomberie, SEO local</span><span>Islandrheumatology · clinique, SEO local</span><span>X-Ring Supply · commerce en ligne</span><span>Gava Coffee · réseaux sociaux</span></div></div>
-          <a class="btn btn-primary" href="#soumission">Demander une soumission</a>
-        </div>
-        <div class="pro-side">
-          <h4>Les 9 219 avis, tous comptés</h4>
-          <p class="side-lead num"><b>98,5 %</b> à 4 ou 5 étoiles. <b>395</b> avis avec fichiers joints.</p>
-          <div class="dist num" role="img" aria-label="Répartition des avis : 8 747 à cinq étoiles, 336 à quatre, 60 à trois, 36 à deux, 40 à une.">
-            <span class="st">5 ★</span><div class="track"><div class="fill" style="width:94.9%"></div></div><span class="v">8 747</span>
-            <span class="st">4 ★</span><div class="track"><div class="fill" style="width:3.6%"></div></div><span class="v">336</span>
-            <span class="st">3 ★</span><div class="track"><div class="fill" style="width:.7%"></div></div><span class="v">60</span>
-            <span class="st">2 ★</span><div class="track"><div class="fill" style="width:.4%"></div></div><span class="v">36</span>
-            <span class="st">1 ★</span><div class="track"><div class="fill" style="width:.4%"></div></div><span class="v">40</span>
-          </div>
-          <p class="side-note">On affiche tout, y compris les 76 avis à une ou deux étoiles. Un freelance qui cache ses mauvais avis, c'est un freelance qu'on ne prend pas.</p>
-          <p class="side-note">Source : profil public Fiverr, relevé le 13 septembre 2026.</p>
-        </div>
-      </article>
-      <p class="more-pros">Chaque freelance ajouté à la plateforme passe les mêmes contrôles avant de porter le badge. Pas d'exception.</p>
+    <div class="vet-strip">
+      <div class="vet"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg></span><b>Historique vérifié</b><p>On lit son parcours et ses avis clients, jusqu'aux mauvais.</p></div>
+      <div class="vet"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><b>Entretien technique</b><p>Un échange avec notre équipe pour valider ses compétences réelles.</p></div>
+      <div class="vet"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></span><b>Références appelées</b><p>On parle à d'anciens clients avant de confier votre dossier.</p></div>
+      <div class="vet"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/></svg></span><b>Suivi continu</b><p>Un freelance qui descend sous nos exigences perd sa place.</p></div>
     </div>
+    <p class="more-pros">On ne travaille qu'avec des freelances qui ont passé ce tri. Pas d'exception, pas de raccourci.</p>
   </div>
 </section>
-
-<section id="avis">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Témoignages</span>
-      <h2>Ce qu'en disent ses clients</h2>
-    </div>
-    <div class="testis">
-      <article class="testi"><div class="stars">★★★★★</div><p>Professionnelle, compétente et patiente, elle se soucie réellement de la croissance de mon entreprise. Elle a contribué à l'amélioration de mon site web, de mon référencement, de ma fiche Google My Business et de ma visibilité dans les résultats de recherche locaux.</p><footer><b>pokaro</b>États-Unis · fiche Google et référencement local · collaboration en cours</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Sa réflexion stratégique en référencement était de premier ordre, et sa réactivité et sa communication proactive ont rendu le projet facile. Livraison pile à l'heure.</p><footer><b>puremagicmaids</b>entreprise de services à domicile · référencement</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Je m'attendais à un bon référencement de la part d'un développeur de haut niveau, et c'est exactement ce que j'ai obtenu. Rien à redire. J'ai même reçu un guide pour continuer à travailler sur mon référencement.</p><footer><b>ksol3950</b>référencement</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Livraison rapide, comme toujours. Le trafic remonte doucement, c'est bon à voir.</p><footer><b>sandralee487</b>client régulier · référencement</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Un plaisir de travailler avec elle. Livraison ultra rapide. Excellent service client.</p><footer><b>rusulaw</b>cabinet juridique · référencement</footer></article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Livré en avance, avec des bonus en plus. Très professionnelle, je recommande.</p><footer><b>bluenotary121</b>services de notariat · référencement</footer></article>
-    </div>
-    <p class="testi-src">Avis publiés sur Fiverr, reproduits tels qu'affichés par la plateforme (traduction Fiverr pour les avis en anglais). Noms d'utilisateur Fiverr.</p>
-    <div class="band">
-      <span><b class="num"><span class="stars">★</span> 4,9 / 5</b></span>
-      <span><b class="num">9 219</b>&nbsp; avis vérifiés sur Fiverr</span>
-      <span><b class="num">98,5 %</b>&nbsp; à 4 ou 5 étoiles</span>
-      <span><b class="num">1 h</b>&nbsp; de réponse en moyenne</span>
-    </div>
-  </div>
-</section>
-
 
 <section id="garanties">
   <div class="wrap">
@@ -844,10 +801,10 @@ section + section{border-top:1px solid var(--line)}
         <ul class="final-list">
           <li>Un diagnostic gratuit : où vous en êtes, où sont vos concurrents.</li>
           <li>Une soumission à prix fixe, en français clair.</li>
-          <li>Une freelance vérifiée par Fiverr Pro pour le référencement local.</li>
+          <li>Des freelances vérifiés, triés sur le volet pour le référencement local.</li>
           <li>Pas de commission sur vos chantiers. Jamais.</li>
         </ul>
-        <p class="sub num" style="margin-top:22px"><span class="stars">★</span> 4,9 / 5 · 9 219 avis vérifiés · Fiverr Pro vérifié · Prix fixé avant de commencer</p>
+        <p class="sub" style="margin-top:22px">Freelances vérifiés · Sélection rigoureuse · Prix fixé avant de commencer</p>
       </div>
       <form class="lead" id="lead-form" novalidate>
         <div class="f2">

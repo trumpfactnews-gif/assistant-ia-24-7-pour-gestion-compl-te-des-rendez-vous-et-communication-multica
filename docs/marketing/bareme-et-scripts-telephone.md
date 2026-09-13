@@ -157,7 +157,7 @@ Il demande combien d'appels : « Ça dépend de votre ville et de vos concurrent
 > Non, et méfiez-vous de ceux qui le promettent, Google ne leur appartient pas. Ce que je garantis : le travail précis dans la soumission, le délai, le prix, et un rapport chaque mois. Si le travail n'est pas livré, on vous rembourse ou on le refait. Ça, oui.
 
 **« Pourquoi je passerais pas directement par un freelance sur Internet ? »**
-> Vous pouvez. La différence : ici vous avez un seul interlocuteur, en français, qui connaît votre métier, qui vérifie le travail avant que vous le voyiez, et qui répond au téléphone. Le freelance qui fait le travail est vérifié, ses 9 000 avis sont publics, vous pouvez les lire. Vous payez un peu plus pour ne pas avoir à gérer ça vous-même.
+> Vous pouvez. La différence : ici vous avez un seul interlocuteur, en français, qui connaît votre métier, qui vérifie le travail avant que vous le voyiez, et qui répond au téléphone. Le freelance qui fait le travail est trié sur le volet, on a vérifié son historique et ses références avant de le prendre. Vous payez un peu plus pour ne pas avoir à gérer ça vous-même.
 
 **« Je vais y penser. »**
 > Bien sûr. Je vous envoie la soumission par courriel dans l'heure, avec tout écrit : ce qu'on fait, le prix, le délai. Je vous rappelle [jour précis] pour répondre à vos questions. Ça vous va ?
