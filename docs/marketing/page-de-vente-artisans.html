@@ -1,0 +1,779 @@
+<title>Visible Pro Artisans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ink:#1B242C; --ink-2:#4B5661; --muted:#6B7580;
+  --ground:#EFF1EE; --surface:#FFFFFF; --surface-2:#F7F8F6; --line:#D3D7D2; --line-2:#E4E7E2;
+  --accent:#E9601C; --accent-deep:#B84A12; --accent-soft:#FBE9DE; --on-accent:#FFFFFF;
+  --gold:#D99A1E; --ok:#2E8B57; --ok-soft:#E3F2E9; --bad:#B23A3A; --bad-soft:#F6E3E3;
+  --hazard:repeating-linear-gradient(135deg,var(--accent) 0 12px,var(--ink) 12px 24px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#EDF0F2; --ink-2:#C2C9CF; --muted:#94A0AA;
+    --ground:#141B21; --surface:#1C252D; --surface-2:#222D36; --line:#34414B; --line-2:#2A353E;
+    --accent:#F0793A; --accent-deep:#F79A66; --accent-soft:#3A2519; --on-accent:#141B21;
+    --gold:#E8B342; --ok:#5CBF85; --ok-soft:#1E3327; --bad:#E07070; --bad-soft:#3A2222;
+    --hazard:repeating-linear-gradient(135deg,var(--accent) 0 12px,#0D1216 12px 24px);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#EDF0F2; --ink-2:#C2C9CF; --muted:#94A0AA;
+  --ground:#141B21; --surface:#1C252D; --surface-2:#222D36; --line:#34414B; --line-2:#2A353E;
+  --accent:#F0793A; --accent-deep:#F79A66; --accent-soft:#3A2519; --on-accent:#141B21;
+  --gold:#E8B342; --ok:#5CBF85; --ok-soft:#1E3327; --bad:#E07070; --bad-soft:#3A2222;
+  --hazard:repeating-linear-gradient(135deg,var(--accent) 0 12px,#0D1216 12px 24px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,.display{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:700;line-height:1.02;letter-spacing:-.005em;text-wrap:balance;margin:0}
+h1{font-size:clamp(44px,7vw,84px);font-weight:800}
+h2{font-size:clamp(34px,4.6vw,54px)}
+h3{font-size:26px}
+p{margin:0}
+.prose p{max-width:66ch}
+.prose p + p{margin-top:14px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:21px;letter-spacing:.02em;text-transform:uppercase;padding:14px 22px;border-radius:4px;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1}
+.btn-primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--surface)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.hazard{height:10px;background:var(--hazard)}
+section{padding-block:72px}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sec-head p{color:var(--ink-2);font-size:19px}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:26px;letter-spacing:.01em;text-transform:uppercase}
+.brand i{display:inline-block;width:26px;height:26px;background:var(--hazard);border-radius:3px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500;flex-wrap:wrap}
+.nav ul a{text-decoration:none;color:var(--ink-2)}
+.nav ul a:hover{color:var(--ink)}
+
+/* HERO */
+.hero{padding-block:56px 64px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:start}
+.hero .eyebrow{margin-bottom:18px;display:block}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:21px;color:var(--ink-2);max-width:56ch;margin-top:22px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border:1px solid var(--line);background:var(--surface);border-radius:6px;overflow:hidden}
+.trust div{padding:16px 18px;border-right:1px solid var(--line-2);font-size:14.5px;line-height:1.35}
+.trust div:last-child{border-right:0}
+.trust strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:24px;font-weight:700;line-height:1}
+.stars{color:var(--gold);letter-spacing:.06em}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 12px 40px -24px rgba(0,0,0,.35)}
+.hero-card .k{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.phone{margin-top:12px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface-2)}
+.phone .q{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--line-2);font-size:15px}
+.phone .q span{flex:1}
+.phone .q i{width:14px;height:14px;border:2px solid var(--muted);border-radius:50%;display:inline-block}
+.res{display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line-2);font-size:14px;align-items:center}
+.res:last-child{border-bottom:0}
+.res .pin{width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--muted);flex:none}
+.res .pin.you{background:var(--accent)}
+.res b{display:block;font-weight:600}
+.res small{color:var(--muted);font-size:12.5px}
+.res .call{margin-left:auto;font-size:12px;font-weight:600;padding:5px 9px;border:1px solid var(--line);border-radius:4px;color:var(--ink-2);white-space:nowrap}
+.res.you{background:var(--accent-soft)}
+.res.you .call{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.res.ghost{opacity:.45}
+.hero-card .foot{margin-top:12px;font-size:13.5px;color:var(--muted)}
+
+/* PROBLEM */
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.facts{display:grid;gap:0;border-top:2px solid var(--ink);margin-top:28px}
+.facts li{list-style:none;padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.facts ul{padding:0;margin:0}
+.facts .n{font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:800;color:var(--accent);line-height:1}
+.quote{background:var(--ink);color:var(--ground);padding:28px;border-radius:6px;position:relative}
+:root[data-theme="dark"] .quote{background:var(--surface-2);color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .quote{background:var(--surface-2);color:var(--ink)}}
+.quote .display{font-size:30px;font-weight:700;margin-bottom:14px}
+.quote p{font-size:16px;opacity:.92}
+.quote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--hazard);border-radius:6px 0 0 6px}
+
+/* SEO */
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 36px}
+.check{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+.check .display{font-size:24px;margin-bottom:8px}
+.check .display::before{content:"✓";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:15px;margin-right:10px;vertical-align:2px;font-family:"IBM Plex Sans",sans-serif}
+.check p{font-size:15px;color:var(--ink-2)}
+.glossary{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.glossary th,.glossary td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line-2);vertical-align:top;font-size:15.5px}
+.glossary tr:last-child td{border-bottom:0}
+.glossary th{background:var(--surface-2);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.glossary td:first-child{font-family:"IBM Plex Mono",monospace;font-weight:500;width:32%;font-size:14.5px}
+.glossary td:first-child small{display:block;color:var(--muted);font-weight:400;font-family:"IBM Plex Sans",sans-serif;font-size:13px;margin-top:3px}
+.tablewrap{overflow-x:auto}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.serp{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.serp .tag{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.serp.before .tag{background:var(--bad-soft);color:var(--bad)}
+.serp.after .tag{background:var(--ok-soft);color:var(--ok)}
+.serp .q{margin:12px 14px 8px;padding:10px 14px;border:1px solid var(--line);border-radius:22px;font-size:15px;display:flex;justify-content:space-between}
+.serp .q span:last-child{color:var(--muted)}
+.serp .map{margin:0 14px;height:70px;background:linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/28px 28px,var(--surface-2);border:1px solid var(--line-2);border-radius:4px;position:relative}
+.serp .map i{position:absolute;width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--muted)}
+.serp .map i.you{background:var(--accent);width:18px;height:18px}
+.serp .list{padding:8px 14px 14px}
+.serp .web{padding:12px 14px 14px;border-top:1px solid var(--line-2);font-size:14px}
+.serp .web b{display:block;color:#1a4fbd;font-weight:500}
+:root[data-theme="dark"] .serp .web b{color:#8AB4F8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .serp .web b{color:#8AB4F8}}
+.serp .web small{color:var(--muted)}
+.serp .note{padding:12px 14px;border-top:1px solid var(--line-2);font-size:14px;color:var(--ink-2)}
+
+/* NUMBERS */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.case .display{font-size:24px}
+.case .who{font-size:14px;color:var(--muted)}
+.case table{width:100%;border-collapse:collapse;font-size:13.5px}
+.case th{text-align:right;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:6px 0;font-weight:600}
+.case th:first-child{text-align:left}
+.case td{padding:8px 0;border-top:1px solid var(--line-2);vertical-align:top}
+.case td:not(:first-child){text-align:right;font-family:"IBM Plex Mono",monospace;font-size:13px;white-space:nowrap;padding-left:8px}
+.case td.after{color:var(--ink);font-weight:500}
+.case tr.total td{border-top:2px solid var(--ink);font-weight:600}
+.case tr.total td.after{color:var(--accent);font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:800}
+.case .fine{font-size:13px;color:var(--muted);margin-top:auto}
+.roi{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-top:24px;align-items:stretch}
+.roi .box{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:800;line-height:1.05;color:var(--accent)}
+.kpi span{font-size:14px;color:var(--ink-2);display:block;margin-top:6px}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.svc .display{font-size:25px}
+.svc dl{margin:0;display:grid;gap:8px;font-size:14.5px}
+.svc dt{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.svc dd{margin:0;color:var(--ink-2)}
+.svc dd.strong{color:var(--ink)}
+.svc .price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.svc .price b{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800}
+.svc .price b small{font-size:13px;font-family:"IBM Plex Sans",sans-serif;font-weight:500;color:var(--muted);margin-right:4px;text-transform:uppercase;letter-spacing:.06em}
+.svc .price span{font-size:13px;color:var(--muted)}
+.svc.free{border-color:var(--accent);border-width:2px}
+.svc.free .price b{color:var(--accent)}
+.packs{margin-top:36px}
+.packs table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.packs th,.packs td{padding:16px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top;font-size:15.5px}
+.packs tr:last-child td{border-bottom:0}
+.packs th{background:var(--surface-2);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.packs td:first-child{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800}
+.packs td:last-child{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800;white-space:nowrap}
+.packs td:last-child small{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
+.packs tr.hl td{background:var(--accent-soft)}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:2px solid var(--ink)}
+.step{padding:20px 18px 20px 0;border-right:1px solid var(--line);padding-left:18px}
+.step:first-child{padding-left:0}
+.step:last-child{border-right:0}
+.step .n{font-family:"Barlow Condensed",sans-serif;font-size:44px;font-weight:800;color:var(--accent);line-height:1}
+.step b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:700;margin:10px 0 6px;line-height:1.05}
+.step p{font-size:14.5px;color:var(--ink-2)}
+
+/* FREELANCES */
+.verify{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;padding:0;margin:24px 0 0;list-style:none}
+.verify li{display:grid;grid-template-columns:24px 1fr;gap:10px;font-size:15.5px;align-items:start}
+.verify li::before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:13px;font-weight:700;margin-top:2px}
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.pro{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.pro .top{display:flex;gap:14px;align-items:center}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--ground);display:grid;place-items:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:26px;flex:none;position:relative}
+.avatar::after{content:"";position:absolute;right:2px;bottom:2px;width:12px;height:12px;border-radius:50%;background:var(--ok);border:2px solid var(--surface)}
+.pro .name{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:700;line-height:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Sans",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:4px;text-transform:uppercase;line-height:1.2}
+.badge.vp{background:var(--accent);color:var(--on-accent)}
+.badge.top{background:var(--ink);color:var(--ground)}
+.badge.top::after{content:"◆◆◆";font-size:8px;letter-spacing:1px}
+:root[data-theme="dark"] .badge.top{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .badge.top{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}}
+.pro .role{font-size:15px;color:var(--ink-2)}
+.pro .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;align-items:center}
+.pro .meta .rate{font-weight:600}
+.pro .meta .rate .stars{margin-right:4px}
+.pro .meta .rate u{color:var(--muted);font-weight:400;margin-left:4px}
+.pro .meta .rt{color:var(--muted)}
+.pro h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 6px;font-weight:600}
+.pro .vfor{display:grid;gap:4px;font-size:14.5px}
+.pro .vfor span::before{content:"✓ ";color:var(--ok);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:20px;color:var(--ink-2);background:var(--surface-2)}
+.clients{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13.5px;color:var(--ink-2)}
+.clients span::before{content:"";display:inline-block;width:14px;height:14px;background:var(--line);border-radius:3px;margin-right:6px;vertical-align:-2px}
+.pro .rec{font-size:13px;color:var(--ok);font-weight:500;margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2)}
+.pro .btn{justify-content:center;font-size:18px;padding:11px 16px}
+
+/* TESTIMONIALS */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.testi{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.testi .stars{font-size:15px}
+.testi p{font-size:16px;line-height:1.5}
+.testi p::before{content:"« "}
+.testi p::after{content:" »"}
+.testi footer{margin-top:auto;font-size:14px;color:var(--muted)}
+.testi footer b{color:var(--ink);font-weight:600;display:block}
+.testi.wide{grid-column:span 1}
+.band{margin-top:24px;display:flex;gap:28px;flex-wrap:wrap;align-items:center;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-radius:6px;font-size:15px}
+.band b{font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:800;line-height:1}
+
+/* LOGOS */
+.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.logo{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;align-items:center;gap:12px}
+.logo i{width:44px;height:44px;border-radius:6px;background:var(--surface-2);border:1px dashed var(--line);display:grid;place-items:center;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:18px;color:var(--ink-2);flex:none;font-style:normal}
+.logo b{display:block;font-weight:600;font-size:15px;line-height:1.2}
+.logo small{color:var(--muted);font-size:13px}
+.logos-foot{margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* GUARANTEES */
+.guar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 20px 20px 24px;position:relative}
+.g::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent);border-radius:6px 0 0 6px}
+.g b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:700;margin-bottom:6px;line-height:1.05}
+.g p{font-size:14.5px;color:var(--ink-2)}
+
+/* FAQ */
+.faq{display:grid;gap:0;border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-family:"Barlow Condensed",sans-serif;font-size:24px;font-weight:700;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:28px;color:var(--accent);font-weight:600;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 18px;color:var(--ink-2);max-width:70ch;font-size:16px}
+
+/* FINAL */
+.final{background:var(--ink);color:var(--ground);padding-block:80px}
+:root[data-theme="dark"] .final{background:var(--surface-2);color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .final{background:var(--surface-2);color:var(--ink)}}
+.final h2{font-size:clamp(38px,5.4vw,66px);max-width:20ch}
+.final h2 em{font-style:normal;color:var(--accent)}
+.final p{margin-top:18px;font-size:19px;opacity:.9;max-width:52ch}
+.final .ctas{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.final .sub{font-size:14px;opacity:.75}
+.footer{padding-block:24px;font-size:13.5px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
+.demo-note b{color:var(--ink-2)}
+
+@media (max-width:980px){
+  .hero-grid,.two,.roi,.ba{grid-template-columns:1fr}
+  .cases,.services,.profiles,.testis,.guar,.checks{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .trust{grid-template-columns:repeat(2,1fr)}
+  .trust div:nth-child(2){border-right:0}
+  .trust div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  section{padding-block:52px}
+  .cases,.services,.profiles,.testis,.guar,.checks,.kpis,.verify,.steps,.logos{grid-template-columns:1fr}
+  .trust{grid-template-columns:1fr}
+  .trust div{border-right:0;border-bottom:1px solid var(--line-2)}
+  .trust div:last-child{border-bottom:0}
+}
+@media (prefers-reduced-motion: no-preference){
+  .btn{transition:background .15s ease,border-color .15s ease}
+}
+</style>
+
+<div class="hazard"></div>
+<header class="wrap nav">
+  <div class="brand"><i></i> Visible Pro</div>
+  <ul>
+    <li><a href="#probleme">Le problème</a></li>
+    <li><a href="#seo">Le référencement</a></li>
+    <li><a href="#chiffres">Les chiffres</a></li>
+    <li><a href="#services">Services et tarifs</a></li>
+    <li><a href="#freelances">Nos freelances</a></li>
+    <li><a href="#faq">Questions</a></li>
+  </ul>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Plombiers · Couvreurs · Électriciens · Serruriers · Rénovation</span>
+        <h1>Vos concurrents sont en première page de Google. <em>Vous, non.</em> On règle ça.</h1>
+        <p class="lead">Des freelances vérifiés, spécialisés dans le bâtiment, rendent votre entreprise visible au moment où un client cherche un artisan près de chez lui. Vous, vous restez sur vos chantiers.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#diagnostic">Recevoir mon diagnostic gratuit</a>
+          <a class="btn btn-ghost" href="#services">Voir les services et les tarifs</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Exemple de recherche Google">
+        <div class="k">Ce que voit votre client à 19 h</div>
+        <div class="phone">
+          <div class="q"><i></i><span>plombier urgence nantes</span></div>
+          <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58) · Ouvert 24h/24</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau 44</b><small>★ 4,5 (31) · Ouvert</small></div><span class="call">Appeler</span></div>
+          <div class="res you"><div class="pin you"></div><div><b>Votre entreprise</b><small>★ 4,9 (42) · Ouvert 24h/24</small></div><span class="call">Appeler</span></div>
+          <div class="res ghost"><div class="pin"></div><div><b>Le 4e, le 5e, le 6e…</b><small>Personne ne descend jusque-là</small></div></div>
+        </div>
+        <p class="foot">Trois entreprises sur la carte. Le client appelle la première qui décroche. Tout le travail consiste à vous mettre dans ces trois-là.</p>
+      </aside>
+    </div>
+    <div class="trust">
+      <div><strong class="num"><span class="stars">★</span> 4,9 / 5</strong>sur 1 240 avis d'artisans</div>
+      <div><strong>Vérifiés</strong>chaque freelance, un par un</div>
+      <div><strong>24 h</strong>réponse sous 24 h ouvrées</div>
+      <div><strong>Prix fixe</strong>fixé avant de commencer</div>
+    </div>
+  </div>
+</section>
+
+<section id="probleme">
+  <div class="wrap">
+    <p class="demo-note"><b>Version de démonstration.</b> Le nom « Visible Pro », les notes, le nombre d'avis, les chiffres avant/après, les tarifs, les freelances, les témoignages et les entreprises clientes sont des exemples plausibles pour le secteur. À remplacer par vos données réelles avant mise en ligne.</p>
+    <div class="two">
+      <div class="prose">
+        <div class="sec-head">
+          <span class="eyebrow">Le problème</span>
+          <h2>Vous faites du bon boulot. Le problème, c'est que personne ne le sait.</h2>
+        </div>
+        <p>Un client a une fuite à 19 h. Il ne fouille pas dans ses contacts. Il prend son téléphone et tape « plombier urgence » avec le nom de sa ville.</p>
+        <p>Google lui montre trois entreprises sur la carte, puis une liste en dessous. Il appelle la première. Si elle ne répond pas, il appelle la deuxième. Il ne descend presque jamais plus bas.</p>
+        <p>Si vous n'êtes pas dans ces trois-là, ce chantier n'existe pas pour vous. Il est parti chez un concurrent. Pas parce qu'il est meilleur. Parce qu'il était affiché.</p>
+        <div class="facts">
+          <ul>
+            <li><span class="n">1</span><span>Sur une recherche locale, la grande majorité des clics vont aux trois premiers résultats. Le reste se partage les miettes.</span></li>
+            <li><span class="n">2</span><span>Beaucoup d'artisans n'ont pas de fiche Google à jour. Certains n'en ont pas du tout. Google affiche alors le concurrent qui en a une.</span></li>
+            <li><span class="n">3</span><span>Le bouche-à-oreille marche toujours. Mais même un client recommandé tape votre nom sur Google avant d'appeler. S'il ne trouve rien, ou deux avis à une étoile, il hésite.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="display">« Je n'ai pas besoin de site, j'ai déjà trop de boulot. »</div>
+        <p>C'est ce que disent la plupart des artisans qui nous contactent. Puis un gros client les lâche, ou un promoteur change de fournisseur. Le carnet se vide et le téléphone ne sonne pas, parce que personne ne les trouve.</p>
+        <p style="margin-top:12px"><strong>Être visible, ce n'est pas pour aujourd'hui. C'est pour le jour où vous en aurez besoin.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Sans jargon</span>
+      <h2>Le référencement, expliqué en deux minutes</h2>
+      <p>Le référencement (le mot anglais est SEO), c'est le travail qui fait remonter votre entreprise dans Google quand quelqu'un cherche votre métier dans votre secteur. Rien de plus.</p>
+    </div>
+    <p class="prose" style="max-width:66ch">Google fonctionne comme un client méfiant. Avant de vous recommander, il vérifie trois choses :</p>
+    <div class="checks">
+      <div class="check"><div class="display">Vous existez vraiment ?</div><p>Une fiche Google avec adresse, téléphone, horaires, photos de chantiers.</p></div>
+      <div class="check"><div class="display">Vous faites bien ce que vous dites ?</div><p>Un site qui décrit clairement vos prestations, vos zones d'intervention, votre façon de travailler.</p></div>
+      <div class="check"><div class="display">D'autres gens vous font confiance ?</div><p>Des avis clients, et des sites sérieux qui parlent de vous.</p></div>
+    </div>
+    <p class="prose" style="max-width:66ch;margin-bottom:16px">Chaque point qu'on améliore fait monter votre entreprise d'un cran. Voici les mots que vous entendrez, traduits.</p>
+    <div class="tablewrap">
+    <table class="glossary">
+      <thead><tr><th>Le mot</th><th>Ce que ça veut dire pour vous</th></tr></thead>
+      <tbody>
+        <tr><td>Référencement local</td><td>Être affiché sur la carte Google quand un client de votre ville cherche votre métier. C'est la priorité numéro un pour un artisan. « Électricien Villeurbanne » doit sortir votre fiche, pas celle d'une franchise nationale.</td></tr>
+        <tr><td>Fiche Google<small>Google Business Profile, l'ancien Google My Business</small></td><td>Votre vitrine gratuite sur Google et Google Maps. Photos, horaires, avis, bouton « Appeler ». C'est là qu'un client vous juge en dix secondes.</td></tr>
+        <tr><td>Mots-clés</td><td>Ce que tapent vraiment vos clients. Pas « solutions de couverture », mais « réparation toiture fuite » ou « remplacement tuiles ». On construit votre site autour de ces mots-là.</td></tr>
+        <tr><td>Page de service</td><td>Une page de votre site dédiée à une seule prestation. « Dépannage chaudière » a sa page. « Salle de bain clé en main » a la sienne. Google sait alors exactement quoi montrer à qui.</td></tr>
+        <tr><td>Backlinks</td><td>Des sites sérieux qui mettent un lien vers le vôtre : annuaire professionnel, fournisseur, journal local. Pour Google, c'est une recommandation. Plus vous en avez, plus il vous fait confiance.</td></tr>
+        <tr><td>Avis Google</td><td>Les étoiles sous votre nom. Elles comptent dans le classement et dans la décision du client. Une entreprise à 4,8 avec 90 avis passe devant une entreprise à 4,2 avec 6 avis, même si la seconde est meilleure sur le terrain.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="ba">
+      <div class="serp before">
+        <div class="tag"><span>Avant</span><span>Recherche « plombier urgence Nantes »</span></div>
+        <div class="q"><span>plombier urgence nantes</span><span>🔍</span></div>
+        <div class="map"><i style="left:22%;top:30%"></i><i style="left:55%;top:50%"></i><i style="left:78%;top:25%"></i></div>
+        <div class="list">
+          <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau 44</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>SOS Plombier Nantes</b><small>★ 4,3 (19)</small></div><span class="call">Appeler</span></div>
+        </div>
+        <div class="note">Votre entreprise n'apparaît pas dans les trois résultats de la carte. Elle est en page 2, ou nulle part. Le client appelle un concurrent.</div>
+      </div>
+      <div class="serp after">
+        <div class="tag"><span>Après 3 mois</span><span>Même recherche</span></div>
+        <div class="q"><span>plombier urgence nantes</span><span>🔍</span></div>
+        <div class="map"><i class="you" style="left:48%;top:38%"></i><i style="left:22%;top:30%"></i><i style="left:78%;top:25%"></i></div>
+        <div class="list">
+          <div class="res you"><div class="pin you"></div><div><b>Votre entreprise</b><small>★ 4,9 (40) · photos récentes</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau 44</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
+        </div>
+        <div class="web"><b>Dépannage plomberie urgence Nantes · Votre entreprise</b><small>Intervention en moins d'une heure, devis annoncé avant de commencer…</small></div>
+        <div class="note">Votre fiche est dans les trois premiers sur la carte. Votre page « dépannage plomberie urgence » sort juste en dessous. Le client vous voit deux fois. Il vous appelle.</div>
+      </div>
+    </div>
+    <p class="prose" style="max-width:66ch;margin-top:24px;font-size:18px"><strong>Ce qui change, ce n'est pas votre travail ni vos prix.</strong> C'est le nombre de gens qui vous voient au moment précis où ils ont besoin de vous.</p>
+  </div>
+</section>
+
+<section id="chiffres">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Avant / après</span>
+      <h2>Ce que ça change sur le téléphone et sur le compte en banque</h2>
+      <p>Résultats types après six mois, mesurés sur les entreprises accompagnées. Ce ne sont pas des promesses. C'est ce qu'on observe quand le travail est fait correctement.</p>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · agglomération de 150 000 habitants</div></div>
+        <table class="num">
+          <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
+          <tbody>
+            <tr><td>Carte Google<br><small style="color:var(--muted)">« plombier + ville »</small></td><td>Non classé</td><td class="after">Top 3</td></tr>
+            <tr><td>Vues de la fiche Google</td><td>210</td><td class="after">2 900</td></tr>
+            <tr><td>Appels venant de Google</td><td>4</td><td class="after">38</td></tr>
+            <tr><td>Demandes de devis</td><td>2</td><td class="after">19</td></tr>
+            <tr><td>Chantiers signés via le web</td><td>1</td><td class="after">11</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 €</td><td class="after">≈ 14 000 €</td></tr>
+          </tbody>
+        </table>
+      </article>
+      <article class="case">
+        <div><div class="display">Couverture</div><div class="who">6 personnes · ville moyenne et zone rurale</div></div>
+        <table class="num">
+          <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
+          <tbody>
+            <tr><td>Vues de la fiche Google</td><td>90</td><td class="after">1 400</td></tr>
+            <tr><td>Appels venant de Google</td><td>2</td><td class="after">17</td></tr>
+            <tr><td>Demandes de devis</td><td>1</td><td class="after">9</td></tr>
+            <tr><td>Chantiers signés</td><td>0 à 1</td><td class="after">4</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 €</td><td class="after">≈ 26 000 €</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">Le panier moyen est élevé en couverture. Une seule rénovation de toiture rembourse l'année entière.</p>
+      </article>
+      <article class="case">
+        <div><div class="display">Électricien indépendant</div><div class="who">Seul · ville de 60 000 habitants</div></div>
+        <table class="num">
+          <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
+          <tbody>
+            <tr><td>Appels venant de Google</td><td>3</td><td class="after">22</td></tr>
+            <tr><td>Demandes de devis</td><td>2</td><td class="after">12</td></tr>
+            <tr><td>Chantiers signés</td><td>1</td><td class="after">7</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 €</td><td class="after">≈ 6 500 €</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+    <div class="roi">
+      <div class="box">
+        <h3 style="margin-bottom:16px">Ce que ça coûte, en face</h3>
+        <div class="kpis">
+          <div class="kpi"><strong class="num">2 400 à 4 500 €</strong><span>investissement moyen sur six mois, selon les services choisis</span></div>
+          <div class="kpi"><strong class="num">3 à 9 ×</strong><span>retour observé sur la première année</span></div>
+          <div class="kpi"><strong>1 chantier</strong><span>de rénovation couvre souvent la totalité</span></div>
+        </div>
+      </div>
+      <div class="box prose">
+        <h3 style="margin-bottom:10px">Pourquoi ces chiffres ne sont pas gonflés</h3>
+        <p>Un client qui tape « chaudière en panne » a déjà décidé d'acheter. Vous n'avez personne à convaincre. Vous avez juste à être là. C'est pour ça qu'un appel venant de Google se transforme en chantier bien plus souvent qu'un prospectus dans une boîte aux lettres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Services et tarifs</span>
+      <h2>Nos services, et ce qu'ils changent pour vous</h2>
+      <p>Chaque service est réalisé par un freelance vérifié, spécialisé dans les métiers du bâtiment. Prix fixé avant de commencer. Vous restez propriétaire de tout ce qui est créé.</p>
+    </div>
+    <div class="services">
+      <article class="svc free">
+        <div class="display">Diagnostic de visibilité</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>On regarde où vous apparaissez (ou pas) sur Google pour vos prestations et votre zone, et où sont vos concurrents.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous savez exactement ce qui vous manque avant de dépenser un euro.</dd>
+          <dt>Idéal si</dt><dd>Vous ne savez pas par où commencer.</dd>
+        </dl>
+        <div class="price"><b>Offert</b><span>48 h</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Fiche Google optimisée</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Création ou remise à niveau de votre fiche Google : catégories, zones, horaires, photos de chantiers, réponses aux avis, mise à jour hebdomadaire pendant trois mois.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous apparaissez sur la carte Google avec le bouton « Appeler » sous votre nom. C'est le service qui fait sonner le téléphone le plus vite.</dd>
+          <dt>Idéal si</dt><dd>Vous n'avez pas de fiche, ou une fiche vide avec deux photos floues.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>290 €</b><span>7 jours</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Référencement local</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Tout ce qui fait monter votre entreprise dans les résultats de votre ville : fiche Google, pages par prestation et par commune, annuaires professionnels, coordonnées cohérentes partout.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous passez devant les concurrents sur « votre métier + votre ville » et sur les communes autour.</dd>
+          <dt>Idéal si</dt><dd>Vous avez déjà un site mais il ne ramène rien.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>490 € / mois</b><span>3 mois minimum · résultats entre 6 et 12 semaines</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Création de site web artisan</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Un site clair et rapide, pensé pour le téléphone : vos prestations, vos zones, vos photos de chantiers, vos avis, un bouton d'appel visible partout. Bases du référencement déjà en place.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Un client qui vous cherche trouve en dix secondes ce que vous faites, où, et comment vous joindre. Il appelle au lieu de continuer à chercher.</dd>
+          <dt>Idéal si</dt><dd>Vous n'avez pas de site, ou un site fait il y a huit ans qui ne s'affiche pas sur mobile.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>1 490 €</b><span>3 semaines</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Refonte d'un site existant</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>On garde ce qui marche, on corrige ce qui bloque : lenteur, affichage mobile, pages sans titre, textes qui ne parlent d'aucune prestation précise.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Votre site actuel commence enfin à apparaître dans Google au lieu de servir de carte de visite que personne ne voit.</dd>
+          <dt>Idéal si</dt><dd>Vous avez payé un site et il ne vous a jamais ramené un client.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>790 €</b><span>2 semaines</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Pages par prestation</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Une page dédiée pour chaque service que vous vendez, écrite avec les mots que tapent vos clients. « Recherche de fuite », « Mise aux normes tableau électrique », « Ouverture de porte claquée ».</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous sortez sur des recherches précises, celles où le client est prêt à signer.</dd>
+          <dt>Idéal si</dt><dd>Votre site dit « tous travaux » sans jamais détailler.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>150 € / page</b><span>5 jours par lot</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Collecte d'avis clients</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Un système simple pour demander un avis à chaque fin de chantier : un SMS ou un QR code sur la facture, un message qui part tout seul, un suivi des réponses.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous passez de 6 avis à 60 en quelques mois. Google vous fait monter, et les clients vous choisissent.</dd>
+          <dt>Idéal si</dt><dd>Vos clients sont contents mais ne le disent nulle part.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>190 €</b><span>3 jours</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Notoriété locale (backlinks)</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>On fait parler de vous sur des sites sérieux de votre secteur : annuaires professionnels, fournisseurs, presse locale, associations.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Google considère que d'autres vous recommandent. Votre site monte plus vite et tient sa place.</dd>
+          <dt>Idéal si</dt><dd>Vous êtes bien placé mais un concurrent vous passe devant régulièrement.</dd>
+        </dl>
+        <div class="price"><b><small>à partir de</small>350 € / mois</b><span>effet progressif sur 3 à 6 mois</span></div>
+      </article>
+      <article class="svc">
+        <div class="display">Option : publicité Google urgences</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Des annonces payantes en haut de Google sur les recherches d'urgence de votre zone. Vous payez seulement quand quelqu'un clique.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Des appels dès la première semaine, le temps que le référencement naturel prenne le relais.</dd>
+          <dt>Idéal si</dt><dd>Vous faites de l'urgence (plomberie, serrurerie, électricité) et vous voulez du volume tout de suite.</dd>
+        </dl>
+        <div class="price"><b><small>gestion dès</small>300 € / mois</b><span>+ budget pub fixé avec vous · en ligne sous 5 jours</span></div>
+      </article>
+    </div>
+
+    <div class="packs tablewrap">
+      <table>
+        <thead><tr><th>Pack</th><th>Ce qu'il contient</th><th>Pour qui</th><th>Prix</th></tr></thead>
+        <tbody>
+          <tr><td>Démarrage</td><td>Diagnostic, fiche Google optimisée, collecte d'avis</td><td>L'artisan seul qui veut être trouvé sur la carte</td><td>590 €</td></tr>
+          <tr class="hl"><td>Visibilité</td><td>Démarrage + site web artisan + 5 pages par prestation</td><td>L'entreprise de 2 à 5 personnes qui veut un vrai outil</td><td>2 490 €</td></tr>
+          <tr><td>Croissance</td><td>Visibilité + référencement local 6 mois + notoriété locale</td><td>L'entreprise qui veut dominer sa zone</td><td>4 900 €<small>payable en 6 fois</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="comment">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Concrètement</span>
+      <h2>Comment ça se passe</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>Vous remplissez le formulaire</b><p>Trois minutes. Votre métier, votre ville, ce que vous avez déjà (site, fiche Google, rien du tout).</p></div>
+      <div class="step"><div class="n">2</div><b>On vous rappelle sous 24 h</b><p>Diagnostic gratuit : où vous en êtes, où sont vos concurrents, ce qui manque.</p></div>
+      <div class="step"><div class="n">3</div><b>Vous choisissez votre freelance</b><p>Deux ou trois profils vérifiés, adaptés à votre métier et à votre budget. Vous voyez leurs avis et leurs résultats.</p></div>
+      <div class="step"><div class="n">4</div><b>Le freelance bosse, vous suivez</b><p>Un point mensuel en français clair : vues, appels, devis. Pas de rapport de 40 pages.</p></div>
+      <div class="step"><div class="n">5</div><b>Vous payez ce qui était prévu</b><p>Prix fixé avant de commencer. Rien ne bouge sans votre accord.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="freelances">
+  <div class="wrap">
+    <div class="two" style="align-items:start">
+      <div class="prose">
+        <div class="sec-head" style="margin-bottom:8px">
+          <span class="eyebrow">Le badge Pro vérifié</span>
+          <h2>Des freelances vérifiés, pas des inconnus trouvés sur un forum</h2>
+        </div>
+        <p>Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. Chaque freelance qui porte le badge <strong>Pro vérifié</strong> a passé nos contrôles. Un freelance qui descend sous ces exigences perd le badge. Simple.</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-family:'IBM Plex Sans',sans-serif;font-weight:600">Ce qu'on vérifie avant de donner le badge</h3>
+        <ul class="verify" style="grid-template-columns:1fr">
+          <li>Au moins cinq artisans accompagnés, avec des résultats qu'on a pu contrôler nous-mêmes.</li>
+          <li>Un entretien technique avec notre équipe.</li>
+          <li>Des références clients appelées une par une.</li>
+          <li>Une note moyenne maintenue au-dessus de 4,7 / 5.</li>
+          <li>Une réponse à vos messages sous 24 h ouvrées.</li>
+          <li>Une façon d'expliquer sans jargon. Si on ne comprend pas, vous ne comprendrez pas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="profiles">
+      <article class="pro">
+        <div class="top">
+          <div class="avatar" aria-hidden="true">JR</div>
+          <div>
+            <div class="name">Julien R. <span class="badge vp">Pro vérifié</span></div>
+            <div class="role">Référencement local · plomberie et chauffage</div>
+          </div>
+        </div>
+        <div class="meta"><span class="rate num"><span class="stars">★</span>4,9 <u>(312 avis)</u></span><span class="badge top">Top noté</span><span class="rt">Répond en 2 h</span></div>
+        <div><h4>Vérifié pour</h4><div class="vfor"><span>Référencement local</span><span>Fiche Google</span></div></div>
+        <div><h4>Compétences</h4><div class="chips"><span class="chip">pages par prestation</span><span class="chip">avis clients</span><span class="chip">annuaires pros</span><span class="chip">coordonnées cohérentes</span></div></div>
+        <div><h4>Parmi ses clients</h4><div class="clients"><span>Plomberie Girard &amp; Fils</span><span>Chauffage Martin</span><span>SOS Dépannage 44</span></div></div>
+        <div class="rec">Recommandé par d'autres freelances de la plateforme</div>
+        <a class="btn btn-ghost" href="#diagnostic">Contacter Julien</a>
+      </article>
+      <article class="pro">
+        <div class="top">
+          <div class="avatar" aria-hidden="true">SL</div>
+          <div>
+            <div class="name">Sophie L. <span class="badge vp">Pro vérifiée</span></div>
+            <div class="role">Sites web pour artisans du bâtiment</div>
+          </div>
+        </div>
+        <div class="meta"><span class="rate num"><span class="stars">★</span>5,0 <u>(148 avis)</u></span><span class="badge top">Top notée</span><span class="rt">Répond en 1 h</span></div>
+        <div><h4>Vérifiée pour</h4><div class="vfor"><span>Création de site</span><span>Référencement</span></div></div>
+        <div><h4>Compétences</h4><div class="chips"><span class="chip">sites rapides mobile</span><span class="chip">photos de chantiers</span><span class="chip">formulaires de devis</span><span class="chip">refonte de sites anciens</span></div></div>
+        <div><h4>Parmi ses clients</h4><div class="clients"><span>Toitures de l'Ouest</span><span>Rénov'Habitat Occitanie</span><span>Élec'Pro Rennes</span></div></div>
+        <div class="rec">Recommandée par d'autres freelances de la plateforme</div>
+        <a class="btn btn-ghost" href="#diagnostic">Contacter Sophie</a>
+      </article>
+      <article class="pro">
+        <div class="top">
+          <div class="avatar" aria-hidden="true">KB</div>
+          <div>
+            <div class="name">Karim B. <span class="badge vp">Pro vérifié</span></div>
+            <div class="role">Avis, réputation et publicité Google urgences</div>
+          </div>
+        </div>
+        <div class="meta"><span class="rate num"><span class="stars">★</span>4,8 <u>(96 avis)</u></span><span class="rt">Répond en 3 h</span></div>
+        <div><h4>Vérifié pour</h4><div class="vfor"><span>Publicité Google</span><span>Collecte d'avis</span></div></div>
+        <div><h4>Compétences</h4><div class="chips"><span class="chip">campagnes urgence</span><span class="chip">réponses aux avis négatifs</span><span class="chip">suivi des appels</span><span class="chip">serrurerie / plomberie</span></div></div>
+        <div><h4>Parmi ses clients</h4><div class="clients"><span>Serrurerie Express Lyon</span><span>Plomberie Nord Isère</span><span>Dépann'Élec 31</span></div></div>
+        <div class="rec">Recommandé par d'autres freelances de la plateforme</div>
+        <a class="btn btn-ghost" href="#diagnostic">Contacter Karim</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Témoignages</span>
+      <h2>Ce qu'en disent les artisans</h2>
+    </div>
+    <div class="testis">
+      <article class="testi"><div class="stars">★★★★★</div><p>Je pensais que c'était un truc pour les grosses boîtes. En trois mois je suis passé de trois ou quatre appels par mois à vingt-cinq, trente. J'ai dû embaucher un gars.</p><footer><b>Nicolas</b>plombier chauffagiste, Angers</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Ce que j'ai apprécié : on m'a expliqué ce qu'on faisait sans me prendre pour une idiote. Chaque mois j'ai un tableau avec mes appels et mes devis. C'est concret, je vois où va l'argent.</p><footer><b>Sandrine</b>entreprise de rénovation, 8 salariés, Toulouse</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Serrurier, mon métier c'est l'urgence. Avant, les gens tombaient sur des plateformes qui prennent 40 % de commission et me refilent les clients au compte-gouttes. Maintenant ils tombent sur moi. Directement.</p><footer><b>Mehdi</b>serrurier, Lyon</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Toiture à 18 000 € signée via le site, deux mois après la mise en ligne. Le site était remboursé dix fois. Depuis j'ai arrêté les prospectus.</p><footer><b>Patrick</b>couvreur, Vendée</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>J'avais un site fait par mon neveu. Joli, mais invisible. Ils ont refait les pages par prestation. Trois semaines après, on sort sur « électricien mise aux normes » dans ma ville. Je n'y croyais pas.</p><footer><b>Laurent</b>électricien, Rennes</footer></article>
+      <article class="testi" style="background:var(--accent-soft);border-color:var(--accent)"><div class="stars">★★★★★</div><p>Ils m'ont dit clairement ce qui ne marcherait pas chez moi et ce qui marcherait. Pas de vente forcée. J'ai pris le pack Démarrage, puis le site six mois plus tard, quand j'ai vu les appels.</p><footer><b>Farid</b>rénovation et carrelage, Marseille</footer></article>
+    </div>
+    <div class="band">
+      <span><b class="num"><span class="stars">★</span> 4,9 / 5</b></span>
+      <span><b class="num">1 240</b>&nbsp; avis vérifiés</span>
+      <span><b class="num">860</b>&nbsp; artisans accompagnés depuis 2021</span>
+    </div>
+  </div>
+</section>
+
+<section id="clients">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Références</span>
+      <h2>Ils nous ont fait confiance</h2>
+    </div>
+    <div class="logos">
+      <div class="logo"><i>PG</i><div><b>Plomberie Girard &amp; Fils</b><small>plomberie · Nantes</small></div></div>
+      <div class="logo"><i>TO</i><div><b>Toitures de l'Ouest</b><small>couverture · Vendée</small></div></div>
+      <div class="logo"><i>EP</i><div><b>Élec'Pro Rennes</b><small>électricité · Rennes</small></div></div>
+      <div class="logo"><i>SE</i><div><b>Serrurerie Express Lyon</b><small>serrurerie · Lyon</small></div></div>
+      <div class="logo"><i>RH</i><div><b>Rénov'Habitat Occitanie</b><small>rénovation · Toulouse</small></div></div>
+      <div class="logo"><i>CM</i><div><b>Chauffage Martin</b><small>chauffage · Angers</small></div></div>
+      <div class="logo"><i>DE</i><div><b>Dépann'Élec 31</b><small>électricité · Haute-Garonne</small></div></div>
+      <div class="logo"><i>PN</i><div><b>Plomberie Nord Isère</b><small>plomberie · Isère</small></div></div>
+    </div>
+    <p class="logos-foot">Emplacements de logos à remplacer par vos vrais clients, avec leur accord d'usage. Ne mentionnez un réseau ou une fédération que si l'accord existe.</p>
+  </div>
+</section>
+
+<section id="garanties">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Nos engagements</span>
+      <h2>Ce qu'on vous garantit</h2>
+    </div>
+    <div class="guar">
+      <div class="g"><b>Prix fixé avant de commencer</b><p>Pas de dépassement, pas d'option cachée.</p></div>
+      <div class="g"><b>Vous restez propriétaire de tout</b><p>Votre site, votre nom de domaine, votre fiche Google, vos accès. Toujours. Si vous partez, vous partez avec.</p></div>
+      <div class="g"><b>Pas d'engagement au-delà de la mission</b><p>Les services mensuels s'arrêtent quand vous le décidez, avec un mois de préavis.</p></div>
+      <div class="g"><b>Un freelance qui ne livre pas est remplacé</b><p>Sans frais, sans repartir de zéro.</p></div>
+      <div class="g"><b>Pas de commission sur vos chantiers</b><p>Les clients que vous gagnez sont à vous.</p></div>
+      <div class="g"><b>Un rapport mensuel lisible</b><p>Vues, appels, devis. En français, sur une page.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Ce qu'on nous demande le plus souvent</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>J'ai déjà une fiche Google, ça suffit ?</summary><p>Si elle est complète, avec des photos récentes, des avis réguliers et des réponses à ces avis, c'est un bon début. Dans la pratique, neuf fiches sur dix qu'on audite sont incomplètes ou mal catégorisées. Le diagnostic gratuit vous dira où vous en êtes.</p></details>
+      <details><summary>Combien de temps avant de voir des résultats ?</summary><p>La fiche Google et la publicité donnent des appels en quelques jours. Le référencement naturel prend entre six et douze semaines pour monter, puis continue de progresser. C'est plus lent, mais ça ne s'arrête pas quand vous cessez de payer.</p></details>
+      <details><summary>Je suis seul, je n'ai pas le temps de m'occuper de ça.</summary><p>C'est justement pour ça que le freelance s'en charge. Ce qu'on vous demande : une heure au départ pour faire le point, des photos de chantiers de temps en temps, et de répondre au téléphone quand il sonne.</p></details>
+      <details><summary>Est-ce que je dois payer Google ?</summary><p>Non, sauf si vous choisissez l'option publicité. La fiche Google est gratuite. Le référencement naturel ne coûte rien à Google, seulement le travail du freelance.</p></details>
+      <details><summary>Quelle différence avec les sites de mise en relation type « demande de devis » ?</summary><p>Ces sites vendent la même demande à trois, quatre ou cinq artisans en même temps. Vous payez chaque contact et vous vous battez sur le prix. Ici, le client vous trouve directement, vous appelle directement, et il est à vous.</p></details>
+      <details><summary>Que se passe-t-il si j'arrête ?</summary><p>Vous gardez votre site, votre fiche et vos avis. Ce qui a été construit reste. Seuls les services mensuels s'arrêtent.</p></details>
+      <details><summary>Vous prenez une commission sur mes chantiers ?</summary><p>Non. Jamais.</p></details>
+      <details><summary>Vous travaillez dans quelles villes ?</summary><p>Partout en France métropolitaine. Le référencement local se fait à distance, avec vos photos et votre connaissance du terrain.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="diagnostic">
+  <div class="wrap">
+    <span class="eyebrow">Diagnostic gratuit</span>
+    <h2 style="margin-top:14px">Le prochain client qui cherche votre métier dans votre ville, <em>il vous trouve.</em> Ou il trouve un autre.</h2>
+    <p>Trois minutes pour remplir le formulaire. Un diagnostic gratuit sous 24 h ouvrées. Aucun engagement.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#diagnostic">Recevoir mon diagnostic gratuit</a>
+      <span class="sub num"><span class="stars">★</span> 4,9 / 5 · 1 240 avis · Freelances vérifiés · Prix fixé avant de commencer</span>
+    </div>
+  </div>
+</section>
+<div class="hazard"></div>
+<footer class="wrap footer">
+  <span>Visible Pro · freelances vérifiés pour artisans du bâtiment</span>
+  <span>Page de démonstration. Chiffres et noms à remplacer par vos données réelles.</span>
+</footer>
