@@ -217,7 +217,7 @@ section + section{border-top:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:20px;color:var(--ink-2);background:var(--surface-2)}
 .clients{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13.5px;color:var(--ink-2)}
-.clients span::before{content:"";display:inline-block;width:14px;height:14px;background:var(--line);border-radius:3px;margin-right:6px;vertical-align:-2px}
+.clients span::before{content:"·";color:var(--accent);font-weight:700;margin-right:6px}
 .pro .rec{font-size:13px;color:var(--ok);font-weight:500;margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2)}
 .pro .btn{justify-content:center;font-size:18px;padding:11px 16px}
 
@@ -294,6 +294,25 @@ section + section{border-top:1px solid var(--line)}
 @media (max-width:980px){.final-grid{grid-template-columns:1fr}}
 @media (max-width:600px){.lead .f2,.lead fieldset{grid-template-columns:1fr}.lead{padding:18px}}
 
+.featured{margin-top:36px;display:grid;gap:14px}
+.pro-featured{display:grid;grid-template-columns:1.2fr .8fr;gap:0;padding:0;overflow:hidden}
+.pro-main{padding:24px;display:flex;flex-direction:column;gap:14px}
+.pro-main .btn{align-self:flex-start;font-size:19px}
+.pro-side{background:var(--surface-2);border-left:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:12px}
+.pro-side h4{margin:0}
+.side-lead{font-size:16px}
+.side-lead b{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800;color:var(--accent)}
+.dist{display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center}
+.dist .st{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-2);white-space:nowrap}
+.dist .track{height:12px;background:var(--surface);border:1px solid var(--line-2);border-radius:2px;position:relative;overflow:hidden}
+.dist .fill{position:absolute;inset:0 auto 0 0;min-width:2px;background:var(--accent);border-radius:0 2px 2px 0}
+.dist .v{font-family:"IBM Plex Mono",monospace;font-size:13px;text-align:right;color:var(--ink);min-width:5ch}
+.side-note{font-size:13.5px;color:var(--muted);line-height:1.45}
+.more-pros{font-size:14.5px;color:var(--ink-2)}
+.chip b{color:var(--ink);margin-left:4px}
+.testi-src{margin-top:14px;font-size:13px;color:var(--muted)}
+@media (max-width:980px){.pro-featured{grid-template-columns:1fr}.pro-side{border-left:0;border-top:1px solid var(--line)}}
+
 .demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
 .demo-note b{color:var(--ink-2)}
 
@@ -359,9 +378,9 @@ section + section{border-top:1px solid var(--line)}
       </aside>
     </div>
     <div class="trust">
-      <div><strong class="num"><span class="stars">★</span> 4,9 / 5</strong>sur 1 240 avis d'artisans</div>
-      <div><strong>Vérifiés</strong>chaque freelance, un par un</div>
-      <div><strong>24 h</strong>réponse sous 24 h ouvrables</div>
+      <div><strong class="num"><span class="stars">★</span> 4,9 / 5</strong>sur 9 219 avis vérifiés</div>
+      <div><strong>Pro vérifié</strong>badge Fiverr Pro + Top Rated</div>
+      <div><strong>1 h</strong>délai de réponse moyen</div>
       <div><strong>Prix fixe</strong>fixé avant de commencer</div>
     </div>
   </div>
@@ -369,7 +388,7 @@ section + section{border-top:1px solid var(--line)}
 
 <section id="probleme">
   <div class="wrap">
-    <p class="demo-note"><b>Version de démonstration.</b> Les notes, le nombre d'avis, les chiffres avant/après, les freelances, les témoignages et les entreprises clientes sont des exemples plausibles pour le secteur. À remplacer par vos données réelles avant mise en ligne.</p>
+    <p class="demo-note"><b>Ce qui est réel, ce qui ne l'est pas.</b> La note, le nombre d'avis, la répartition des étoiles, les badges et les témoignages viennent du profil Fiverr public de la freelance, relevés le 13 septembre 2026. Les trois cas chiffrés « avant / après » restent des exemples types pour le secteur, pas des résultats mesurés.</p>
     <div class="two">
       <div class="prose">
         <div class="sec-head">
@@ -593,7 +612,7 @@ section + section{border-top:1px solid var(--line)}
       <article class="svc">
         <div class="display">Notoriété locale (backlinks)</div>
         <dl>
-          <dt>Ce que c'est</dt><dd>On fait parler de vous sur des sites sérieux de votre secteur : annuaires professionnels, fournisseurs, presse locale, associations.</dd>
+          <dt>Ce que c'est</dt><dd>On fait parler de vous sur des sites sérieux de votre secteur : fournisseurs, presse locale, associations, annuaires professionnels reconnus. Pas de liens en masse depuis des profils ou des annuaires sans valeur.</dd>
           <dt>Ce que ça change</dt><dd class="strong">Google considère que d'autres vous recommandent. Votre site monte plus vite et tient sa place.</dd>
           <dt>Idéal si</dt><dd>Vous êtes bien placé mais un concurrent vous passe devant régulièrement.</dd>
         </dl>
@@ -645,14 +664,14 @@ section + section{border-top:1px solid var(--line)}
       <div class="prose">
         <div class="sec-head" style="margin-bottom:8px">
           <span class="eyebrow">Le badge Pro vérifié</span>
-          <h2>Des freelances vérifiés, pas des inconnus trouvés sur un forum</h2>
+          <h2>Une freelance vérifiée, pas une inconnue trouvée sur un forum</h2>
         </div>
-        <p>Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. Chaque freelance qui porte le badge <strong>Pro vérifié</strong> a passé nos contrôles. Un freelance qui descend sous ces exigences perd le badge. Simple.</p>
+        <p>Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. La freelance qui réalise vos travaux a été sélectionnée par l'équipe Fiverr Pro et vérifiée sur le référencement local et le SEO. En plus, on applique nos propres contrôles. Un freelance qui descend sous ces exigences perd sa place. Simple.</p>
       </div>
       <div>
         <h3 style="font-size:16px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-family:'IBM Plex Sans',sans-serif;font-weight:600">Ce qu'on vérifie avant de donner le badge</h3>
         <ul class="verify" style="grid-template-columns:1fr">
-          <li>Au moins cinq artisans accompagnés, avec des résultats qu'on a pu contrôler nous-mêmes.</li>
+          <li>Un historique d'avis public, complet, qu'on peut lire jusqu'aux mauvais.</li>
           <li>Un entretien technique avec notre équipe.</li>
           <li>Des références clients appelées une par une.</li>
           <li>Une note moyenne maintenue au-dessus de 4,7 / 5.</li>
@@ -662,52 +681,38 @@ section + section{border-top:1px solid var(--line)}
       </div>
     </div>
 
-    <div class="profiles">
-      <article class="pro">
-        <div class="top">
-          <div class="avatar" aria-hidden="true">JR</div>
-          <div>
-            <div class="name">Julien R. <span class="badge vp">Pro vérifié</span></div>
-            <div class="role">Référencement local · plomberie et chauffage</div>
+    <div class="featured">
+      <article class="pro pro-featured">
+        <div class="pro-main">
+          <div class="top">
+            <div class="avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="name">Miranda <span class="badge vp">Pro vérifié</span> <span class="badge top">Top Rated</span></div>
+              <div class="role">Référencement local, fiche Google, SEO et sites web · 19 services</div>
+            </div>
           </div>
+          <div class="meta"><span class="rate num"><span class="stars">★</span>4,9 <u>(9 219 avis)</u></span><span class="rt">Répond en 1 h en moyenne</span></div>
+          <div><h4>Vérifiée par l'équipe Fiverr Pro pour</h4><div class="vfor"><span>Référencement local</span><span>Optimisation pour les moteurs de recherche (SEO)</span></div></div>
+          <div><h4>Sous-notes de ses clients</h4><div class="chips"><span class="chip">Communication <b class="num">4,9</b></span><span class="chip">Qualité de la livraison <b class="num">4,9</b></span><span class="chip">Rapport qualité-prix <b class="num">4,9</b></span></div></div>
+          <div><h4>Compétences</h4><div class="chips"><span class="chip">fiche Google et référencement local</span><span class="chip">SEO on-page</span><span class="chip">sites WordPress</span><span class="chip">rédaction de contenu</span><span class="chip">réseaux sociaux</span></div></div>
+          <div><h4>Au portfolio public</h4><div class="clients"><span>Performanceplumb · plomberie, SEO local</span><span>Islandrheumatology · clinique, SEO local</span><span>X-Ring Supply · commerce en ligne</span><span>Gava Coffee · réseaux sociaux</span></div></div>
+          <a class="btn btn-primary" href="#soumission">Demander une soumission</a>
         </div>
-        <div class="meta"><span class="rate num"><span class="stars">★</span>4,9 <u>(312 avis)</u></span><span class="badge top">Top noté</span><span class="rt">Répond en 2 h</span></div>
-        <div><h4>Vérifié pour</h4><div class="vfor"><span>Référencement local</span><span>Fiche Google</span></div></div>
-        <div><h4>Compétences</h4><div class="chips"><span class="chip">pages par prestation</span><span class="chip">avis clients</span><span class="chip">annuaires pros</span><span class="chip">coordonnées cohérentes</span></div></div>
-        <div><h4>Parmi ses clients</h4><div class="clients"><span>Plomberie Girard &amp; Fils</span><span>Chauffage Martin</span><span>SOS Dépannage Laval</span></div></div>
-        <div class="rec">Recommandé par d'autres freelances de la plateforme</div>
-        <a class="btn btn-ghost" href="#soumission">Demander une soumission</a>
-      </article>
-      <article class="pro">
-        <div class="top">
-          <div class="avatar" aria-hidden="true">SL</div>
-          <div>
-            <div class="name">Sophie L. <span class="badge vp">Pro vérifiée</span></div>
-            <div class="role">Sites web pour artisans du bâtiment</div>
+        <div class="pro-side">
+          <h4>Les 9 219 avis, tous comptés</h4>
+          <p class="side-lead num"><b>98,5 %</b> à 4 ou 5 étoiles. <b>395</b> avis avec fichiers joints.</p>
+          <div class="dist num" role="img" aria-label="Répartition des avis : 8 747 à cinq étoiles, 336 à quatre, 60 à trois, 36 à deux, 40 à une.">
+            <span class="st">5 ★</span><div class="track"><div class="fill" style="width:94.9%"></div></div><span class="v">8 747</span>
+            <span class="st">4 ★</span><div class="track"><div class="fill" style="width:3.6%"></div></div><span class="v">336</span>
+            <span class="st">3 ★</span><div class="track"><div class="fill" style="width:.7%"></div></div><span class="v">60</span>
+            <span class="st">2 ★</span><div class="track"><div class="fill" style="width:.4%"></div></div><span class="v">36</span>
+            <span class="st">1 ★</span><div class="track"><div class="fill" style="width:.4%"></div></div><span class="v">40</span>
           </div>
+          <p class="side-note">On affiche tout, y compris les 76 avis à une ou deux étoiles. Un freelance qui cache ses mauvais avis, c'est un freelance qu'on ne prend pas.</p>
+          <p class="side-note">Source : profil public Fiverr, relevé le 13 septembre 2026.</p>
         </div>
-        <div class="meta"><span class="rate num"><span class="stars">★</span>5,0 <u>(148 avis)</u></span><span class="badge top">Top notée</span><span class="rt">Répond en 1 h</span></div>
-        <div><h4>Vérifiée pour</h4><div class="vfor"><span>Création de site</span><span>Référencement</span></div></div>
-        <div><h4>Compétences</h4><div class="chips"><span class="chip">sites rapides mobile</span><span class="chip">photos de chantiers</span><span class="chip">formulaires de soumission</span><span class="chip">refonte de sites anciens</span></div></div>
-        <div><h4>Parmi ses clients</h4><div class="clients"><span>Toitures Rive-Nord</span><span>Réno-Habitat Québec</span><span>Élec'Pro Sherbrooke</span></div></div>
-        <div class="rec">Recommandée par d'autres freelances de la plateforme</div>
-        <a class="btn btn-ghost" href="#soumission">Demander une soumission</a>
       </article>
-      <article class="pro">
-        <div class="top">
-          <div class="avatar" aria-hidden="true">KB</div>
-          <div>
-            <div class="name">Karim B. <span class="badge vp">Pro vérifié</span></div>
-            <div class="role">Avis, réputation et publicité Google urgences</div>
-          </div>
-        </div>
-        <div class="meta"><span class="rate num"><span class="stars">★</span>4,8 <u>(96 avis)</u></span><span class="rt">Répond en 3 h</span></div>
-        <div><h4>Vérifié pour</h4><div class="vfor"><span>Publicité Google</span><span>Collecte d'avis</span></div></div>
-        <div><h4>Compétences</h4><div class="chips"><span class="chip">campagnes urgence</span><span class="chip">réponses aux avis négatifs</span><span class="chip">suivi des appels</span><span class="chip">serrurerie / plomberie</span></div></div>
-        <div><h4>Parmi ses clients</h4><div class="clients"><span>Serrurerie Express Montréal</span><span>Plomberie des Laurentides</span><span>Dépann'Élec Estrie</span></div></div>
-        <div class="rec">Recommandé par d'autres freelances de la plateforme</div>
-        <a class="btn btn-ghost" href="#soumission">Demander une soumission</a>
-      </article>
+      <p class="more-pros">Chaque freelance ajouté à la plateforme passe les mêmes contrôles avant de porter le badge. Pas d'exception.</p>
     </div>
   </div>
 </section>
@@ -716,241 +721,26 @@ section + section{border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Témoignages</span>
-      <h2>Ce qu'en disent les artisans</h2>
+      <h2>Ce qu'en disent ses clients</h2>
     </div>
     <div class="testis">
-      <article class="testi"><div class="stars">★★★★★</div><p>Je pensais que c'était un truc pour les grosses boîtes. En trois mois je suis passé de trois ou quatre appels par mois à vingt-cinq, trente. J'ai dû embaucher un gars.</p><footer><b>Nicolas</b>plombier chauffagiste, Gatineau</footer>
-<script>
-(function(){
-  var form=document.getElementById('lead-form');
-  var status=document.getElementById('f-status');
-  var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
-  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='status';status.textContent='';
-    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
-    var data={
-      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
-      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
-      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
-      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
-    };
-    submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
-  });
-})();
-</script>
-</article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Ce que j'ai apprécié : on m'a expliqué ce qu'on faisait sans me prendre pour une imbécile. Chaque mois j'ai un tableau avec mes appels et mes soumissions. C'est concret, je vois où va l'argent.</p><footer><b>Sandrine</b>entreprise de rénovation, 8 employés, Québec</footer>
-<script>
-(function(){
-  var form=document.getElementById('lead-form');
-  var status=document.getElementById('f-status');
-  var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
-  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='status';status.textContent='';
-    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
-    var data={
-      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
-      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
-      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
-      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
-    };
-    submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
-  });
-})();
-</script>
-</article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Serrurier, mon métier c'est l'urgence. Avant, les gens tombaient sur des plateformes qui prennent 40 % de commission et me refilent les clients au compte-gouttes. Maintenant ils tombent sur moi. Directement.</p><footer><b>Mehdi</b>serrurier, Montréal</footer>
-<script>
-(function(){
-  var form=document.getElementById('lead-form');
-  var status=document.getElementById('f-status');
-  var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
-  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='status';status.textContent='';
-    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
-    var data={
-      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
-      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
-      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
-      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
-    };
-    submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
-  });
-})();
-</script>
-</article>
-      <article class="testi"><div class="stars">★★★★★</div><p>Toiture à 18 000 $ signée via le site, deux mois après la mise en ligne. Le site était remboursé dix fois. Depuis j'ai arrêté les circulaires.</p><footer><b>Patrick</b>couvreur, Terrebonne</footer>
-<script>
-(function(){
-  var form=document.getElementById('lead-form');
-  var status=document.getElementById('f-status');
-  var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
-  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='status';status.textContent='';
-    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
-    var data={
-      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
-      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
-      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
-      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
-    };
-    submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
-  });
-})();
-</script>
-</article>
-      <article class="testi"><div class="stars">★★★★★</div><p>J'avais un site fait par mon neveu. Joli, mais invisible. Ils ont refait les pages par prestation. Trois semaines après, on sort sur « électricien mise aux normes » dans ma ville. Je n'y croyais pas.</p><footer><b>Laurent</b>électricien, Sherbrooke</footer>
-<script>
-(function(){
-  var form=document.getElementById('lead-form');
-  var status=document.getElementById('f-status');
-  var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
-  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='status';status.textContent='';
-    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
-    var data={
-      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
-      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
-      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
-      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
-    };
-    submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
-  });
-})();
-</script>
-</article>
-      <article class="testi" style="background:var(--accent-soft);border-color:var(--accent)"><div class="stars">★★★★★</div><p>Ils m'ont dit clairement ce qui ne marcherait pas chez moi et ce qui marcherait. Pas de vente forcée. J'ai pris le pack Démarrage, puis le site six mois plus tard, quand j'ai vu les appels.</p><footer><b>Farid</b>rénovation et céramique, Trois-Rivières</footer>
-<script>
-(function(){
-  var form=document.getElementById('lead-form');
-  var status=document.getElementById('f-status');
-  var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
-  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    status.className='status';status.textContent='';
-    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
-    var data={
-      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
-      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
-      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
-      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
-    };
-    submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
-  });
-})();
-</script>
-</article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Professionnelle, compétente et patiente, elle se soucie réellement de la croissance de mon entreprise. Elle a contribué à l'amélioration de mon site web, de mon référencement, de ma fiche Google My Business et de ma visibilité dans les résultats de recherche locaux.</p><footer><b>pokaro</b>États-Unis · fiche Google et référencement local · collaboration en cours</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Sa réflexion stratégique en référencement était de premier ordre, et sa réactivité et sa communication proactive ont rendu le projet facile. Livraison pile à l'heure.</p><footer><b>puremagicmaids</b>entreprise de services à domicile · référencement</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Je m'attendais à un bon référencement de la part d'un développeur de haut niveau, et c'est exactement ce que j'ai obtenu. Rien à redire. J'ai même reçu un guide pour continuer à travailler sur mon référencement.</p><footer><b>ksol3950</b>référencement</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Livraison rapide, comme toujours. Le trafic remonte doucement, c'est bon à voir.</p><footer><b>sandralee487</b>client régulier · référencement</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Un plaisir de travailler avec elle. Livraison ultra rapide. Excellent service client.</p><footer><b>rusulaw</b>cabinet juridique · référencement</footer></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>Livré en avance, avec des bonus en plus. Très professionnelle, je recommande.</p><footer><b>bluenotary121</b>services de notariat · référencement</footer></article>
     </div>
+    <p class="testi-src">Avis publiés sur Fiverr, reproduits tels qu'affichés par la plateforme (traduction Fiverr pour les avis en anglais). Noms d'utilisateur Fiverr.</p>
     <div class="band">
       <span><b class="num"><span class="stars">★</span> 4,9 / 5</b></span>
-      <span><b class="num">1 240</b>&nbsp; avis vérifiés</span>
-      <span><b class="num">860</b>&nbsp; artisans accompagnés depuis 2021</span>
+      <span><b class="num">9 219</b>&nbsp; avis vérifiés sur Fiverr</span>
+      <span><b class="num">98,5 %</b>&nbsp; à 4 ou 5 étoiles</span>
+      <span><b class="num">1 h</b>&nbsp; de réponse en moyenne</span>
     </div>
   </div>
 </section>
 
-<section id="clients">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Références</span>
-      <h2>Ils nous ont fait confiance</h2>
-    </div>
-    <div class="logos">
-      <div class="logo"><i>PG</i><div><b>Plomberie Girard &amp; Fils</b><small>plomberie · Laval</small></div></div>
-      <div class="logo"><i>TR</i><div><b>Toitures Rive-Nord</b><small>couverture · Rive-Nord de Montréal</small></div></div>
-      <div class="logo"><i>EP</i><div><b>Élec'Pro Sherbrooke</b><small>électricité · Sherbrooke</small></div></div>
-      <div class="logo"><i>SE</i><div><b>Serrurerie Express Montréal</b><small>serrurerie · Montréal</small></div></div>
-      <div class="logo"><i>RQ</i><div><b>Réno-Habitat Québec</b><small>rénovation · Québec</small></div></div>
-      <div class="logo"><i>CM</i><div><b>Chauffage Martin</b><small>chauffage · Gatineau</small></div></div>
-      <div class="logo"><i>DE</i><div><b>Dépann'Élec Estrie</b><small>électricité · Estrie</small></div></div>
-      <div class="logo"><i>PL</i><div><b>Plomberie des Laurentides</b><small>plomberie · Laurentides</small></div></div>
-    </div>
-    <p class="logos-foot">Emplacements de logos à remplacer par vos vrais clients, avec leur accord d'usage. Ne mentionnez un réseau ou une fédération que si l'accord existe.</p>
-  </div>
-</section>
 
 <section id="garanties">
   <div class="wrap">
@@ -998,10 +788,10 @@ section + section{border-top:1px solid var(--line)}
         <ul class="final-list">
           <li>Un diagnostic gratuit : où vous en êtes, où sont vos concurrents.</li>
           <li>Une soumission à prix fixe, en français clair.</li>
-          <li>Des freelances vérifiés, choisis pour votre métier.</li>
+          <li>Une freelance vérifiée par Fiverr Pro pour le référencement local.</li>
           <li>Pas de commission sur vos chantiers. Jamais.</li>
         </ul>
-        <p class="sub num" style="margin-top:22px"><span class="stars">★</span> 4,9 / 5 · 1 240 avis · Freelances vérifiés · Prix fixé avant de commencer</p>
+        <p class="sub num" style="margin-top:22px"><span class="stars">★</span> 4,9 / 5 · 9 219 avis vérifiés · Fiverr Pro vérifié · Prix fixé avant de commencer</p>
       </div>
       <form class="lead" id="lead-form" novalidate>
         <div class="f2">

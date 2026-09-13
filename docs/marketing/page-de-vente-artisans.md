@@ -1,19 +1,20 @@
 # Page de vente : freelances pros pour artisans du bâtiment (Québec)
 
-> **Avant publication, remplace les éléments entre crochets.** La page ne porte aucun nom
+> **Avant publication, relis l'annexe en fin de document.** La page ne porte aucun nom
 > de plateforme et n'affiche aucun prix : la seule action demandée au lecteur est de
-> demander une soumission gratuite. Contexte : artisans du Québec. Les chiffres avant/après,
-> les notes, le nombre d'avis, les prénoms de freelances, les témoignages et les entreprises
-> clientes sont des exemples plausibles pour le secteur du bâtiment. Ils sont cohérents entre
-> eux, mais ce ne sont pas des données réelles. La liste des valeurs à remplacer est en fin
-> de document.
+> demander une soumission gratuite. Contexte : artisans du Québec. La note, le nombre
+> d'avis, la répartition des étoiles, les badges, les sous-notes et les témoignages viennent
+> du profil Fiverr public de la freelance (miranda_davis), relevé le 13 septembre 2026.
+> Seuls les trois cas chiffrés « avant / après » restent des exemples types pour le secteur.
+> Les noms de grands comptes et les chiffres de croissance du portfolio sont volontairement
+> absents : ils sont auto-déclarés et non vérifiés par Fiverr.
 
 ---
 
 ## 0. Balises de la page
 
 - **Title (moins de 60 caractères) :** Artisans : soyez trouvés sur Google. Soumission gratuite
-- **Meta description :** Plombiers, couvreurs, électriciens, serruriers : des freelances vérifiés rendent votre entreprise visible sur Google et font sonner votre téléphone. Demandez une soumission gratuite.
+- **Meta description :** Plombiers, couvreurs, électriciens, serruriers : une freelance vérifiée Fiverr Pro rend votre entreprise visible sur Google et fait sonner votre téléphone. Demandez une soumission gratuite.
 - **URL conseillée :** /artisans
 
 ---
@@ -30,10 +31,12 @@
 **Bouton secondaire :** Comment ça se passe
 
 **Bandeau de confiance (sous les boutons) :**
-- ★ 4,9 / 5 sur [1 240] avis d'artisans
-- Freelances vérifiés un par un
-- Réponse sous 24 h ouvrables
+- ★ 4,9 / 5 sur 9 219 avis vérifiés
+- Pro vérifié : badge Fiverr Pro + Top Rated
+- 1 h de délai de réponse moyen
 - Prix fixé avant de commencer
+
+**Encadré de transparence (petit, sous le hero) :** Ce qui est réel, ce qui ne l'est pas. La note, le nombre d'avis, la répartition des étoiles, les badges et les témoignages viennent du profil Fiverr public de la freelance, relevés le 13 septembre 2026. Les trois cas chiffrés « avant / après » restent des exemples types pour le secteur, pas des résultats mesurés.
 
 ---
 
@@ -209,7 +212,7 @@ Chaque service est réalisé par un freelance vérifié, spécialisé dans les m
 
 ### Notoriété locale (backlinks)
 
-- **Ce que c'est :** on fait parler de vous sur des sites sérieux de votre secteur : annuaires professionnels, fournisseurs, presse locale, associations.
+- **Ce que c'est :** on fait parler de vous sur des sites sérieux de votre secteur : fournisseurs, presse locale, associations, annuaires professionnels reconnus. Pas de liens en masse depuis des profils ou des annuaires sans valeur.
 - **Ce que ça change :** Google considère que d'autres vous recommandent. Votre site monte plus vite et tient sa place.
 - **Idéal si :** vous êtes bien placé mais un concurrent vous passe devant régulièrement.
 - **Action :** Demander une soumission
@@ -245,99 +248,70 @@ Chaque service est réalisé par un freelance vérifié, spécialisé dans les m
 
 ---
 
-## 7. Pourquoi nos freelances
+## 7. Pourquoi cette freelance
 
-**Titre :** Des freelances vérifiés, pas des inconnus trouvés sur un forum
+**Titre :** Une freelance vérifiée, pas une inconnue trouvée sur un forum
 
-Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. Chaque freelance qui porte le badge **Pro vérifié** a passé nos contrôles.
+Le référencement est plein de gens qui promettent la première place en une semaine. On ne les prend pas. La freelance qui réalise vos travaux a été sélectionnée par l'équipe Fiverr Pro et vérifiée sur le référencement local et le SEO. En plus, on applique nos propres contrôles. Un freelance qui descend sous ces exigences perd sa place. Simple.
 
 **Ce qu'on vérifie avant de donner le badge :**
 
-- Au moins cinq artisans accompagnés, avec des résultats qu'on a pu contrôler nous-mêmes.
+- Un historique d'avis public, complet, qu'on peut lire jusqu'aux mauvais.
 - Un entretien technique avec notre équipe.
 - Des références clients appelées une par une.
 - Une note moyenne maintenue au-dessus de 4,7 / 5.
 - Une réponse à vos messages sous 24 h ouvrables.
 - Une façon d'expliquer les choses sans jargon. Si on ne comprend pas, vous ne comprendrez pas.
 
-Un freelance qui descend sous ces exigences perd le badge. Simple.
+### Fiche de la freelance (données Fiverr, relevées le 13 septembre 2026)
 
-### Trois profils, à titre d'exemple
+**Miranda** · Pro vérifié · Top Rated
+Référencement local, fiche Google, SEO et sites web · 19 services
+★ 4,9 (9 219 avis) · Répond en 1 h en moyenne
+Vérifiée par l'équipe Fiverr Pro pour : référencement local, optimisation pour les moteurs de recherche (SEO)
+Sous-notes de ses clients : communication 4,9 · qualité de la livraison 4,9 · rapport qualité-prix 4,9
+Compétences : fiche Google et référencement local, SEO on-page, sites WordPress, rédaction de contenu, réseaux sociaux
+Au portfolio public : Performanceplumb (plomberie, SEO local) · Islandrheumatology (clinique, SEO local) · X-Ring Supply (commerce en ligne) · Gava Coffee (réseaux sociaux)
+Bouton : Demander une soumission
 
-> Format de fiche inspiré des profils professionnels vérifiés. Prénoms, notes et clients à remplacer par vos vrais freelances.
+**Encadré « Les 9 219 avis, tous comptés » :**
+98,5 % à 4 ou 5 étoiles. 395 avis avec fichiers joints.
 
-**[Julien R.]** · Pro vérifié · Top noté
-Référencement local, spécialiste plomberie et chauffage
-★ 4,9 ([312] avis) · Répond en 2 h en moyenne
-Vérifié pour : référencement local, fiche Google
-Compétences : pages par prestation, avis clients, annuaires professionnels, cohérence des coordonnées
-Parmi ses clients : [Plomberie Girard & Fils], [Chauffage Martin], [SOS Dépannage Laval]
-Recommandé par d'autres freelances de la plateforme
+| Étoiles | Nombre |
+|---|---|
+| 5 ★ | 8 747 |
+| 4 ★ | 336 |
+| 3 ★ | 60 |
+| 2 ★ | 36 |
+| 1 ★ | 40 |
 
-**[Sophie L.]** · Pro vérifiée · Top notée
-Sites web pour artisans du bâtiment
-★ 5,0 ([148] avis) · Répond en 1 h en moyenne
-Vérifiée pour : création de site, référencement
-Compétences : sites rapides pensés pour le mobile, photos de chantiers, formulaires de soumission, refonte de sites anciens
-Parmi ses clients : [Toitures Rive-Nord], [Réno-Habitat Québec], [Élec'Pro Sherbrooke]
+On affiche tout, y compris les 76 avis à une ou deux étoiles. Un freelance qui cache ses mauvais avis, c'est un freelance qu'on ne prend pas.
+Source : profil public Fiverr, relevé le 13 septembre 2026.
 
-**[Karim B.]** · Pro vérifié
-Avis clients, réputation et publicité Google pour les urgences
-★ 4,8 ([96] avis) · Répond en 3 h en moyenne
-Vérifié pour : publicité Google, collecte d'avis
-Compétences : campagnes urgence plomberie et serrurerie, réponses aux avis négatifs, suivi des appels
-Parmi ses clients : [Serrurerie Express Montréal], [Plomberie des Laurentides], [Dépann'Élec Estrie]
+**Sous la fiche :** Chaque freelance ajouté à la plateforme passe les mêmes contrôles avant de porter le badge. Pas d'exception.
 
 ---
 
 ## 8. Témoignages
 
-**Titre :** Ce qu'en disent les artisans
+**Titre :** Ce qu'en disent ses clients
 
-★★★★★
-« Je pensais que c'était un truc pour les grosses boîtes. En trois mois je suis passé de trois ou quatre appels par mois à vingt-cinq, trente. J'ai dû embaucher un gars. »
-**[Nicolas], plombier chauffagiste, Gatineau**
+- ★★★★★ « Professionnelle, compétente et patiente, elle se soucie réellement de la croissance de mon entreprise. Elle a contribué à l'amélioration de mon site web, de mon référencement, de ma fiche Google My Business et de ma visibilité dans les résultats de recherche locaux. » **pokaro**, États-Unis · fiche Google et référencement local · collaboration en cours
+- ★★★★★ « Sa réflexion stratégique en référencement était de premier ordre, et sa réactivité et sa communication proactive ont rendu le projet facile. Livraison pile à l'heure. » **puremagicmaids**, entreprise de services à domicile
+- ★★★★★ « Je m'attendais à un bon référencement de la part d'un développeur de haut niveau, et c'est exactement ce que j'ai obtenu. Rien à redire. J'ai même reçu un guide pour continuer à travailler sur mon référencement. » **ksol3950**
+- ★★★★★ « Livraison rapide, comme toujours. Le trafic remonte doucement, c'est bon à voir. » **sandralee487**, client régulier
+- ★★★★★ « Un plaisir de travailler avec elle. Livraison ultra rapide. Excellent service client. » **rusulaw**, cabinet juridique
+- ★★★★★ « Livré en avance, avec des bonus en plus. Très professionnelle, je recommande. » **bluenotary121**, services de notariat
 
-★★★★★
-« Ce que j'ai apprécié : on m'a expliqué ce qu'on faisait sans me prendre pour une imbécile. Chaque mois j'ai un tableau avec mes appels et mes soumissions. C'est concret, je vois où va l'argent. »
-**[Sandrine], entreprise de rénovation, 8 employés, Québec**
+**Mention sous les témoignages :** Avis publiés sur Fiverr, reproduits tels qu'affichés par la plateforme (traduction Fiverr pour les avis en anglais). Noms d'utilisateur Fiverr.
 
-★★★★★
-« Serrurier, mon métier c'est l'urgence. Avant, les gens tombaient sur des plateformes qui prennent 40 % de commission et me refilent les clients au compte-gouttes. Maintenant ils tombent sur moi. Directement. »
-**[Mehdi], serrurier, Montréal**
-
-★★★★★
-« Toiture à 18 000 $ signée via le site, deux mois après la mise en ligne. Le site était remboursé dix fois. Depuis j'ai arrêté les circulaires. »
-**[Patrick], couvreur, Terrebonne**
-
-★★★★★
-« J'avais un site fait par mon neveu. Joli, mais invisible. Ils ont refait les pages par prestation. Trois semaines après, on sort sur « électricien mise aux normes » dans ma ville. Je n'y croyais pas. »
-**[Laurent], électricien, Sherbrooke**
-
-★★★★★
-« Ils m'ont dit clairement ce qui ne marcherait pas chez moi et ce qui marcherait. Pas de vente forcée. J'ai commencé par la fiche Google, puis le site six mois plus tard, quand j'ai vu les appels. »
-**[Farid], rénovation et céramique, Trois-Rivières**
-
-**Bandeau sous les témoignages :** ★ 4,9 / 5 · [1 240] avis vérifiés · [860] artisans accompagnés depuis [2021]
+**Bandeau :** ★ 4,9 / 5 · 9 219 avis vérifiés sur Fiverr · 98,5 % à 4 ou 5 étoiles · 1 h de réponse en moyenne
 
 ---
 
-## 9. Ils nous ont fait confiance
+## 9. Références clients
 
-**Titre :** Ils nous ont fait confiance
-
-> Mur de logos. Remplace par tes vrais clients. Ne mentionne un réseau ou une fédération que si l'accord existe.
-
-- [LOGO] **Plomberie Girard & Fils** · plomberie, Laval
-- [LOGO] **Toitures Rive-Nord** · couverture, Rive-Nord de Montréal
-- [LOGO] **Élec'Pro Sherbrooke** · électricité, Sherbrooke
-- [LOGO] **Serrurerie Express Montréal** · serrurerie, Montréal
-- [LOGO] **Réno-Habitat Québec** · rénovation, Québec
-- [LOGO] **Chauffage Martin** · chauffage, Gatineau
-- [LOGO] **Dépann'Élec Estrie** · électricité, Estrie
-- [LOGO] **Plomberie des Laurentides** · plomberie, Laurentides
-
-**Ligne sous les logos :** Nos freelances travaillent aussi avec [des membres de réseaux professionnels du bâtiment, à préciser].
+Section retirée de la page. Les noms de grands comptes affichés sur le profil (Huawei, LECHERY, Nile Cruisers, Master Mobile) sont saisis par la freelance dans un champ libre que Fiverr ne vérifie pas, et aucun projet du portfolio ne les confirme. Ne les affiche pas sans confirmation écrite de sa part (contrat, contact, cas d'usage). Les projets du portfolio public figurent déjà dans sa fiche, section 7.
 
 ---
 
@@ -391,7 +365,7 @@ Partout au Québec. Le référencement local se fait à distance, avec vos photo
 **Ce que vous obtenez :**
 - Un diagnostic gratuit : où vous en êtes, où sont vos concurrents.
 - Une soumission à prix fixe, en français clair.
-- Des freelances vérifiés, choisis pour votre métier.
+- Une freelance vérifiée par Fiverr Pro pour le référencement local.
 - Pas de commission sur vos chantiers. Jamais.
 
 **Formulaire (champs) :**
@@ -409,19 +383,18 @@ Partout au Québec. Le référencement local se fait à distance, avec vos photo
 
 **Message après envoi :** Demande reçue. Merci [Prénom]. On vous rappelle sous 24 h ouvrables au [téléphone] avec votre diagnostic gratuit, puis votre soumission.
 
-**Rappel de confiance :** ★ 4,9 / 5 · [1 240] avis · Freelances vérifiés · Prix fixé avant de commencer
+**Rappel de confiance :** ★ 4,9 / 5 · 9 219 avis vérifiés · Fiverr Pro vérifié · Prix fixé avant de commencer
 
 ---
 
-## Annexe : valeurs à remplacer avant publication
+## Annexe : ce qui reste à remplacer ou à confirmer
 
-| Élément | Valeur actuelle (exemple) | À remplacer par |
+| Élément | État | À faire |
 |---|---|---|
-| Note globale et nombre d'avis | 4,9 / 5, 1 240 avis | tes chiffres réels |
-| Artisans accompagnés, année de création | 860, 2021 | tes chiffres réels |
-| Chiffres avant/après (3 cas) | voir section 4 | tes résultats clients mesurés |
-| Destination du formulaire | base de la page (démo) | ton CRM, courriel ou webhook |
-| Profils de freelances | Julien R., Sophie L., Karim B. | tes vrais freelances, avec leur accord |
-| Témoignages | 6 témoignages, section 8 | témoignages réels, avec accord écrit |
-| Entreprises clientes et logos | 8 entreprises, section 9 | tes vrais clients, avec accord d'usage du logo |
-| Réseaux ou fédérations | mention à préciser | uniquement si un accord existe |
+| Note, nombre d'avis, répartition, badges, sous-notes | Réels, Fiverr, 13 sept. 2026 | Rafraîchir le relevé avant mise en ligne, les compteurs bougent |
+| Témoignages | Réels, avis Fiverr | Vérifier que la freelance accepte leur reprise hors Fiverr |
+| Chiffres avant/après (3 cas) | Exemples types | Remplacer par des résultats mesurés (accès Search Console) dès qu'il y en a |
+| Grands comptes (Huawei, etc.) | Auto-déclarés, non vérifiés | Ne pas afficher sans confirmation écrite |
+| Chiffres de croissance du portfolio (+2 000 %, 900 K → 1,7 M) | Visuels de la freelance | Ne pas afficher sans captures brutes |
+| 24 000 commandes, 16 ans d'expérience | Déclarés en bio, non vérifiés | Absents de la page ; à ajouter seulement avec preuve |
+| Destination du formulaire | Base de la page (démo) | Brancher ton CRM, un courriel ou un webhook |
