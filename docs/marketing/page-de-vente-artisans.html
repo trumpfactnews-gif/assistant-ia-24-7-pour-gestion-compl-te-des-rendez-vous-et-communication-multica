@@ -878,7 +878,7 @@ section + section{border-top:1px solid var(--line)}
   var form=document.getElementById('lead-form');
   var status=document.getElementById('f-status');
   var submit=document.getElementById('f-submit');
-  var dbp=(window.claude&&window.claude.use)?window.claude.use('db'):Promise.resolve(null);
+  var LEAD_URL='/api/lead';
   function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
   function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
   form.addEventListener('submit',function(e){
@@ -892,16 +892,16 @@ section + section{border-top:1px solid var(--line)}
       envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
     };
     submit.disabled=true;status.textContent='Envoi en cours…';
-    dbp.then(function(db){
-      if(!db){throw {code:'unavailable'};}
-      return db.collection('soumissions').add(data);
-    }).then(function(){
-      form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
-      form.scrollIntoView({block:'nearest'});
-    }).catch(function(err){
-      submit.disabled=false;status.className='status err';
-      status.textContent=(err&&err.code==='unavailable')?"L'envoi n'est pas disponible depuis cet aperçu. Sur le site en ligne, la demande part directement.":"L'envoi a échoué. Réessayez dans un instant.";
-    });
+    fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(res){ if(!res.ok){throw new Error('http '+res.status);} return res.json().catch(function(){return {};}); })
+      .then(function(){
+        form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+        form.scrollIntoView({block:'nearest'});
+      })
+      .catch(function(){
+        submit.disabled=false;status.className='status err';
+        status.textContent="L'envoi a échoué. Réessayez dans un instant, ou appelez-nous directement si ça persiste.";
+      });
   });
 })();
 </script>
