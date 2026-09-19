@@ -83,6 +83,13 @@ section + section{border-top:1px solid var(--line)}
 .nav ul a:hover{color:var(--ink)}
 
 /* HERO */
+.masthead{position:relative;overflow:hidden;height:300px}
+.masthead-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 35%}
+.masthead-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,19,15,.92) 0%,rgba(18,19,15,.68) 42%,rgba(18,19,15,.22) 100%)}
+.masthead-content{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:620px}
+.masthead-content .eyebrow{color:#fff;opacity:.85}
+.masthead-content h2{color:#fff;font-size:32px;line-height:1.2;margin-top:10px}
+@media (max-width:700px){.masthead{height:240px}.masthead-content h2{font-size:22px}}
 .hero{padding-block:56px 64px}
 .hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:start}
 .hero .eyebrow{margin-bottom:18px;display:block}
@@ -466,6 +473,15 @@ section + section{border-top:1px solid var(--line)}
     <li><a href="#soumission" style="color:var(--accent);font-weight:600">Demander une soumission</a></li>
   </ul>
 </header>
+
+<section class="masthead">
+  <img class="masthead-img" src="/img/hero-banner.jpg" alt="" loading="eager">
+  <div class="masthead-overlay"></div>
+  <div class="wrap masthead-content">
+    <span class="eyebrow">Agence de référencement — Québec</span>
+    <h2>Le référencement, sans jargon, pour les artisans du Québec.</h2>
+  </div>
+</section>
 
 <section class="hero">
   <div class="wrap">
