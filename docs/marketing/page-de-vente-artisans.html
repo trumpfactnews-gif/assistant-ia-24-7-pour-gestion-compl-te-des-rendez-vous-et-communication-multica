@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SEO Montréal Artisan | Visibilité Google pour artisans du Québec</title>
+<title>SEO Québec | Visibilité Google pour artisans du Québec</title>
 <meta name="description" content="Plombiers, couvreurs, électriciens, serruriers, rénovation : des freelances vérifiés rendent votre entreprise visible sur Google et font sonner votre téléphone. Demandez une soumission gratuite.">
 <link rel="canonical" href="https://seo-quebec.ca/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_CA">
-<meta property="og:site_name" content="SEO Montréal Artisan">
-<meta property="og:title" content="SEO Montréal Artisan | Visibilité Google pour artisans du Québec">
+<meta property="og:site_name" content="SEO Québec">
+<meta property="og:title" content="SEO Québec | Visibilité Google pour artisans du Québec">
 <meta property="og:description" content="Des freelances vérifiés rendent votre entreprise visible sur Google et font sonner votre téléphone. Demandez une soumission gratuite.">
 <meta property="og:url" content="https://seo-quebec.ca/">
 <meta name="twitter:card" content="summary_large_image">
@@ -73,8 +73,11 @@ section + section{border-top:1px solid var(--line)}
 
 /* NAV */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:26px;letter-spacing:.01em;text-transform:uppercase}
-.brand i{display:inline-block;width:26px;height:26px;background:var(--hazard);border-radius:3px}
+.brand{display:flex;align-items:center;gap:9px}
+.brand-mark{display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;background:var(--accent);color:var(--on-accent);border-radius:8px}
+.brand-mark svg{width:17px;height:17px}
+.brand-name{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:23px;letter-spacing:-.01em;color:var(--ink)}
+.brand-name b{font-weight:800;color:var(--accent);letter-spacing:.02em;margin-right:2px}
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500;flex-wrap:wrap}
 .nav ul a{text-decoration:none;color:var(--ink-2)}
 .nav ul a:hover{color:var(--ink)}
@@ -412,6 +415,14 @@ section + section{border-top:1px solid var(--line)}
 .seo-intro-fig{max-width:280px}
 @media (max-width:900px){.seo-intro{grid-template-columns:1fr}.seo-intro-fig{max-width:100%}}
 
+/* Real-photo placeholders: shows the image the moment a real file lands at the path; graceful fallback otherwise */
+.ph-img{display:block;width:100%;aspect-ratio:220/170;object-fit:cover}
+.ph-img.ph-broken{display:none}
+.ph-fallback{display:none;aspect-ratio:220/170;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(160deg,var(--surface-2),var(--ground));color:var(--muted)}
+.ph-img.ph-broken + .ph-fallback{display:flex}
+.ph-fallback svg{width:34px;height:34px;opacity:.5}
+.ph-fallback b{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;opacity:.65}
+
 .demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
 .demo-note b{color:var(--ink-2)}
 
@@ -442,7 +453,7 @@ section + section{border-top:1px solid var(--line)}
 <body>
 <div class="hazard"></div>
 <header class="wrap nav">
-  <div class="brand"><i></i> SEO Montréal Artisan</div>
+  <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/></svg></span><span class="brand-name"><b>SEO</b>Québec</span></div>
   <ul>
     <li><a href="#probleme">Le problème</a></li>
     <li><a href="#seo">Le référencement</a></li>
@@ -565,21 +576,7 @@ section + section{border-top:1px solid var(--line)}
         <h2>Le référencement, expliqué en deux minutes</h2>
         <p>Le référencement (le mot anglais est SEO), c'est le travail qui fait remonter votre entreprise dans Google quand quelqu'un cherche votre métier dans votre secteur. Rien de plus.</p>
       </div>
-      <div class="figure-card seo-intro-fig"><svg viewBox="0 0 220 170" class="fig-scene">
-    <rect width="220" height="170" fill="var(--fig-ground)"/>
-    <rect x="0" y="150" width="220" height="20" fill="var(--surface-2)"/>
-    <circle cx="112" cy="52" r="16" fill="var(--fig-skin)"/>
-    <path d="M97 50a16 13 0 0 1 30-3" fill="var(--fig-hair)"/>
-    <rect x="90" y="68" width="44" height="52" rx="14" fill="var(--accent)"/>
-    <rect x="80" y="78" width="14" height="32" rx="6" fill="var(--accent)" transform="rotate(26 87 94)"/>
-    <rect x="126" y="74" width="14" height="30" rx="6" fill="var(--accent)" transform="rotate(-46 133 89)"/>
-    <rect x="128" y="46" width="22" height="40" rx="4" fill="var(--ink)" transform="rotate(-8 139 66)"/>
-    <rect x="131" y="51" width="16" height="28" rx="1.5" fill="var(--surface)" transform="rotate(-8 139 66)"/>
-    <circle cx="140" cy="60" r="4" fill="none" stroke="var(--accent)" stroke-width="2" transform="rotate(-8 139 66)"/>
-    <path d="M143 63 147 67" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" transform="rotate(-8 139 66)"/>
-    <rect x="96" y="118" width="16" height="36" rx="6" fill="var(--fig-navy-2)"/>
-    <rect x="114" y="118" width="16" height="36" rx="6" fill="var(--fig-navy-2)"/>
-  </svg><p class="fig-cap">Pendant que vous travaillez, quelqu'un tape déjà votre métier sur son téléphone.</p></div>
+      <div class="figure-card seo-intro-fig"><img class="ph-img" src="/img/recherche-telephone.jpg" alt="Personne consultant Google sur son téléphone" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg><b>Photo à venir</b></span><p class="fig-cap">Pendant que vous travaillez, quelqu'un tape déjà votre métier sur son téléphone.</p></div>
     </div>
     <p class="prose" style="max-width:66ch">Google fonctionne comme un client méfiant. Avant de vous recommander, il vérifie trois choses :</p>
     <div class="checks">
@@ -650,24 +647,7 @@ section + section{border-top:1px solid var(--line)}
     </div>
     <div class="cases">
       <article class="case">
-        <div class="case-fig"><svg viewBox="0 0 220 170" class="fig-scene">
-    <rect width="220" height="170" fill="var(--fig-ground)"/>
-    <rect x="0" y="128" width="220" height="42" fill="var(--surface-2)"/>
-    <rect x="18" y="60" width="70" height="68" rx="4" fill="var(--fig-metal)" opacity=".5"/>
-    <rect x="26" y="70" width="54" height="10" rx="2" fill="var(--surface)"/>
-    <circle cx="120" cy="70" r="16" fill="var(--fig-skin)"/>
-    <path d="M104 68a16 12 0 0 1 32 0" fill="var(--fig-hair)"/>
-    <rect x="98" y="84" width="44" height="46" rx="10" fill="var(--fig-navy)"/>
-    <rect x="90" y="90" width="14" height="38" rx="6" fill="var(--fig-navy)"/>
-    <rect x="136" y="86" width="14" height="30" rx="6" fill="var(--fig-navy)" transform="rotate(18 143 101)"/>
-    <circle cx="150" cy="112" r="7" fill="var(--fig-skin)"/>
-    <rect x="146" y="106" width="26" height="9" rx="3" fill="var(--fig-metal)" transform="rotate(-24 146 110)"/>
-    <rect x="104" y="126" width="16" height="36" rx="6" fill="var(--fig-navy-2)"/>
-    <rect x="122" y="126" width="16" height="36" rx="6" fill="var(--fig-navy-2)"/>
-    <rect x="60" y="118" width="10" height="14" fill="var(--fig-metal)"/>
-    <path d="M60 118v-30a8 8 0 0 1 8-8h8" stroke="var(--fig-metal)" stroke-width="6" fill="none" stroke-linecap="round"/>
-    <circle cx="66" cy="128" r="3" fill="#6FB8E0"/><circle cx="72" cy="132" r="2.4" fill="#6FB8E0"/>
-  </svg><p class="case-fig-cap">Le plombier, sur un chantier plutôt que devant son ordinateur.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg></span><div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · ville de 150 000 habitants</div></div></div>
+        <div class="case-fig"><img class="ph-img" src="/img/plombier.jpg" alt="Plombier en plein travail" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg><b>Photo à venir</b></span><p class="case-fig-cap">Le plombier, sur un chantier plutôt que devant son ordinateur.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg></span><div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · ville de 150 000 habitants</div></div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
@@ -681,23 +661,7 @@ section + section{border-top:1px solid var(--line)}
         </table>
       </article>
       <article class="case">
-        <div class="case-fig"><svg viewBox="0 0 220 170" class="fig-scene">
-    <rect width="220" height="170" fill="var(--fig-ground)"/>
-    <path d="M0 100 130 40 220 90 220 170 0 170z" fill="var(--fig-grey)"/>
-    <g stroke="var(--surface-2)" stroke-width="2" opacity=".5">
-      <path d="M20 92h190"/><path d="M35 82h190"/><path d="M50 72h190"/><path d="M65 62h150"/>
-    </g>
-    <circle cx="150" cy="60" r="15" fill="var(--fig-skin)"/>
-    <path d="M136 58a15 12 0 0 1 28-2" fill="var(--fig-hair)"/>
-    <rect x="134" y="46" width="32" height="9" rx="4" fill="#D9622B"/>
-    <rect x="132" y="72" width="42" height="42" rx="10" fill="var(--fig-grey-2)" transform="rotate(-8 153 93)"/>
-    <rect x="122" y="80" width="14" height="34" rx="6" fill="var(--fig-grey-2)" transform="rotate(30 129 97)"/>
-    <rect x="168" y="76" width="14" height="30" rx="6" fill="var(--fig-grey-2)" transform="rotate(-40 175 91)"/>
-    <circle cx="188" cy="66" r="7" fill="var(--fig-skin)"/>
-    <rect x="182" y="52" width="8" height="20" rx="2" fill="#8A5A32" transform="rotate(18 186 62)"/>
-    <rect x="130" y="108" width="16" height="34" rx="6" fill="var(--fig-navy-2)" transform="rotate(6 138 125)"/>
-    <rect x="150" y="108" width="16" height="34" rx="6" fill="var(--fig-navy-2)" transform="rotate(-4 158 125)"/>
-  </svg><p class="case-fig-cap">Le couvreur, sur le toit, pas au clavier.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/><path d="M10 19v-4h4v4"/></svg></span><div><div class="display">Couverture</div><div class="who">6 personnes · ville moyenne et zone rurale</div></div></div>
+        <div class="case-fig"><img class="ph-img" src="/img/couvreur.jpg" alt="Couvreur sur un toit" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/></svg><b>Photo à venir</b></span><p class="case-fig-cap">Le couvreur, sur le toit, pas au clavier.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/><path d="M10 19v-4h4v4"/></svg></span><div><div class="display">Couverture</div><div class="who">6 personnes · ville moyenne et zone rurale</div></div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
@@ -711,24 +675,7 @@ section + section{border-top:1px solid var(--line)}
         <p class="fine">Le panier moyen est élevé en couverture. Une seule rénovation de toiture rembourse l'année entière.</p>
       </article>
       <article class="case">
-        <div class="case-fig"><svg viewBox="0 0 220 170" class="fig-scene">
-    <rect width="220" height="170" fill="var(--fig-ground)"/>
-    <rect x="0" y="128" width="220" height="42" fill="var(--surface-2)"/>
-    <rect x="140" y="34" width="46" height="94" rx="4" fill="var(--fig-grey-2)"/>
-    <rect x="148" y="44" width="30" height="18" rx="2" fill="var(--fig-yellow)" opacity=".85"/>
-    <path d="M156 46h6l-3 6h5l-9 12 2-9h-5z" fill="var(--fig-navy-2)"/>
-    <g stroke="var(--fig-metal)" stroke-width="3" fill="none"><path d="M150 70h24"/><path d="M150 78h24"/><path d="M150 86h16"/></g>
-    <circle cx="88" cy="66" r="16" fill="var(--fig-skin-2)"/>
-    <path d="M74 60a16 14 0 0 1 30-4" fill="var(--fig-hair)"/>
-    <rect x="72" y="45" width="34" height="10" rx="4" fill="var(--fig-yellow)"/>
-    <rect x="66" y="80" width="44" height="46" rx="10" fill="var(--fig-yellow)"/>
-    <rect x="58" y="86" width="14" height="36" rx="6" fill="var(--fig-yellow)"/>
-    <rect x="100" y="82" width="14" height="34" rx="6" fill="var(--fig-yellow)" transform="rotate(-30 107 99)"/>
-    <circle cx="134" cy="82" r="7" fill="var(--fig-skin-2)"/>
-    <rect x="130" y="70" width="10" height="20" rx="3" fill="var(--surface)" stroke="var(--fig-grey-2)" stroke-width="2"/>
-    <rect x="72" y="122" width="16" height="38" rx="6" fill="var(--fig-navy-2)"/>
-    <rect x="90" y="122" width="16" height="38" rx="6" fill="var(--fig-navy-2)"/>
-  </svg><p class="case-fig-cap">L'électricien, au panneau, jamais devant Google.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg></span><div><div class="display">Électricien indépendant</div><div class="who">Seul · ville de 60 000 habitants</div></div></div>
+        <div class="case-fig"><img class="ph-img" src="/img/electricien.jpg" alt="Électricien devant un panneau" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><b>Photo à venir</b></span><p class="case-fig-cap">L'électricien, au panneau, jamais devant Google.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg></span><div><div class="display">Électricien indépendant</div><div class="who">Seul · ville de 60 000 habitants</div></div></div>
         <table class="num">
           <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
           <tbody>
@@ -960,23 +907,7 @@ section + section{border-top:1px solid var(--line)}
           <li>Pas de commission sur vos chantiers. Jamais.</li>
         </ul>
         <p class="sub" style="margin-top:22px">Freelances vérifiés · Sélection rigoureuse · Prix fixé avant de commencer</p>
-        <div class="figure-card" style="margin-top:24px;max-width:320px"><svg viewBox="0 0 220 170" class="fig-scene">
-    <rect width="220" height="170" fill="var(--fig-ground)"/>
-    <rect x="0" y="140" width="220" height="30" fill="var(--surface-2)"/>
-    <rect x="60" y="118" width="100" height="8" rx="2" fill="var(--fig-metal)"/>
-    <rect x="95" y="126" width="30" height="14" fill="var(--fig-metal)" opacity=".6"/>
-    <rect x="66" y="66" width="88" height="56" rx="4" fill="var(--ink)"/>
-    <rect x="72" y="72" width="76" height="44" rx="2" fill="var(--surface)"/>
-    <circle cx="110" cy="86" r="9" fill="none" stroke="var(--accent)" stroke-width="3"/>
-    <path d="M116 92 124 100" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
-    <rect x="80" y="102" width="60" height="5" rx="2.5" fill="var(--line-2)"/>
-    <rect x="80" y="110" width="40" height="5" rx="2.5" fill="var(--line-2)"/>
-    <circle cx="112" cy="46" r="15" fill="var(--fig-skin)"/>
-    <path d="M98 44a15 13 0 0 1 29-3" fill="var(--fig-hair)"/>
-    <rect x="92" y="60" width="40" height="44" rx="12" fill="var(--fig-navy)"/>
-    <rect x="82" y="70" width="14" height="30" rx="6" fill="var(--fig-navy)" transform="rotate(18 89 85)"/>
-    <rect x="126" y="68" width="14" height="30" rx="6" fill="var(--fig-navy)" transform="rotate(-22 133 83)"/>
-  </svg><p class="fig-cap">Là, maintenant, quelqu'un tape le nom de votre métier sur Google.</p></div>
+        <div class="figure-card" style="margin-top:24px;max-width:320px"><img class="ph-img" src="/img/recherche-ordinateur.jpg" alt="Personne qui effectue une recherche Google sur un ordinateur" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg><b>Photo à venir</b></span><p class="fig-cap">Là, maintenant, quelqu'un tape le nom de votre métier sur Google.</p></div>
       </div>
       <form class="lead" id="lead-form" novalidate>
         <div class="f2">
@@ -1026,8 +957,8 @@ section + section{border-top:1px solid var(--line)}
 
 <div class="hazard"></div>
 <footer class="wrap footer">
-  <span>SEO Montréal Artisan · freelances vérifiés pour artisans du bâtiment, Québec</span>
-  <span>&copy; 2026 SEO Montréal Artisan</span>
+  <span>SEO Québec · freelances vérifiés pour artisans du bâtiment, Québec</span>
+  <span>&copy; 2026 SEO Québec</span>
 </footer>
 <script>
 (function(){
