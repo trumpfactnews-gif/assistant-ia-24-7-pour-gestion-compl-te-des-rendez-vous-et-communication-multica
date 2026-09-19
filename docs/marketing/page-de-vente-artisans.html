@@ -98,6 +98,8 @@ section + section{border-top:1px solid var(--line)}
 .trust strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:24px;font-weight:700;line-height:1}
 .stars{color:var(--gold);letter-spacing:.06em}
 .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 12px 40px -24px rgba(0,0,0,.35)}
+.hero-card-photo{padding:0;overflow:hidden;aspect-ratio:4/5}
+.hero-card-photo img{display:block;width:100%;height:100%;object-fit:cover}
 .hero-card .k{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
 .phone{margin-top:12px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface-2)}
 .phone .q{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--line-2);font-size:15px}
@@ -359,7 +361,9 @@ section + section{border-top:1px solid var(--line)}
 /* problem-section illustration */
 .scene{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px}
 .scene-svg{display:block;width:100%;height:auto}
+.scene-photo{display:block;width:100%;height:auto;object-fit:cover}
 .scene-cap{margin:0;padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line-2)}
+.two-photo{grid-template-columns:.9fr 1.25fr}
 :root{--scene-sky-top:#1b2735;--scene-sky-bot:#0f1620;--scene-moon:#e7ecf2;--scene-star:#e7ecf2;--scene-house:#2a3644;--scene-window-off:#1a232d}
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){--scene-sky-top:#0c1319;--scene-sky-bot:#070b0f;--scene-moon:#cfd8e0;--scene-star:#cfd8e0;--scene-house:#1a232c;--scene-window-off:#0f151b}
@@ -487,24 +491,8 @@ section + section{border-top:1px solid var(--line)}
           <a class="btn btn-ghost" href="#comment">Comment ça se passe</a>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Exemple de recherche Google">
-        <div class="k">Ce que voit votre client à 19 h</div>
-        <div class="browser" style="margin-top:10px">
-          <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="addr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>google.com/search?q=plombier+urgence</span></div></div>
-          <div class="gbar"><span class="glogo" style="width:30px;height:30px" ><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true">
-  <path d="M36 20.5c0-1.3-.1-2.6-.3-3.8H20v7.2h9c-.4 2.1-1.6 3.9-3.4 5.1v4.2h5.5c3.2-3 5-7.3 5-12.7z" fill="#4285F4"/>
-  <path d="M20 37c4.6 0 8.4-1.5 11.2-4.1l-5.5-4.2c-1.5 1-3.5 1.6-5.7 1.6-4.4 0-8.1-2.9-9.4-6.9H4.9v4.3C7.7 33 13.4 37 20 37z" fill="#34A853"/>
-  <path d="M10.6 23.4c-.3-1-.5-2.1-.5-3.4s.2-2.4.5-3.4v-4.3H4.9C3.7 14.7 3 17.3 3 20s.7 5.3 1.9 7.7z" fill="#FBBC05"/>
-  <path d="M20 9.9c2.5 0 4.7.9 6.5 2.5l4.9-4.8C28.4 4.9 24.6 3 20 3 13.4 3 7.7 7 4.9 12.3l5.7 4.3c1.3-4 5-6.7 9.4-6.7z" fill="#EA4335"/>
-</svg></span><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg><span>plombier urgence laval</span></div></div>
-        </div>
-        <div class="phone">
-          <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58) · Ouvert 24h/24</small></div><span class="call">Appeler</span></div>
-          <div class="res"><div class="pin"></div><div><b>Dépann'Eau Laval</b><small>★ 4,5 (31) · Ouvert</small></div><span class="call">Appeler</span></div>
-          <div class="res you"><div class="pin you"></div><div><b>Votre entreprise</b><small>★ 4,9 (42) · Ouvert 24h/24</small></div><span class="call">Appeler</span></div>
-          <div class="res ghost"><div class="pin"></div><div><b>Le 4e, le 5e, le 6e…</b><small>Personne ne descend jusque-là</small></div></div>
-        </div>
-        <p class="foot">Trois entreprises sur la carte. Le client appelle la première qui décroche. Tout le travail consiste à vous mettre dans ces trois-là.</p>
+      <aside class="hero-card hero-card-photo" aria-label="Le référencement (SEO)">
+        <img src="/img/seo-letters.jpg" alt="Lettres SEO" loading="eager">
       </aside>
     </div>
       <div class="g-chip" style="margin:0 0 14px"><span class="glogo" style="width:16px;height:16px" ><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true">
@@ -525,7 +513,7 @@ section + section{border-top:1px solid var(--line)}
 <section id="probleme">
   <div class="wrap">
     <p class="demo-note"><b>Ce qui est réel, ce qui ne l'est pas.</b> Les trois cas chiffrés « avant / après » plus bas sont des exemples types pour le secteur, pas des résultats mesurés sur un client précis.</p>
-    <div class="two">
+    <div class="two two-photo">
       <div class="prose">
         <div class="sec-head">
           <span class="eyebrow">Le problème</span>
@@ -542,32 +530,9 @@ section + section{border-top:1px solid var(--line)}
           </ul>
         </div>
       </div>
-      <div class="scene" role="img" aria-label="Illustration : une maison le soir, un téléphone qui sonne, personne ne répond côté artisan">
-        <svg viewBox="0 0 340 170" class="scene-svg">
-          <defs>
-            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="var(--scene-sky-top)"/>
-              <stop offset="1" stop-color="var(--scene-sky-bot)"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="340" height="170" fill="url(#skyGrad)"/>
-          <circle cx="288" cy="34" r="16" fill="var(--scene-moon)"/>
-          <g fill="var(--scene-star)">
-            <circle cx="40" cy="24" r="1.6"/><circle cx="90" cy="16" r="1.3"/><circle cx="150" cy="30" r="1.6"/>
-            <circle cx="200" cy="18" r="1.3"/><circle cx="240" cy="42" r="1.3"/><circle cx="60" cy="50" r="1.3"/>
-          </g>
-          <path d="M0 170V96l40-22 34 14 30-20 40 18 36-24 44 20 40-16 40 14 36-12v112z" fill="var(--scene-house)"/>
-          <rect x="150" y="112" width="22" height="28" rx="1.5" fill="var(--scene-window-off)"/>
-          <rect x="214" y="104" width="20" height="20" rx="1.5" fill="var(--accent)" class="scene-lit"/>
-          <g stroke="var(--accent)" stroke-width="2.4" fill="none" stroke-linecap="round" class="scene-rings">
-            <path d="M258 70a20 20 0 0 1 20 20"/>
-            <path d="M258 58a32 32 0 0 1 32 32"/>
-          </g>
-          <circle cx="252" cy="96" r="9" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
-          <path d="M248.5 92.5 255.5 99.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-          <path d="M255.5 92.5 248.5 99.5" stroke="var(--ink-2)" stroke-width="0" />
-        </svg>
-        <p class="scene-cap">19 h. Un client tape « plombier urgence » près de chez vous. Votre fenêtre reste dans le noir.</p>
+      <div class="scene" role="img" aria-label="Photo : un client qui cherche une entreprise sur Google depuis son ordinateur">
+        <img class="scene-photo" src="/img/recherche-ordinateur.jpg" alt="Client qui recherche une entreprise sur Google depuis son ordinateur" loading="lazy">
+        <p class="scene-cap">19 h. Un client tape « plombier urgence » sur Google. Il choisit une des trois premières entreprises affichées.</p>
       </div>
       <div class="quote">
         <div class="display">« Je n'ai pas besoin de site, j'ai déjà trop de boulot. »</div>
