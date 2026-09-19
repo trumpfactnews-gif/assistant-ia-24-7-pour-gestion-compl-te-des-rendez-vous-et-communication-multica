@@ -74,8 +74,8 @@ section + section{border-top:1px solid var(--line)}
 /* NAV */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:9px}
-.brand-mark{display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;background:#0B3D8F;color:#fff;border-radius:8px}
-.brand-mark svg{width:16px;height:16px}
+.brand-mark{display:inline-grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;width:32px;height:32px;flex:none;align-items:center;justify-items:center;background:#0B3D8F;color:#fff;border-radius:6px;padding:5px}
+.brand-mark svg{width:9px;height:9px}
 .brand-name{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:23px;letter-spacing:-.01em;color:var(--ink)}
 .brand-name b{font-weight:800;color:#0B3D8F;letter-spacing:.02em;margin-right:2px}
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500;flex-wrap:wrap}
@@ -462,7 +462,12 @@ section + section{border-top:1px solid var(--line)}
 <body>
 <div class="hazard"></div>
 <header class="wrap nav">
-  <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.3 1.9-2.2 3.4-2.2 4.9 0 .9.4 1.6 1.1 2V10H9a1.9 1.9 0 1 0 0 3.8h.2c-.6.7-1 1.5-1 2.4A2.4 2.4 0 0 0 10.6 19H11v3h2v-3h.4a2.4 2.4 0 0 0 2.4-2.8c0-.9-.4-1.7-1-2.4h.2a1.9 1.9 0 1 0 0-3.8h-1.9V8.9c.7-.4 1.1-1.1 1.1-2C14.2 5.4 13.3 3.9 12 2z"/></svg></span><span class="brand-name"><b>SEO</b>Québec</span></div>
+  <div class="brand"><span class="brand-mark">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.3 1.9-2.2 3.4-2.2 4.9 0 .9.4 1.6 1.1 2V10H9a1.9 1.9 0 1 0 0 3.8h.2c-.6.7-1 1.5-1 2.4A2.4 2.4 0 0 0 10.6 19H11v3h2v-3h.4a2.4 2.4 0 0 0 2.4-2.8c0-.9-.4-1.7-1-2.4h.2a1.9 1.9 0 1 0 0-3.8h-1.9V8.9c.7-.4 1.1-1.1 1.1-2C14.2 5.4 13.3 3.9 12 2z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.3 1.9-2.2 3.4-2.2 4.9 0 .9.4 1.6 1.1 2V10H9a1.9 1.9 0 1 0 0 3.8h.2c-.6.7-1 1.5-1 2.4A2.4 2.4 0 0 0 10.6 19H11v3h2v-3h.4a2.4 2.4 0 0 0 2.4-2.8c0-.9-.4-1.7-1-2.4h.2a1.9 1.9 0 1 0 0-3.8h-1.9V8.9c.7-.4 1.1-1.1 1.1-2C14.2 5.4 13.3 3.9 12 2z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.3 1.9-2.2 3.4-2.2 4.9 0 .9.4 1.6 1.1 2V10H9a1.9 1.9 0 1 0 0 3.8h.2c-.6.7-1 1.5-1 2.4A2.4 2.4 0 0 0 10.6 19H11v3h2v-3h.4a2.4 2.4 0 0 0 2.4-2.8c0-.9-.4-1.7-1-2.4h.2a1.9 1.9 0 1 0 0-3.8h-1.9V8.9c.7-.4 1.1-1.1 1.1-2C14.2 5.4 13.3 3.9 12 2z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.3 1.9-2.2 3.4-2.2 4.9 0 .9.4 1.6 1.1 2V10H9a1.9 1.9 0 1 0 0 3.8h.2c-.6.7-1 1.5-1 2.4A2.4 2.4 0 0 0 10.6 19H11v3h2v-3h.4a2.4 2.4 0 0 0 2.4-2.8c0-.9-.4-1.7-1-2.4h.2a1.9 1.9 0 1 0 0-3.8h-1.9V8.9c.7-.4 1.1-1.1 1.1-2C14.2 5.4 13.3 3.9 12 2z"/></svg>
+  </span><span class="brand-name"><b>SEO</b>Québec</span></div>
   <ul>
     <li><a href="#probleme">Le problème</a></li>
     <li><a href="#seo">Le référencement</a></li>
