@@ -195,7 +195,7 @@ section + section{border-top:1px solid var(--line)}
 .svc dt{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
 .svc dd{margin:0;color:var(--ink-2)}
 .svc dd.strong{color:var(--ink)}
-.svc .price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.svc .price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);display:flex;flex-direction:column;align-items:flex-start;gap:4px}
 .svc .price b{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800}
 .svc .price a{white-space:nowrap;font-family:"Barlow Condensed",sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--accent);text-decoration:none}
 .svc .price a:hover{color:var(--accent-deep)}
@@ -409,7 +409,7 @@ section + section{border-top:1px solid var(--line)}
 
 /* Figure illustrations (plumber / electrician / roofer / searcher) */
 .figure-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
-.figure-card .fig-scene{display:block;width:100%;height:auto}
+.figure-card .fig-scene,.figure-card img{display:block;width:100%;height:auto}
 .figure-card .fig-cap{padding:12px 14px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line-2)}
 :root{--fig-ground:#EDEFE7;--fig-skin:#E3B08C;--fig-skin-2:#C98A5E;--fig-hair:#3A2E27;--fig-navy:#2C4A6B;--fig-navy-2:#20364F;--fig-yellow:#F4B93E;--fig-grey:#7C8577;--fig-grey-2:#5C6456;--fig-metal:#B8BEB2}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fig-ground:#20261B;--fig-skin:#C99169;--fig-skin-2:#A9724C;--fig-hair:#20180F;--fig-navy:#3E6089;--fig-navy-2:#2C4867;--fig-yellow:#E0A82E;--fig-grey:#8C9686;--fig-grey-2:#6C766A;--fig-metal:#9AA192}}
@@ -791,9 +791,15 @@ section + section{border-top:1px solid var(--line)}
 
 <section id="comment">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Concrètement</span>
-      <h2>Comment ça se passe, de la soumission au premier appel</h2>
+    <div class="two" style="align-items:center;margin-bottom:28px">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="eyebrow">Concrètement</span>
+        <h2>Comment ça se passe, de la soumission au premier appel</h2>
+      </div>
+      <div class="figure-card">
+        <img src="/img/rappel-24h.jpg" alt="Une personne au téléphone qui rappelle un client" loading="lazy">
+        <p class="fig-cap">On vous rappelle sous 24 h avec un diagnostic clair, pas un argumentaire de vente.</p>
+      </div>
     </div>
     <div class="steps">
       <div class="step"><div class="n">1</div><b>Vous demandez une soumission</b><p>Trois minutes. Votre métier, votre ville, ce que vous avez déjà (site, fiche Google, rien du tout).</p></div>
