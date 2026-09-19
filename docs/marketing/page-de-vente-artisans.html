@@ -411,7 +411,7 @@ section + section{border-top:1px solid var(--line)}
 
 /* Figure illustrations (plumber / electrician / roofer / searcher) */
 .figure-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
-.figure-card .fig-scene,.figure-card img{display:block;width:100%;height:auto}
+.figure-card .fig-scene,.figure-card img,.figure-card video{display:block;width:100%;height:auto}
 .figure-card .fig-cap{padding:12px 14px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line-2)}
 :root{--fig-ground:#EDEFE7;--fig-skin:#E3B08C;--fig-skin-2:#C98A5E;--fig-hair:#3A2E27;--fig-navy:#2C4A6B;--fig-navy-2:#20364F;--fig-yellow:#F4B93E;--fig-grey:#7C8577;--fig-grey-2:#5C6456;--fig-metal:#B8BEB2}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fig-ground:#20261B;--fig-skin:#C99169;--fig-skin-2:#A9724C;--fig-hair:#20180F;--fig-navy:#3E6089;--fig-navy-2:#2C4867;--fig-yellow:#E0A82E;--fig-grey:#8C9686;--fig-grey-2:#6C766A;--fig-metal:#9AA192}}
@@ -552,7 +552,7 @@ section + section{border-top:1px solid var(--line)}
         <h2>Le référencement, expliqué en deux minutes</h2>
         <p>Le référencement (le mot anglais est SEO), c'est le travail qui fait remonter votre entreprise dans Google quand quelqu'un cherche votre métier dans votre secteur. Rien de plus.</p>
       </div>
-      <div class="figure-card seo-intro-fig"><img class="ph-img" src="/img/recherche-telephone.jpg" alt="Personne consultant Google sur son téléphone" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg><b>Photo à venir</b></span><p class="fig-cap">Pendant que vous travaillez, quelqu'un tape déjà votre métier sur son téléphone.</p></div>
+      <div class="figure-card seo-intro-fig"><video src="/video/seo-explication.mp4" autoplay muted loop playsinline aria-label="Le référencement expliqué simplement"></video><p class="fig-cap">Le référencement, expliqué simplement.</p></div>
     </div>
     <p class="prose" style="max-width:66ch">Google fonctionne comme un client méfiant. Avant de vous recommander, il vérifie trois choses :</p>
     <div class="checks">
