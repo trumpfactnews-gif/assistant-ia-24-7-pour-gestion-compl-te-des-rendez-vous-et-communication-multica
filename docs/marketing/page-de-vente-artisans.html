@@ -72,10 +72,11 @@ section + section{border-top:1px solid var(--line)}
 .sec-head p{color:var(--ink-2);font-size:19px}
 
 /* NAV */
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px;flex-wrap:wrap}
+.nav-band{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:9px}
-.brand-logo-wrap{display:inline-flex;align-items:center;background:#fff;padding:6px 14px;border-radius:8px}
-.brand-logo-wrap img{display:block;height:26px;width:auto}
+.brand-logo-wrap{display:inline-flex;align-items:center;background:#fff;padding:8px 16px;border-radius:8px}
+.brand-logo-wrap img{display:block;height:42px;width:auto}
 .brand-mark{display:inline-grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;width:32px;height:32px;flex:none;align-items:center;justify-items:center;background:#0B3D8F;color:#fff;border-radius:6px;padding:5px}
 .brand-mark svg{width:9px;height:9px}
 .brand-name{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:23px;letter-spacing:-.01em;color:var(--ink)}
@@ -89,7 +90,7 @@ section + section{border-top:1px solid var(--line)}
 .masthead-img{display:block;width:100%;height:100%;object-fit:contain;background:#0b1220}
 .masthead-cta{position:absolute;left:.5%;top:57%;width:21%;height:11%}
 .hero{padding-block:56px 64px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:start}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .hero .eyebrow{margin-bottom:18px;display:block}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .lead{font-size:21px;color:var(--ink-2);max-width:56ch;margin-top:22px}
@@ -101,7 +102,7 @@ section + section{border-top:1px solid var(--line)}
 .stars{color:var(--gold);letter-spacing:.06em}
 .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 12px 40px -24px rgba(0,0,0,.35)}
 .hero-card-photo{padding:0;overflow:hidden;aspect-ratio:4/5}
-.hero-card-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-card-photo img,.hero-card-photo video{display:block;width:100%;height:100%;object-fit:cover}
 .hero-card .k{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
 .phone{margin-top:12px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface-2)}
 .phone .q{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--line-2);font-size:15px}
@@ -463,7 +464,7 @@ section + section{border-top:1px solid var(--line)}
 </head>
 <body>
 <div class="hazard"></div>
-<header class="wrap nav">
+<header class="nav-band"><div class="wrap nav">
   <div class="brand"><span class="brand-logo-wrap"><img src="/img/LOGO-SEO-QUEBEC.png" alt="SEO Québec"></span></div>
   <ul>
     <li><a href="#probleme">Le problème</a></li>
@@ -473,7 +474,7 @@ section + section{border-top:1px solid var(--line)}
     <li><a href="#faq">Questions</a></li>
     <li><a href="#soumission" style="color:var(--accent);font-weight:600">Demander une soumission</a></li>
   </ul>
-</header>
+</div></header>
 
 <section class="masthead">
   <img class="masthead-img" src="/img/hero-banner-full.jpg" alt="Votre site web en première page de Google. Augmentez la visibilité de votre entreprise dans les premiers résultats Google." loading="eager">
@@ -493,7 +494,7 @@ section + section{border-top:1px solid var(--line)}
         </div>
       </div>
       <aside class="hero-card hero-card-photo" aria-label="Le référencement (SEO)">
-        <img src="/img/hero-search-dark.jpg" alt="Recherche Google" loading="eager">
+        <video src="/video/seo-explication.mp4" autoplay muted loop playsinline></video>
       </aside>
     </div>
       <div class="g-chip" style="margin:0 0 14px"><span class="glogo" style="width:16px;height:16px" ><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true">
