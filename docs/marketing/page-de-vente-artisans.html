@@ -435,6 +435,13 @@ section + section{border-top:1px solid var(--line)}
 .ph-fallback svg{width:34px;height:34px;opacity:.5}
 .ph-fallback b{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;opacity:.65}
 
+.stats{padding-block:8px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 18px;box-shadow:var(--shadow-sm)}
+.stat b{display:block;font-family:"Sora",sans-serif;font-weight:800;font-size:clamp(30px,3.4vw,42px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat>span{display:block;margin-top:8px;font-size:14px;color:var(--ink-2);line-height:1.35}
+.stat small{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+@media (max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
 .demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:6px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
 .demo-note b{color:var(--ink-2)}
 
@@ -505,9 +512,19 @@ section + section{border-top:1px solid var(--line)}
   </div>
 </section>
 
+<section class="stats" aria-label="Chiffres clés">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><b><span class="count" data-count="38">0</span></b><span>appels par mois venant de Google<small>au lieu de 4</small></span></div>
+      <div class="stat"><b><span class="count" data-count="2900">0</span></b><span>vues de la fiche Google par mois<small>au lieu de 210</small></span></div>
+      <div class="stat"><b><span class="count" data-count="11">0</span></b><span>chantiers signés par mois<small>au lieu de 1</small></span></div>
+      <div class="stat"><b>≈ <span class="count" data-count="14000">0</span> $</b><span>de chiffre d'affaires en plus par mois<small>exemple type · plomberie, 3 personnes</small></span></div>
+    </div>
+  </div>
+</section>
+
 <section id="probleme">
   <div class="wrap">
-    <p class="demo-note"><b>Ce qui est réel, ce qui ne l'est pas.</b> Les trois cas chiffrés « avant / après » plus bas sont des exemples types pour le secteur, pas des résultats mesurés sur un client précis.</p>
     <div class="two two-photo">
       <div class="prose">
         <div class="sec-head">
@@ -517,22 +534,10 @@ section + section{border-top:1px solid var(--line)}
         <p>Un client a une fuite à 19 h. Il ne fouille pas dans ses contacts. Il prend son téléphone et tape « plombier urgence » avec le nom de sa ville.</p>
         <p>Google lui montre trois entreprises sur la carte, puis une liste en dessous. Il appelle la première. Si elle ne répond pas, il appelle la deuxième. Il ne descend presque jamais plus bas.</p>
         <p>Si vous n'êtes pas dans ces trois-là, ce chantier n'existe pas pour vous. Il est parti chez un concurrent. Pas parce qu'il est meilleur. Parce qu'il était affiché.</p>
-        <div class="facts">
-          <ul>
-            <li><span class="n">1</span><span>Sur une recherche locale, la grande majorité des clics vont aux trois premiers résultats. Le reste se partage les miettes.</span></li>
-            <li><span class="n">2</span><span>Beaucoup d'artisans n'ont pas de fiche Google à jour. Certains n'en ont pas du tout. Google affiche alors le concurrent qui en a une.</span></li>
-            <li><span class="n">3</span><span>Le bouche-à-oreille marche toujours. Mais même un client recommandé tape votre nom sur Google avant d'appeler. S'il ne trouve rien, ou deux avis à une étoile, il hésite.</span></li>
-          </ul>
-        </div>
       </div>
       <div class="scene" role="img" aria-label="Photo : un client qui cherche une entreprise sur Google depuis son ordinateur">
         <img class="scene-photo" src="/img/recherche-ordinateur.jpg" alt="Client qui recherche une entreprise sur Google depuis son ordinateur" loading="lazy">
         <p class="scene-cap">19 h. Un client tape « plombier urgence » sur Google. Il choisit une des trois premières entreprises affichées.</p>
-      </div>
-      <div class="quote">
-        <div class="display">« Je n'ai pas besoin de site, j'ai déjà trop de boulot. »</div>
-        <p>C'est ce que disent la plupart des artisans qui nous contactent. Puis un gros client les lâche, ou un promoteur change de fournisseur. Le carnet se vide et le téléphone ne sonne pas, parce que personne ne les trouve.</p>
-        <p style="margin-top:12px"><strong>Être visible, ce n'est pas pour aujourd'hui. C'est pour le jour où vous en aurez besoin.</strong></p>
       </div>
     </div>
   </div>
@@ -554,21 +559,6 @@ section + section{border-top:1px solid var(--line)}
       <div class="check"><div class="display">Vous faites bien ce que vous dites ?</div><p>Un site qui décrit clairement vos prestations, vos zones d'intervention, votre façon de travailler.</p></div>
       <div class="check"><div class="display">D'autres gens vous font confiance ?</div><p>Des avis clients, et des sites sérieux qui parlent de vous.</p></div>
     </div>
-    <p class="prose" style="max-width:66ch;margin-bottom:16px">Chaque point qu'on améliore fait monter votre entreprise d'un cran. Voici les mots que vous entendrez, traduits.</p>
-    <div class="tablewrap">
-    <table class="glossary">
-      <thead><tr><th>Le mot</th><th>Ce que ça veut dire pour vous</th></tr></thead>
-      <tbody>
-        <tr><td>Référencement local</td><td>Être affiché sur la carte Google quand un client de votre ville cherche votre métier. C'est la priorité numéro un pour un artisan. « Électricien Longueuil » doit sortir votre fiche, pas celle d'une grande bannière.</td></tr>
-        <tr><td>Fiche Google<small>Google Business Profile, l'ancien Google My Business</small></td><td>Votre vitrine gratuite sur Google et Google Maps. Photos, horaires, avis, bouton « Appeler ». C'est là qu'un client vous juge en dix secondes.</td></tr>
-        <tr><td>Mots-clés</td><td>Ce que tapent vraiment vos clients. Pas « solutions de couverture », mais « réparation toiture fuite » ou « remplacement tuiles ». On construit votre site autour de ces mots-là.</td></tr>
-        <tr><td>Page de service</td><td>Une page de votre site dédiée à une seule prestation. « Dépannage chaudière » a sa page. « Salle de bain clé en main » a la sienne. Google sait alors exactement quoi montrer à qui.</td></tr>
-        <tr><td>Backlinks</td><td>Des sites sérieux qui mettent un lien vers le vôtre : annuaire professionnel, fournisseur, journal local. Pour Google, c'est une recommandation. Plus vous en avez, plus il vous fait confiance.</td></tr>
-        <tr><td>Avis Google</td><td>Les étoiles sous votre nom. Elles comptent dans le classement et dans la décision du client. Une entreprise à 4,8 avec 90 avis passe devant une entreprise à 4,2 avec 6 avis, même si la seconde est meilleure sur le terrain.</td></tr>
-      </tbody>
-    </table>
-    </div>
-
     <div class="ba">
       <div class="serp before">
         <div class="tag"><span>Avant</span><span>Recherche « plombier urgence Laval »</span></div>
@@ -613,7 +603,7 @@ section + section{border-top:1px solid var(--line)}
     <div class="sec-head">
       <span class="eyebrow">Avant / après</span>
       <h2>Ce que ça change sur le téléphone et sur le compte en banque</h2>
-      <p>Résultats types après six mois, mesurés sur les entreprises accompagnées. Ce ne sont pas des promesses. C'est ce qu'on observe quand le travail est fait correctement.</p>
+      <p>Exemples types pour le secteur, après six mois de travail.</p>
     </div>
     <div class="cases">
       <article class="case">
@@ -933,6 +923,20 @@ section + section{border-top:1px solid var(--line)}
         status.textContent="L'envoi a échoué. Réessayez dans un instant, ou appelez-nous directement si ça persiste.";
       });
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.count');if(!els.length)return;
+  var fmt=function(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'\u202f');};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var run=function(el){var t=+el.getAttribute('data-count'),d=1400,s0=null;
+    if(reduce||!window.requestAnimationFrame){el.textContent=fmt(t);return;}
+    var step=function(ts){if(!s0)s0=ts;var k=Math.min(1,(ts-s0)/d);k=1-Math.pow(1-k,3);el.textContent=fmt(t*k);if(k<1)requestAnimationFrame(step);};
+    requestAnimationFrame(step);};
+  if(!('IntersectionObserver' in window)){els.forEach(run);return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target);}});},{threshold:.4});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>
