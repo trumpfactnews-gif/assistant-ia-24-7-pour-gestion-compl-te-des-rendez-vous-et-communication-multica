@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Québec | Visibilité Google pour artisans du Québec</title>
+<meta name="description" content="Plombiers, couvreurs, électriciens, serruriers, rénovation : des freelances vérifiés rendent votre entreprise visible sur Google et font sonner votre téléphone. Demandez une soumission gratuite.">
+<link rel="canonical" href="https://seo-quebec.ca/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:site_name" content="SEO Québec">
+<meta property="og:title" content="SEO Québec | Visibilité Google pour artisans du Québec">
+<meta property="og:description" content="Des freelances vérifiés rendent votre entreprise visible sur Google et font sonner votre téléphone. Demandez une soumission gratuite.">
+<meta property="og:url" content="https://seo-quebec.ca/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --ink:#0E2740; --ink-2:#3B4A5C; --muted:#6B7A8A;
+  --ground:#F5F4F0; --surface:#FFFFFF; --surface-2:#EEF3F2; --line:#DDE3E6; --line-2:#EAEEF0;
+  --accent:#12A594; --accent-deep:#0E8577; --accent-soft:#DFF3F0; --on-accent:#FFFFFF;
+  --gold:#D99A1E; --ok:#2F9E5F; --ok-soft:#E3F2E9; --bad:#B23A3A; --bad-soft:#F6E3E3;
+  --shadow-sm:0 2px 8px -2px rgba(14,39,64,.10),0 1px 2px rgba(14,39,64,.06);
+  --shadow-md:0 18px 40px -20px rgba(14,39,64,.30),0 4px 12px -4px rgba(14,39,64,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8EEF2; --ink-2:#BFCAD3; --muted:#8E9DAA;
+    --ground:#0F1A24; --surface:#16232E; --surface-2:#1C2B37; --line:#2A3A47; --line-2:#22313C;
+    --accent:#2BC4B1; --accent-deep:#5ED8C9; --accent-soft:#12332F; --on-accent:#0B1A26;
+    --shadow-sm:0 2px 10px -2px rgba(0,0,0,.5),0 1px 2px rgba(0,0,0,.4);
+    --shadow-md:0 20px 44px -20px rgba(0,0,0,.65),0 6px 16px -6px rgba(0,0,0,.5);
+    --gold:#E8B342; --ok:#5CBF85; --ok-soft:#1E3327; --bad:#E07070; --bad-soft:#3A2222;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8EEF2; --ink-2:#BFCAD3; --muted:#8E9DAA;
+  --ground:#0F1A24; --surface:#16232E; --surface-2:#1C2B37; --line:#2A3A47; --line-2:#22313C;
+  --accent:#2BC4B1; --accent-deep:#5ED8C9; --accent-soft:#12332F; --on-accent:#0B1A26;
+  --shadow-sm:0 2px 10px -2px rgba(0,0,0,.5),0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 20px 44px -20px rgba(0,0,0,.65),0 6px 16px -6px rgba(0,0,0,.5);
+  --gold:#E8B342; --ok:#5CBF85; --ok-soft:#1E3327; --bad:#E07070; --bad-soft:#3A2222;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,.display{font-family:"Sora",system-ui,sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,4.6vw,58px);font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(26px,3.2vw,40px)}
+h3{font-size:21px}
+p{margin:0}
+.prose p{max-width:66ch}
+.prose p + p{margin-top:14px}
+.eyebrow{font-family:"Inter",system-ui,sans-serif;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.mono{font-family:"Inter",system-ui,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:"Sora",sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em;text-transform:none;padding:14px 24px;border-radius:10px;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1}
+.btn-primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--surface)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+section{padding-block:72px}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sec-head p{color:var(--ink-2);font-size:19px}
+
+/* NAV */
+.nav-band{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px}
+.brand-logo-wrap{display:inline-flex;align-items:center;background:#fff;padding:8px 16px;border-radius:12px}
+.brand-logo-wrap img{display:block;height:42px;width:auto}
+.brand-mark{display:inline-grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;width:32px;height:32px;flex:none;align-items:center;justify-items:center;background:#0B3D8F;color:#fff;border-radius:10px;padding:5px}
+.brand-mark svg{width:9px;height:9px}
+.brand-name{font-family:"Sora",sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
+.brand-name b{font-weight:800;color:#0B3D8F;letter-spacing:.02em;margin-right:2px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500;flex-wrap:wrap}
+.nav ul a{text-decoration:none;color:var(--ink-2)}
+.nav ul a:hover{color:var(--ink)}
+
+/* HERO */
+.masthead{position:relative;width:100%;aspect-ratio:16/9}
+.masthead-img{display:block;width:100%;height:100%;object-fit:contain;background:#0b1220}
+.masthead-cta{position:absolute;left:.5%;top:57%;width:21%;height:11%}
+.hero{padding-block:56px 64px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.hero .eyebrow{margin-bottom:18px;display:block}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:21px;color:var(--ink-2);max-width:56ch;margin-top:22px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border:1px solid var(--line);background:var(--surface);border-radius:10px;overflow:hidden}
+.trust div{padding:16px 18px;border-right:1px solid var(--line-2);font-size:14.5px;line-height:1.35}
+.trust div:last-child{border-right:0}
+.trust strong{display:block;font-family:"Sora",sans-serif;font-size:19px;font-weight:700;line-height:1}
+.stars{color:var(--gold);letter-spacing:.06em}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 12px 40px -24px rgba(0,0,0,.35)}
+.hero-card-photo{padding:0;overflow:hidden;aspect-ratio:4/5}
+.hero-card-photo img,.hero-card-photo video{display:block;width:100%;height:100%;object-fit:cover}
+.hero-card .k{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.phone{margin-top:12px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface-2)}
+.phone .q{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--line-2);font-size:15px}
+.phone .q span{flex:1}
+.phone .q i{width:14px;height:14px;border:2px solid var(--muted);border-radius:50%;display:inline-block}
+.res{display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line-2);font-size:14px;align-items:center}
+.res:last-child{border-bottom:0}
+.res .pin{width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--muted);flex:none}
+.res .pin.you{background:var(--accent)}
+.res b{display:block;font-weight:600}
+.res small{color:var(--muted);font-size:12.5px}
+.res .call{margin-left:auto;font-size:12px;font-weight:600;padding:5px 9px;border:1px solid var(--line);border-radius:12px;color:var(--ink-2);white-space:nowrap}
+.res.you{background:var(--accent-soft)}
+.res.you .call{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.res.ghost{opacity:.45}
+.hero-card .foot{margin-top:12px;font-size:13.5px;color:var(--muted)}
+
+/* PROBLEM */
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.facts{display:grid;gap:0;border-top:2px solid var(--ink);margin-top:28px}
+.facts li{list-style:none;padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.facts ul{padding:0;margin:0}
+.facts .n{font-family:"Sora",sans-serif;font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+.quote{background:var(--ink);color:var(--ground);padding:28px;border-radius:10px;position:relative}
+:root[data-theme="dark"] .quote{background:var(--surface-2);color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .quote{background:var(--surface-2);color:var(--ink)}}
+.quote .display{font-size:30px;font-weight:700;margin-bottom:14px}
+.quote p{font-size:16px;opacity:.92}
+
+/* SEO */
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 36px}
+.check{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow-sm)}
+.check .display{font-size:24px;margin-bottom:8px}
+.check .display::before{content:"✓";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:15px;margin-right:10px;vertical-align:2px;font-family:"Inter",sans-serif}
+.check p{font-size:15px;color:var(--ink-2)}
+.glossary{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.glossary th,.glossary td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line-2);vertical-align:top;font-size:15.5px}
+.glossary tr:last-child td{border-bottom:0}
+.glossary th{background:var(--surface-2);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.glossary td:first-child{font-family:"Inter",system-ui,sans-serif;font-weight:500;width:32%;font-size:14.5px}
+.glossary td:first-child small{display:block;color:var(--muted);font-weight:400;font-family:"Inter",sans-serif;font-size:13px;margin-top:3px}
+.tablewrap{overflow-x:auto}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px;padding-top:6px}
+.serp{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);transition:transform .2s ease}
+.serp.before{}
+.serp.after{}
+.serp.after{outline:3px solid var(--accent-soft);outline-offset:4px}
+.serp .tag{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.serp.before .tag{background:var(--bad-soft);color:var(--bad)}
+.serp.after .tag{background:var(--ok-soft);color:var(--ok)}
+.serp .q{margin:12px 14px 8px;padding:10px 14px;border:1px solid var(--line);border-radius:22px;font-size:15px;display:flex;align-items:center;gap:10px}
+.serp .q span:last-child{color:var(--muted)}
+.serp .map{margin:0 14px;height:70px;background:linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/28px 28px,var(--surface-2);border:1px solid var(--line-2);border-radius:12px;position:relative}
+.serp .map i{position:absolute;width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--muted)}
+.serp .map i.you{background:var(--accent);width:18px;height:18px}
+.serp .list{padding:8px 14px 14px}
+.serp .web{padding:12px 14px 14px;border-top:1px solid var(--line-2);font-size:14px}
+.serp .web b{display:block;color:#1a4fbd;font-weight:500}
+:root[data-theme="dark"] .serp .web b{color:#8AB4F8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .serp .web b{color:#8AB4F8}}
+.serp .web small{color:var(--muted)}
+.serp .note{padding:12px 14px;border-top:1px solid var(--line-2);font-size:14px;color:var(--ink-2)}
+
+/* NUMBERS */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-sm);overflow:hidden}
+.case .display{font-size:24px}
+.case .who{font-size:14px;color:var(--muted)}
+.case table{width:100%;border-collapse:collapse;font-size:13.5px}
+.case th{text-align:right;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:6px 0;font-weight:600}
+.case th:first-child{text-align:left}
+.case td{padding:8px 0;border-top:1px solid var(--line-2);vertical-align:top}
+.case td:not(:first-child){text-align:right;font-family:"Inter",system-ui,sans-serif;font-size:13px;white-space:nowrap;padding-left:8px}
+.case td.after{color:var(--ink);font-weight:500}
+.case tr.total td{border-top:2px solid var(--ink);font-weight:600}
+.case tr.total td.after{color:var(--accent);font-family:"Sora",sans-serif;font-size:18px;font-weight:800}
+.case .fine{font-size:13px;color:var(--muted);margin-top:auto}
+.roi{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-top:24px;align-items:stretch}
+.roi .box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.proof-shot{display:block;width:100%;border-radius:12px;box-shadow:var(--shadow-sm);margin-bottom:8px}
+.proof-cap{font-size:12.5px;color:var(--muted);margin:0 0 16px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi strong{display:block;font-family:"Sora",sans-serif;font-size:24px;font-weight:800;line-height:1.05;color:var(--accent)}
+.kpi span{font-size:14px;color:var(--ink-2);display:block;margin-top:6px}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease}
+.svc:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.svc .display{font-size:25px}
+.svc dl{margin:0;display:grid;gap:8px;font-size:14.5px}
+.svc dt{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.svc dd{margin:0;color:var(--ink-2)}
+.svc dd.strong{color:var(--ink)}
+.svc .price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-2);display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.svc .price b{font-family:"Sora",sans-serif;font-size:22px;font-weight:800}
+.svc .price a{white-space:nowrap;font-family:"Sora",sans-serif;font-size:15px;font-weight:700;text-transform:none;letter-spacing:-.01em;color:var(--accent);text-decoration:none}
+.svc .price a:hover{color:var(--accent-deep)}
+.svc .price b small{font-size:13px;font-family:"Inter",sans-serif;font-weight:500;color:var(--muted);margin-right:4px;text-transform:uppercase;letter-spacing:.06em}
+.svc .price span{font-size:13px;color:var(--muted)}
+.svc.free{border-color:var(--accent);border-width:2px}
+.svc.free .price b{color:var(--accent)}
+.packs{margin-top:36px}
+.packs table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.packs th,.packs td{padding:16px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:top;font-size:15.5px}
+.packs tr:last-child td{border-bottom:0}
+.packs th{background:var(--surface-2);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.packs td:first-child{font-family:"Sora",sans-serif;font-size:20px;font-weight:800}
+.packs td:last-child{font-family:"Sora",sans-serif;font-size:15px;font-weight:700;white-space:nowrap;text-transform:none;letter-spacing:-.01em}
+.packs td:last-child a{color:var(--accent);text-decoration:none}
+.packs td:last-child small{display:block;font-family:"Inter",sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
+.packs tr.hl td{background:var(--accent-soft)}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.step{padding:20px 18px 20px 0;border-right:1px solid var(--line);padding-left:18px}
+.step:first-child{padding-left:0}
+.step:last-child{border-right:0}
+.step .n{font-family:"Sora",sans-serif;font-size:36px;font-weight:800;color:var(--accent);line-height:1}
+.step b{display:block;font-family:"Sora",sans-serif;font-size:17px;font-weight:700;margin:10px 0 6px;line-height:1.05}
+.step p{font-size:14.5px;color:var(--ink-2)}
+
+/* FREELANCES */
+.verify{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;padding:0;margin:24px 0 0;list-style:none}
+.verify li{display:grid;grid-template-columns:24px 1fr;gap:10px;font-size:15.5px;align-items:start}
+.verify li::before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:13px;font-weight:700;margin-top:2px}
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.pro{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.pro .top{display:flex;gap:14px;align-items:center}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--ground);display:grid;place-items:center;font-family:"Sora",sans-serif;font-weight:800;font-size:26px;flex:none;position:relative}
+.avatar::after{content:"";position:absolute;right:2px;bottom:2px;width:12px;height:12px;border-radius:50%;background:var(--ok);border:2px solid var(--surface)}
+.pro .name{font-family:"Sora",sans-serif;font-size:20px;font-weight:700;line-height:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:5px;font-family:"Inter",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:12px;text-transform:uppercase;line-height:1.2}
+.badge.vp{background:var(--accent);color:var(--on-accent)}
+.badge.top{background:var(--ink);color:var(--ground)}
+.badge.top::after{content:"◆◆◆";font-size:8px;letter-spacing:1px}
+:root[data-theme="dark"] .badge.top{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .badge.top{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}}
+.pro .role{font-size:15px;color:var(--ink-2)}
+.pro .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;align-items:center}
+.pro .meta .rate{font-weight:600}
+.pro .meta .rate .stars{margin-right:4px}
+.pro .meta .rate u{color:var(--muted);font-weight:400;margin-left:4px}
+.pro .meta .rt{color:var(--muted)}
+.pro h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 6px;font-weight:600}
+.pro .vfor{display:grid;gap:4px;font-size:14.5px}
+.pro .vfor span::before{content:"✓ ";color:var(--ok);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:20px;color:var(--ink-2);background:var(--surface-2)}
+.clients{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13.5px;color:var(--ink-2)}
+.clients span::before{content:"·";color:var(--accent);font-weight:700;margin-right:6px}
+.pro .rec{font-size:13px;color:var(--ok);font-weight:500;margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2)}
+.pro .btn{justify-content:center;font-size:18px;padding:11px 16px}
+
+/* TESTIMONIALS */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.testi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-sm)}
+.testi .stars{font-size:15px}
+.testi p{font-size:16px;line-height:1.5}
+.testi p::before{content:"« "}
+.testi p::after{content:" »"}
+.testi footer{margin-top:auto;font-size:14px;color:var(--muted)}
+.testi footer b{color:var(--ink);font-weight:600;display:block}
+.testi.wide{grid-column:span 1}
+.band{margin-top:24px;display:flex;gap:28px;flex-wrap:wrap;align-items:center;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:15px}
+.band b{font-family:"Sora",sans-serif;font-size:22px;font-weight:800;line-height:1}
+
+/* LOGOS */
+.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.logo{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;align-items:center;gap:12px}
+.logo i{width:44px;height:44px;border-radius:10px;background:var(--surface-2);border:1px dashed var(--line);display:grid;place-items:center;font-family:"Sora",sans-serif;font-weight:800;font-size:18px;color:var(--ink-2);flex:none;font-style:normal}
+.logo b{display:block;font-weight:600;font-size:15px;line-height:1.2}
+.logo small{color:var(--muted);font-size:13px}
+.logos-foot{margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* GUARANTEES */
+.guar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 20px 20px 24px;position:relative;box-shadow:var(--shadow-sm)}
+.g::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent);border-radius:10px 0 0 6px}
+.g b{display:block;font-family:"Sora",sans-serif;font-size:17px;font-weight:700;margin-bottom:6px;line-height:1.05}
+.g p{font-size:14.5px;color:var(--ink-2)}
+
+/* FAQ */
+.faq{display:grid;gap:0;border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-family:"Sora",sans-serif;font-size:18px;font-weight:700;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:28px;color:var(--accent);font-weight:600;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 18px;color:var(--ink-2);max-width:70ch;font-size:16px}
+
+/* FINAL */
+.final{background:var(--ink);color:var(--ground);padding-block:80px}
+:root[data-theme="dark"] .final{background:var(--surface-2);color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .final{background:var(--surface-2);color:var(--ink)}}
+.final h2{font-size:clamp(28px,3.8vw,46px);max-width:22ch}
+.final h2 em{font-style:normal;color:var(--accent)}
+.final p{margin-top:18px;font-size:19px;opacity:.9;max-width:52ch}
+.final .ctas{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.final .sub{font-size:14px;opacity:.75}
+.footer{padding-block:24px;font-size:13.5px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.final-list{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:16px}
+.final-list li{padding-left:26px;position:relative}
+.final-list li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.lead{background:var(--surface);color:var(--ink);border-radius:12px;padding:26px;display:grid;gap:14px;border:1px solid var(--line);box-shadow:var(--shadow-md)}
+.lead label{display:grid;gap:6px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.lead .opt{text-transform:none;letter-spacing:0;font-weight:400}
+.lead input,.lead select,.lead textarea{font:inherit;font-family:"Inter",system-ui,sans-serif;font-size:16px;text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;width:100%}
+.lead input:focus,.lead select:focus,.lead textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.lead input:user-invalid,.lead select:user-invalid{border-color:var(--bad)}
+.lead .f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lead fieldset{border:1px solid var(--line);border-radius:12px;padding:10px 12px 12px;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+.lead legend{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:0 6px}
+.lead .ck{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-weight:400;font-size:15px;color:var(--ink)}
+.lead .ck input{width:18px;height:18px;accent-color:var(--accent);margin:0}
+.lead .btn{justify-content:center;width:100%}
+.lead .btn[disabled]{opacity:.6;cursor:wait}
+.lead .consent{font-size:12.5px;color:var(--muted);line-height:1.4}
+.lead .status{font-size:15px;font-weight:500;min-height:1em}
+.lead .status.err{color:var(--bad)}
+.lead .done{display:grid;gap:10px;padding:10px 0}
+.lead .done .display{font-size:32px;color:var(--ok)}
+@media (max-width:980px){.final-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.lead .f2,.lead fieldset{grid-template-columns:1fr}.lead{padding:18px}}
+
+.featured{margin-top:36px;display:grid;gap:14px}
+.pro-featured{display:grid;grid-template-columns:1.2fr .8fr;gap:0;padding:0;overflow:hidden}
+.pro-main{padding:24px;display:flex;flex-direction:column;gap:14px}
+.pro-main .btn{align-self:flex-start;font-size:19px}
+.pro-side{background:var(--surface-2);border-left:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:12px}
+.pro-side h4{margin:0}
+.side-lead{font-size:16px}
+.side-lead b{font-family:"Sora",sans-serif;font-size:22px;font-weight:800;color:var(--accent)}
+.dist{display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center}
+.dist .st{font-family:"Inter",system-ui,sans-serif;font-size:13px;color:var(--ink-2);white-space:nowrap}
+.dist .track{height:12px;background:var(--surface);border:1px solid var(--line-2);border-radius:2px;position:relative;overflow:hidden}
+.dist .fill{position:absolute;inset:0 auto 0 0;min-width:2px;background:var(--accent);border-radius:0 2px 2px 0}
+.dist .v{font-family:"Inter",system-ui,sans-serif;font-size:13px;text-align:right;color:var(--ink);min-width:5ch}
+.side-note{font-size:13.5px;color:var(--muted);line-height:1.45}
+.more-pros{font-size:14.5px;color:var(--ink-2)}
+.chip b{color:var(--ink);margin-left:4px}
+.testi-src{margin-top:14px;font-size:13px;color:var(--muted)}
+@media (max-width:980px){.pro-featured{grid-template-columns:1fr}.pro-side{border-left:0;border-top:1px solid var(--line)}}
+
+/* trade chips (hero) */
+.trade-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.trade-chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 13px 6px 9px}
+.trade-chip svg{width:16px;height:16px;color:var(--accent);flex:none}
+
+/* icon badges (services, case studies) */
+.icon-badge{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:var(--accent-soft);color:var(--accent);flex:none}
+.icon-badge svg{width:19px;height:19px}
+.svc .icon-badge{margin-bottom:10px}
+.case-head{display:flex;gap:12px;align-items:flex-start}
+
+/* problem-section illustration */
+.scene{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.scene-svg{display:block;width:100%;height:auto}
+.scene-photo{display:block;width:100%;height:auto;object-fit:cover}
+.scene-cap{margin:0;padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line-2)}
+.two-photo{grid-template-columns:.9fr 1.25fr}
+:root{--scene-sky-top:#1b2735;--scene-sky-bot:#0f1620;--scene-moon:#e7ecf2;--scene-star:#e7ecf2;--scene-house:#2a3644;--scene-window-off:#1a232d}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--scene-sky-top:#0c1319;--scene-sky-bot:#070b0f;--scene-moon:#cfd8e0;--scene-star:#cfd8e0;--scene-house:#1a232c;--scene-window-off:#0f151b}
+}
+:root[data-theme="dark"]{--scene-sky-top:#0c1319;--scene-sky-bot:#070b0f;--scene-moon:#cfd8e0;--scene-star:#cfd8e0;--scene-house:#1a232c;--scene-window-off:#0f151b}
+.scene-lit{filter:drop-shadow(0 0 6px var(--accent))}
+@media (prefers-reduced-motion: no-preference){
+  .scene-rings path{stroke-dasharray:60;stroke-dashoffset:60;animation:ring 1.8s ease-out infinite}
+  .scene-rings path:nth-child(2){animation-delay:.3s}
+  .scene-lit{animation:flicker 3s ease-in-out infinite}
+}
+@keyframes ring{0%{stroke-dashoffset:60;opacity:0}30%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes flicker{0%,100%{opacity:1}50%{opacity:.82}}
+
+.vet-strip{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.vet{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;box-shadow:var(--shadow-sm)}
+.vet .icon-badge{margin-bottom:10px}
+.vet b{display:block;font-family:"Sora",sans-serif;font-size:16px;font-weight:700;margin-bottom:4px}
+.vet p{font-size:14px;color:var(--ink-2);margin:0}
+@media (max-width:900px){.vet-strip{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.vet-strip{grid-template-columns:1fr}}
+
+/* Google mark + browser chrome */
+.glogo{display:inline-flex;flex:none}
+.glogo-svg{width:100%;height:100%;display:block}
+.gword{font-family:"Sora",sans-serif;font-weight:800;font-size:15px;letter-spacing:.01em}
+.gword b:nth-child(1){color:#4285F4}.gword b:nth-child(2){color:#EA4335}.gword b:nth-child(3){color:#FBBC05}
+.gword b:nth-child(4){color:#4285F4}.gword b:nth-child(5){color:#34A853}.gword b:nth-child(6){color:#EA4335}
+.gword b{font-style:normal}
+.g-chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 13px 6px 9px}
+
+.browser{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:0 16px 40px -22px rgba(0,0,0,.4)}
+.browser .chrome{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--surface-2);border-bottom:1px solid var(--line-2)}
+.browser .dots{display:flex;gap:5px;flex:none}
+.browser .dots i{width:9px;height:9px;border-radius:50%;background:var(--line-strong,var(--line))}
+.browser .addr{flex:1;display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--muted);font-family:"Inter",system-ui,sans-serif;min-width:0}
+.browser .addr svg{width:11px;height:11px;flex:none;color:var(--ok)}
+.browser .addr span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser .gbar{display:flex;align-items:center;gap:14px;padding:16px 18px 10px;justify-content:center}
+.browser .search{flex:1;max-width:340px;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:24px;padding:9px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.browser .search svg{width:15px;height:15px;color:var(--muted);flex:none}
+.browser .search span{font-size:14px;color:var(--ink)}
+
+/* Figure illustrations (plumber / electrician / roofer / searcher) */
+.figure-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.figure-card .fig-scene,.figure-card img,.figure-card video{display:block;width:100%;height:auto}
+.figure-card .fig-cap{padding:12px 14px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line-2)}
+:root{--fig-ground:#EDEFE7;--fig-skin:#E3B08C;--fig-skin-2:#C98A5E;--fig-hair:#3A2E27;--fig-navy:#2C4A6B;--fig-navy-2:#20364F;--fig-yellow:#F4B93E;--fig-grey:#7C8577;--fig-grey-2:#5C6456;--fig-metal:#B8BEB2}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fig-ground:#20261B;--fig-skin:#C99169;--fig-skin-2:#A9724C;--fig-hair:#20180F;--fig-navy:#3E6089;--fig-navy-2:#2C4867;--fig-yellow:#E0A82E;--fig-grey:#8C9686;--fig-grey-2:#6C766A;--fig-metal:#9AA192}}
+:root[data-theme="dark"]{--fig-ground:#20261B;--fig-skin:#C99169;--fig-skin-2:#A9724C;--fig-hair:#20180F;--fig-navy:#3E6089;--fig-navy-2:#2C4867;--fig-yellow:#E0A82E;--fig-grey:#8C9686;--fig-grey-2:#6C766A;--fig-metal:#9AA192}
+
+.case-fig{margin:-20px -20px 0}
+.case-fig .fig-scene{border-radius:0}
+.case-fig .fig-scene{display:block;width:100%;height:auto;border-radius:10px 6px 0 0}
+.case-fig-cap{margin:0;padding:9px 20px;font-size:12.5px;color:var(--muted);border-bottom:1px solid var(--line-2);font-style:italic}
+
+.seo-intro{display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:start;margin-bottom:28px}
+.seo-intro-fig{max-width:280px}
+@media (max-width:900px){.seo-intro{grid-template-columns:1fr}.seo-intro-fig{max-width:100%}}
+
+/* Real-photo placeholders: shows the image the moment a real file lands at the path; graceful fallback otherwise */
+.ph-img{display:block;width:100%;aspect-ratio:220/170;object-fit:cover}
+.ph-img.ph-broken{display:none}
+.ph-fallback{display:none;aspect-ratio:220/170;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(160deg,var(--surface-2),var(--ground));color:var(--muted)}
+.ph-img.ph-broken + .ph-fallback{display:flex}
+.ph-fallback svg{width:34px;height:34px;opacity:.5}
+.ph-fallback b{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;opacity:.65}
+
+.stats{padding-block:8px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 18px;box-shadow:var(--shadow-sm)}
+.stat b{display:block;font-family:"Sora",sans-serif;font-weight:800;font-size:clamp(30px,3.4vw,42px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat>span{display:block;margin-top:8px;font-size:14px;color:var(--ink-2);line-height:1.35}
+.stat small{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+@media (max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.demo-note{margin:0 0 28px;padding:10px 14px;border:1px dashed var(--line);border-radius:10px;font-size:13.5px;color:var(--muted);background:var(--surface-2)}
+.demo-note b{color:var(--ink-2)}
+
+@media (max-width:980px){
+  .hero-grid,.two,.roi,.ba{grid-template-columns:1fr}
+  .cases,.services,.profiles,.testis,.guar,.checks{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .trust{grid-template-columns:repeat(2,1fr)}
+  .trust div:nth-child(2){border-right:0}
+  .trust div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  section{padding-block:52px}
+  .cases,.services,.profiles,.testis,.guar,.checks,.kpis,.verify,.steps,.logos{grid-template-columns:1fr}
+  .trust{grid-template-columns:1fr}
+  .trust div{border-right:0;border-bottom:1px solid var(--line-2)}
+  .trust div:last-child{border-bottom:0}
+}
+@media (prefers-reduced-motion: no-preference){
+  .btn{transition:background .15s ease,border-color .15s ease}
+}
+</style>
+
+</head>
+<body>
+<header class="nav-band"><div class="wrap nav">
+  <div class="brand"><span class="brand-logo-wrap"><img src="/img/LOGO-SEO-QUEBEC.png" alt="SEO Québec"></span></div>
+  <ul>
+    <li><a href="#probleme">Le problème</a></li>
+    <li><a href="#seo">Le référencement</a></li>
+    <li><a href="#chiffres">Les chiffres</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a href="#soumission" style="color:var(--accent);font-weight:600">Demander une soumission</a></li>
+  </ul>
+</div></header>
+
+<section class="masthead">
+  <img class="masthead-img" src="/img/hero-banner-full.jpg" alt="Votre site web en première page de Google. Augmentez la visibilité de votre entreprise dans les premiers résultats Google." loading="eager">
+  <a class="masthead-cta" href="#soumission" aria-label="Demander une soumission"></a>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Pour les artisans du bâtiment</span><div class="trade-row"><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg>Plombiers</span><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/><path d="M10 19v-4h4v4"/></svg>Couvreurs</span><span class="trade-chip"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg>Électriciens</span><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.3"/><path d="M10.3 12.8 19.5 3.5"/><path d="M16.3 6.5 19 9.2"/><path d="M13.8 9 16.5 11.7"/></svg>Serruriers</span><span class="trade-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(45 12 12)"><rect x="9.5" y="2.5" width="5" height="7.5" rx="1.2"/><rect x="7.5" y="10" width="9" height="4" rx="1.2"/></g></svg>Rénovation</span></div>
+        <h1>Vos concurrents sont en première page de Google. <em>Vous, non.</em> On règle ça.</h1>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#soumission">Demander une soumission gratuite</a>
+          <a class="btn btn-ghost" href="#comment">Comment ça se passe</a>
+        </div>
+      </div>
+      <aside class="hero-card hero-card-photo" aria-label="Le référencement (SEO)">
+        <video src="/video/seo-explication.mp4" autoplay muted loop playsinline></video>
+      </aside>
+    </div>
+      <div class="g-chip" style="margin:0 0 14px"><span class="glogo" style="width:16px;height:16px" ><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true">
+  <path d="M36 20.5c0-1.3-.1-2.6-.3-3.8H20v7.2h9c-.4 2.1-1.6 3.9-3.4 5.1v4.2h5.5c3.2-3 5-7.3 5-12.7z" fill="#4285F4"/>
+  <path d="M20 37c4.6 0 8.4-1.5 11.2-4.1l-5.5-4.2c-1.5 1-3.5 1.6-5.7 1.6-4.4 0-8.1-2.9-9.4-6.9H4.9v4.3C7.7 33 13.4 37 20 37z" fill="#34A853"/>
+  <path d="M10.6 23.4c-.3-1-.5-2.1-.5-3.4s.2-2.4.5-3.4v-4.3H4.9C3.7 14.7 3 17.3 3 20s.7 5.3 1.9 7.7z" fill="#FBBC05"/>
+  <path d="M20 9.9c2.5 0 4.7.9 6.5 2.5l4.9-4.8C28.4 4.9 24.6 3 20 3 13.4 3 7.7 7 4.9 12.3l5.7 4.3c1.3-4 5-6.7 9.4-6.7z" fill="#EA4335"/>
+</svg></span>Vérifié pour le référencement Google</div>
+  </div>
+</section>
+
+<section class="stats" aria-label="Chiffres clés">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><b><span class="count" data-count="38">0</span></b><span>appels par mois venant de Google<small>au lieu de 4</small></span></div>
+      <div class="stat"><b><span class="count" data-count="2900">0</span></b><span>vues de la fiche Google par mois<small>au lieu de 210</small></span></div>
+      <div class="stat"><b><span class="count" data-count="11">0</span></b><span>chantiers signés par mois<small>au lieu de 1</small></span></div>
+      <div class="stat"><b>≈ <span class="count" data-count="14000">0</span> $</b><span>de chiffre d'affaires en plus par mois<small>exemple type · plomberie, 3 personnes</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="probleme">
+  <div class="wrap">
+    <div class="two two-photo">
+      <div class="prose">
+        <div class="sec-head">
+          <span class="eyebrow">Le problème</span>
+          <h2>Vous faites du bon travail. Le problème, c'est que personne ne le sait.</h2>
+        </div>
+        <p>Un client a une fuite à 19 h. Il ne fouille pas dans ses contacts. Il prend son téléphone et tape « plombier urgence » avec le nom de sa ville.</p>
+        <p>Google lui montre trois entreprises sur la carte, puis une liste en dessous. Il appelle la première. Si elle ne répond pas, il appelle la deuxième. Il ne descend presque jamais plus bas.</p>
+        <p>Si vous n'êtes pas dans ces trois-là, ce chantier n'existe pas pour vous. Il est parti chez un concurrent. Pas parce qu'il est meilleur. Parce qu'il était affiché.</p>
+      </div>
+      <div class="scene" role="img" aria-label="Photo : un client qui cherche une entreprise sur Google depuis son ordinateur">
+        <img class="scene-photo" src="/img/recherche-ordinateur.jpg" alt="Client qui recherche une entreprise sur Google depuis son ordinateur" loading="lazy">
+        <p class="scene-cap">19 h. Un client tape « plombier urgence » sur Google. Il choisit une des trois premières entreprises affichées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seo">
+  <div class="wrap">
+    <div class="seo-intro">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="eyebrow">Sans jargon</span>
+        <h2>Le référencement, expliqué en deux minutes</h2>
+        <p>Le référencement (le mot anglais est SEO), c'est le travail qui fait remonter votre entreprise dans Google quand quelqu'un cherche votre métier dans votre secteur. Rien de plus.</p>
+      </div>
+      <div class="figure-card seo-intro-fig"><video src="/video/seo-explication.mp4" autoplay muted loop playsinline aria-label="Le référencement expliqué simplement"></video><p class="fig-cap">Le référencement, expliqué simplement.</p></div>
+    </div>
+    <p class="prose" style="max-width:66ch">Google fonctionne comme un client méfiant. Avant de vous recommander, il vérifie trois choses :</p>
+    <div class="checks">
+      <div class="check"><div class="display">Vous existez vraiment ?</div><p>Une fiche Google avec adresse, téléphone, horaires, photos de chantiers.</p></div>
+      <div class="check"><div class="display">Vous faites bien ce que vous dites ?</div><p>Un site qui décrit clairement vos prestations, vos zones d'intervention, votre façon de travailler.</p></div>
+      <div class="check"><div class="display">D'autres gens vous font confiance ?</div><p>Des avis clients, et des sites sérieux qui parlent de vous.</p></div>
+    </div>
+    <div class="ba">
+      <div class="serp before">
+        <div class="tag"><span>Avant</span><span>Recherche « plombier urgence Laval »</span></div>
+        <div class="q"><span class="glogo" style="width:18px;height:18px"><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true">
+  <path d="M36 20.5c0-1.3-.1-2.6-.3-3.8H20v7.2h9c-.4 2.1-1.6 3.9-3.4 5.1v4.2h5.5c3.2-3 5-7.3 5-12.7z" fill="#4285F4"/>
+  <path d="M20 37c4.6 0 8.4-1.5 11.2-4.1l-5.5-4.2c-1.5 1-3.5 1.6-5.7 1.6-4.4 0-8.1-2.9-9.4-6.9H4.9v4.3C7.7 33 13.4 37 20 37z" fill="#34A853"/>
+  <path d="M10.6 23.4c-.3-1-.5-2.1-.5-3.4s.2-2.4.5-3.4v-4.3H4.9C3.7 14.7 3 17.3 3 20s.7 5.3 1.9 7.7z" fill="#FBBC05"/>
+  <path d="M20 9.9c2.5 0 4.7.9 6.5 2.5l4.9-4.8C28.4 4.9 24.6 3 20 3 13.4 3 7.7 7 4.9 12.3l5.7 4.3c1.3-4 5-6.7 9.4-6.7z" fill="#EA4335"/>
+</svg></span><span>plombier urgence laval</span></div>
+        <div class="map"><i style="left:22%;top:30%"></i><i style="left:55%;top:50%"></i><i style="left:78%;top:25%"></i></div>
+        <div class="list">
+          <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau Laval</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>SOS Plombier Laval</b><small>★ 4,3 (19)</small></div><span class="call">Appeler</span></div>
+        </div>
+        <div class="note">Votre entreprise n'apparaît pas dans les trois résultats de la carte. Elle est en page 2, ou nulle part. Le client appelle un concurrent.</div>
+      </div>
+      <div class="serp after">
+        <div class="tag"><span>Après 3 mois</span><span>Même recherche</span></div>
+        <div class="q"><span class="glogo" style="width:18px;height:18px"><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true">
+  <path d="M36 20.5c0-1.3-.1-2.6-.3-3.8H20v7.2h9c-.4 2.1-1.6 3.9-3.4 5.1v4.2h5.5c3.2-3 5-7.3 5-12.7z" fill="#4285F4"/>
+  <path d="M20 37c4.6 0 8.4-1.5 11.2-4.1l-5.5-4.2c-1.5 1-3.5 1.6-5.7 1.6-4.4 0-8.1-2.9-9.4-6.9H4.9v4.3C7.7 33 13.4 37 20 37z" fill="#34A853"/>
+  <path d="M10.6 23.4c-.3-1-.5-2.1-.5-3.4s.2-2.4.5-3.4v-4.3H4.9C3.7 14.7 3 17.3 3 20s.7 5.3 1.9 7.7z" fill="#FBBC05"/>
+  <path d="M20 9.9c2.5 0 4.7.9 6.5 2.5l4.9-4.8C28.4 4.9 24.6 3 20 3 13.4 3 7.7 7 4.9 12.3l5.7 4.3c1.3-4 5-6.7 9.4-6.7z" fill="#EA4335"/>
+</svg></span><span>plombier urgence laval</span></div>
+        <div class="map"><i class="you" style="left:48%;top:38%"></i><i style="left:22%;top:30%"></i><i style="left:78%;top:25%"></i></div>
+        <div class="list">
+          <div class="res you"><div class="pin you"></div><div><b>Votre entreprise</b><small>★ 4,9 (40) · photos récentes</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Plomberie Ledoux</b><small>★ 4,7 (58)</small></div><span class="call">Appeler</span></div>
+          <div class="res"><div class="pin"></div><div><b>Dépann'Eau Laval</b><small>★ 4,5 (31)</small></div><span class="call">Appeler</span></div>
+        </div>
+        <div class="web"><b>Dépannage plomberie urgence Laval · Votre entreprise</b><small>Intervention en moins d'une heure, prix annoncé avant de commencer…</small></div>
+        <div class="note">Votre fiche est dans les trois premiers sur la carte. Votre page « dépannage plomberie urgence » sort juste en dessous. Le client vous voit deux fois. Il vous appelle.</div>
+      </div>
+    </div>
+    <p class="prose" style="max-width:66ch;margin-top:24px;font-size:18px"><strong>Ce qui change, ce n'est pas votre travail ni vos prix.</strong> C'est le nombre de gens qui vous voient au moment précis où ils ont besoin de vous.</p>
+  </div>
+</section>
+
+<section id="chiffres">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Avant / après</span>
+      <h2>Ce que ça change sur le téléphone et sur le compte en banque</h2>
+      <p>Exemples types pour le secteur, après six mois de travail.</p>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <div class="case-fig"><img class="ph-img" src="/img/plombier.jpg" alt="Plombier en plein travail" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg><b>Photo à venir</b></span><p class="case-fig-cap">Le plombier, sur un chantier plutôt que devant son ordinateur.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6.5 7.8-6.5 12A6.5 6.5 0 0 0 12 21a6.5 6.5 0 0 0 6.5-6C18.5 10.8 12 3 12 3z"/></svg></span><div><div class="display">Plomberie et chauffage</div><div class="who">3 personnes · ville de 150 000 habitants</div></div></div>
+        <table class="num">
+          <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
+          <tbody>
+            <tr><td>Carte Google<br><small style="color:var(--muted)">« plombier + ville »</small></td><td>Non classé</td><td class="after">Top 3</td></tr>
+            <tr><td>Vues de la fiche Google</td><td>210</td><td class="after">2 900</td></tr>
+            <tr><td>Appels venant de Google</td><td>4</td><td class="after">38</td></tr>
+            <tr><td>Demandes de soumission</td><td>2</td><td class="after">19</td></tr>
+            <tr><td>Chantiers signés via le web</td><td>1</td><td class="after">11</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 $</td><td class="after">≈ 14 000 $</td></tr>
+          </tbody>
+        </table>
+      </article>
+      <article class="case">
+        <div class="case-fig"><img class="ph-img" src="/img/couvreur.jpg" alt="Couvreur sur un toit" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/></svg><b>Photo à venir</b></span><p class="case-fig-cap">Le couvreur, sur le toit, pas au clavier.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M6 11v8h12v-8"/><path d="M10 19v-4h4v4"/></svg></span><div><div class="display">Couverture</div><div class="who">6 personnes · ville moyenne et zone rurale</div></div></div>
+        <table class="num">
+          <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
+          <tbody>
+            <tr><td>Vues de la fiche Google</td><td>90</td><td class="after">1 400</td></tr>
+            <tr><td>Appels venant de Google</td><td>2</td><td class="after">17</td></tr>
+            <tr><td>Demandes de soumission</td><td>1</td><td class="after">9</td></tr>
+            <tr><td>Chantiers signés</td><td>0 à 1</td><td class="after">4</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 $</td><td class="after">≈ 26 000 $</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">Le panier moyen est élevé en couverture. Une seule rénovation de toiture rembourse l'année entière.</p>
+      </article>
+      <article class="case">
+        <div class="case-fig"><img class="ph-img" src="/img/electricien.jpg" alt="Électricien devant un panneau" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><b>Photo à venir</b></span><p class="case-fig-cap">L'électricien, au panneau, jamais devant Google.</p></div><div class="case-head"><span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg></span><div><div class="display">Électricien indépendant</div><div class="who">Seul · ville de 60 000 habitants</div></div></div>
+        <table class="num">
+          <thead><tr><th>Par mois</th><th>Avant</th><th>Après 6 mois</th></tr></thead>
+          <tbody>
+            <tr><td>Appels venant de Google</td><td>3</td><td class="after">22</td></tr>
+            <tr><td>Demandes de soumission</td><td>2</td><td class="after">12</td></tr>
+            <tr><td>Chantiers signés</td><td>1</td><td class="after">7</td></tr>
+            <tr class="total"><td>CA mensuel en plus</td><td>0 $</td><td class="after">≈ 6 500 $</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+    <div class="roi">
+      <div class="box">
+        <h3 style="margin-bottom:16px">Et ce que ça coûte, en face</h3>
+        <div class="kpis">
+          <div class="kpi"><strong>Sur mesure</strong><span>chaque soumission dépend de votre métier, de votre ville et de ce que vous avez déjà</span></div>
+          <div class="kpi"><strong>Prix fixe</strong><span>annoncé dans la soumission, avant de commencer</span></div>
+          <div class="kpi"><strong>1 chantier</strong><span>de rénovation couvre souvent l'investissement de l'année</span></div>
+        </div>
+      </div>
+      <div class="box prose">
+        <img class="proof-shot" src="/img/search-console.jpg" alt="Tableau de bord Google Search Console montrant la progression réelle des clics et impressions" loading="lazy">
+        <p class="proof-cap">Le genre de suivi qu'on vous montre chaque mois : des vrais chiffres, pas des captures d'écran retouchées.</p>
+        <h3 style="margin-bottom:10px">Pourquoi ces chiffres ne sont pas gonflés</h3>
+        <p>Un client qui tape « chaudière en panne » a déjà décidé d'acheter. Vous n'avez personne à convaincre. Vous avez juste à être là. C'est pour ça qu'un appel venant de Google se transforme en chantier bien plus souvent qu'une circulaire dans une boîte aux lettres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Services</span>
+      <h2>Nos services, et ce qu'ils changent pour vous</h2>
+      <p>Chaque service est réalisé par un freelance vérifié, spécialisé dans les métiers du bâtiment. Chaque soumission est faite sur mesure, selon votre métier, votre ville et ce que vous avez déjà. Le prix est fixé avant de commencer, et vous restez propriétaire de tout ce qui est créé.</p>
+    </div>
+    <div class="services">
+      <article class="svc free">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg></span><div class="display">Diagnostic de visibilité</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>On regarde où vous apparaissez (ou pas) sur Google pour vos prestations et votre zone, et où sont vos concurrents.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous savez exactement ce qui vous manque avant de dépenser un dollar.</dd>
+          <dt>Idéal si</dt><dd>Vous ne savez pas par où commencer.</dd>
+        </dl>
+        <div class="price"><b>Offert</b><span>réponse sous 48 h</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></span><div class="display"><span class="glogo" style="width:15px;height:15px;vertical-align:-2px;margin-right:6px"><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true"><path d="M36 20.5c0-1.3-.1-2.6-.3-3.8H20v7.2h9c-.4 2.1-1.6 3.9-3.4 5.1v4.2h5.5c3.2-3 5-7.3 5-12.7z" fill="#4285F4"/><path d="M20 37c4.6 0 8.4-1.5 11.2-4.1l-5.5-4.2c-1.5 1-3.5 1.6-5.7 1.6-4.4 0-8.1-2.9-9.4-6.9H4.9v4.3C7.7 33 13.4 37 20 37z" fill="#34A853"/><path d="M10.6 23.4c-.3-1-.5-2.1-.5-3.4s.2-2.4.5-3.4v-4.3H4.9C3.7 14.7 3 17.3 3 20s.7 5.3 1.9 7.7z" fill="#FBBC05"/><path d="M20 9.9c2.5 0 4.7.9 6.5 2.5l4.9-4.8C28.4 4.9 24.6 3 20 3 13.4 3 7.7 7 4.9 12.3l5.7 4.3c1.3-4 5-6.7 9.4-6.7z" fill="#EA4335"/></svg></span>Fiche Google optimisée</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Création ou remise à niveau de votre fiche Google : catégories, zones, horaires, photos de chantiers, réponses aux avis, mise à jour hebdomadaire pendant trois mois.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous apparaissez sur la carte Google avec le bouton « Appeler » sous votre nom. C'est le service qui fait sonner le téléphone le plus vite.</dd>
+          <dt>Idéal si</dt><dd>Vous n'avez pas de fiche, ou une fiche vide avec deux photos floues.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>7 jours</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/></svg></span><div class="display"><span class="glogo" style="width:15px;height:15px;vertical-align:-2px;margin-right:6px"><svg viewBox="0 0 40 40" class="glogo-svg" aria-hidden="true"><path d="M36 20.5c0-1.3-.1-2.6-.3-3.8H20v7.2h9c-.4 2.1-1.6 3.9-3.4 5.1v4.2h5.5c3.2-3 5-7.3 5-12.7z" fill="#4285F4"/><path d="M20 37c4.6 0 8.4-1.5 11.2-4.1l-5.5-4.2c-1.5 1-3.5 1.6-5.7 1.6-4.4 0-8.1-2.9-9.4-6.9H4.9v4.3C7.7 33 13.4 37 20 37z" fill="#34A853"/><path d="M10.6 23.4c-.3-1-.5-2.1-.5-3.4s.2-2.4.5-3.4v-4.3H4.9C3.7 14.7 3 17.3 3 20s.7 5.3 1.9 7.7z" fill="#FBBC05"/><path d="M20 9.9c2.5 0 4.7.9 6.5 2.5l4.9-4.8C28.4 4.9 24.6 3 20 3 13.4 3 7.7 7 4.9 12.3l5.7 4.3c1.3-4 5-6.7 9.4-6.7z" fill="#EA4335"/></svg></span>Référencement local</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Tout ce qui fait monter votre entreprise dans les résultats de votre ville : fiche Google, pages par prestation et par ville, annuaires professionnels, coordonnées cohérentes partout.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous passez devant les concurrents sur « votre métier + votre ville » et sur les villes autour.</dd>
+          <dt>Idéal si</dt><dd>Vous avez déjà un site mais il ne ramène rien.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>3 mois minimum · résultats entre 6 et 12 semaines</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><div class="display">Création de site web artisan</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Un site clair et rapide, pensé pour le téléphone : vos prestations, vos zones, vos photos de chantiers, vos avis, un bouton d'appel visible partout. Bases du référencement déjà en place.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Un client qui vous cherche trouve en dix secondes ce que vous faites, où, et comment vous joindre. Il appelle au lieu de continuer à chercher.</dd>
+          <dt>Idéal si</dt><dd>Vous n'avez pas de site, ou un site fait il y a huit ans qui ne s'affiche pas sur mobile.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>3 semaines</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg></span><div class="display">Refonte d'un site existant</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>On garde ce qui marche, on corrige ce qui bloque : lenteur, affichage mobile, pages sans titre, textes qui ne parlent d'aucune prestation précise.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Votre site actuel commence enfin à apparaître dans Google au lieu de servir de carte de visite que personne ne voit.</dd>
+          <dt>Idéal si</dt><dd>Vous avez payé un site et il ne vous a jamais ramené un client.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>2 semaines</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></svg></span><div class="display">Pages par prestation</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Une page dédiée pour chaque service que vous vendez, écrite avec les mots que tapent vos clients. « Recherche de fuite », « Mise aux normes tableau électrique », « Ouverture de porte claquée ».</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous sortez sur des recherches précises, celles où le client est prêt à signer.</dd>
+          <dt>Idéal si</dt><dd>Votre site dit « tous travaux » sans jamais détailler.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>5 jours par lot</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L12 17l-5.6 3.1 1.4-6.3-4.8-4.3 6.4-.6z"/></svg></span><div class="display">Collecte d'avis clients</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Un système simple pour demander un avis à chaque fin de chantier : un texto ou un code QR sur la facture, un message qui part tout seul, un suivi des réponses.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Vous passez de 6 avis à 60 en quelques mois. Google vous fait monter, et les clients vous choisissent.</dd>
+          <dt>Idéal si</dt><dd>Vos clients sont contents mais ne le disent nulle part.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>3 jours</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="9" height="6" rx="3"/><rect x="13" y="9" width="9" height="6" rx="3"/><path d="M9 12h6"/></svg></span><div class="display">Notoriété locale (backlinks)</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>On fait parler de vous sur des sites sérieux de votre secteur : fournisseurs, presse locale, associations, annuaires professionnels reconnus. Pas de liens en masse depuis des profils ou des annuaires sans valeur.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Google considère que d'autres vous recommandent. Votre site monte plus vite et tient sa place.</dd>
+          <dt>Idéal si</dt><dd>Vous êtes bien placé mais un concurrent vous passe devant régulièrement.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>effet progressif sur 3 à 6 mois</span></div>
+      </article>
+      <article class="svc">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l6 4V6l-6 4H3z"/><path d="M15 9a4 4 0 0 1 0 6"/></svg></span><div class="display">Option : publicité Google urgences</div>
+        <dl>
+          <dt>Ce que c'est</dt><dd>Des annonces payantes en haut de Google sur les recherches d'urgence de votre zone. Vous payez seulement quand quelqu'un clique.</dd>
+          <dt>Ce que ça change</dt><dd class="strong">Des appels dès la première semaine, le temps que le référencement naturel prenne le relais.</dd>
+          <dt>Idéal si</dt><dd>Vous faites de l'urgence (plomberie, serrurerie, électricité) et vous voulez du volume tout de suite.</dd>
+        </dl>
+        <div class="price"><a href="#soumission">Demander une soumission</a><span>+ budget pub fixé avec vous · en ligne sous 5 jours</span></div>
+      </article>
+    </div>
+
+    <div class="packs tablewrap">
+      <table>
+        <thead><tr><th>Pack</th><th>Ce qu'il contient</th><th>Pour qui</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Démarrage</td><td>Diagnostic, fiche Google optimisée, collecte d'avis</td><td>L'artisan seul qui veut être trouvé sur la carte</td><td><a href="#soumission">Sur soumission</a></td></tr>
+          <tr class="hl"><td>Visibilité</td><td>Démarrage + site web artisan + 5 pages par prestation</td><td>L'entreprise de 2 à 5 personnes qui veut un vrai outil</td><td><a href="#soumission">Sur soumission</a></td></tr>
+          <tr><td>Croissance</td><td>Visibilité + référencement local 6 mois + notoriété locale</td><td>L'entreprise qui veut dominer sa zone</td><td><a href="#soumission">Sur soumission</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="comment">
+  <div class="wrap">
+    <div class="two" style="align-items:center;margin-bottom:28px">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="eyebrow">Concrètement</span>
+        <h2>Comment ça se passe, de la soumission au premier appel</h2>
+      </div>
+      <div class="figure-card">
+        <img src="/img/rappel-24h.jpg" alt="Une personne au téléphone qui rappelle un client" loading="lazy">
+        <p class="fig-cap">On vous rappelle sous 24 h avec un diagnostic clair, pas un argumentaire de vente.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>Vous demandez une soumission</b><p>Trois minutes. Votre métier, votre ville, ce que vous avez déjà (site, fiche Google, rien du tout).</p></div>
+      <div class="step"><div class="n">2</div><b>On vous rappelle sous 24 h</b><p>Diagnostic gratuit : où vous en êtes, où sont vos concurrents, ce qui manque.</p></div>
+      <div class="step"><div class="n">3</div><b>Vous payez ce qui était prévu</b><p>Le prix de la soumission, pas un dollar de plus. Rien ne bouge sans votre accord.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="garanties">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Nos engagements</span>
+      <h2>Ce qu'on vous garantit</h2>
+    </div>
+    <div class="guar">
+      <div class="g"><b>Prix fixé avant de commencer</b><p>Pas de dépassement, pas d'option cachée.</p></div>
+      <div class="g"><b>Vous restez propriétaire de tout</b><p>Votre site, votre nom de domaine, votre fiche Google, vos accès. Toujours. Si vous partez, vous partez avec.</p></div>
+      <div class="g"><b>Pas d'engagement au-delà de la mission</b><p>Les services mensuels s'arrêtent quand vous le décidez, avec un mois de préavis.</p></div>
+      <div class="g"><b>Un freelance qui ne livre pas est remplacé</b><p>Sans frais, sans repartir de zéro.</p></div>
+      <div class="g"><b>Pas de commission sur vos chantiers</b><p>Les clients que vous gagnez sont à vous.</p></div>
+      <div class="g"><b>Un rapport mensuel lisible</b><p>Vues, appels, soumissions. En français, sur une page.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Ce qu'on nous demande le plus souvent</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>J'ai déjà une fiche Google, ça suffit ?</summary><p>Si elle est complète, avec des photos récentes, des avis réguliers et des réponses à ces avis, c'est un bon début. Dans la pratique, neuf fiches sur dix qu'on audite sont incomplètes ou mal catégorisées. Le diagnostic gratuit vous dira où vous en êtes.</p></details>
+      <details><summary>Combien de temps avant de voir des résultats ?</summary><p>La fiche Google et la publicité donnent des appels en quelques jours. Le référencement naturel prend entre six et douze semaines pour monter, puis continue de progresser. C'est plus lent, mais ça ne s'arrête pas quand vous cessez de payer.</p></details>
+      <details><summary>Je suis seul, je n'ai pas le temps de m'occuper de ça.</summary><p>C'est justement pour ça que le freelance s'en charge. Ce qu'on vous demande : une heure au départ pour faire le point, des photos de chantiers de temps en temps, et de répondre au téléphone quand il sonne.</p></details>
+      <details><summary>Est-ce que je dois payer Google ?</summary><p>Non, sauf si vous choisissez l'option publicité. La fiche Google est gratuite. Le référencement naturel ne coûte rien à Google, seulement le travail du freelance.</p></details>
+      <details><summary>Quelle différence avec les sites de mise en relation type « demandes de soumission » ?</summary><p>Ces sites vendent la même demande à trois, quatre ou cinq artisans en même temps. Vous payez chaque contact et vous vous battez sur le prix. Ici, le client vous trouve directement, vous appelle directement, et il est à vous.</p></details>
+      <details><summary>Que se passe-t-il si j'arrête ?</summary><p>Vous gardez votre site, votre fiche et vos avis. Ce qui a été construit reste. Seuls les services mensuels s'arrêtent.</p></details>
+      <details><summary>Vous prenez une commission sur mes chantiers ?</summary><p>Non. Jamais.</p></details>
+      <details><summary>Vous travaillez dans quelles villes ?</summary><p>Partout au Québec. Le référencement local se fait à distance, avec vos photos et votre connaissance du terrain.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="soumission">
+  <div class="wrap">
+    <div class="final-grid">
+      <div>
+        <span class="eyebrow">Soumission gratuite</span>
+        <h2 style="margin-top:14px">Le prochain client qui cherche votre métier dans votre ville, <em>il vous trouve.</em> Ou il trouve un autre.</h2>
+        <p>Trois minutes pour remplir le formulaire. On vous rappelle sous 24 h ouvrables avec un diagnostic gratuit de votre visibilité, puis une soumission claire. Aucun engagement.</p>
+        <ul class="final-list">
+          <li>Un diagnostic gratuit : où vous en êtes, où sont vos concurrents.</li>
+          <li>Une soumission à prix fixe, en français clair.</li>
+          <li>Des freelances vérifiés, triés sur le volet pour le référencement local.</li>
+          <li>Pas de commission sur vos chantiers. Jamais.</li>
+        </ul>
+        <p class="sub" style="margin-top:22px">Freelances vérifiés · Sélection rigoureuse · Prix fixé avant de commencer</p>
+        <div class="figure-card" style="margin-top:24px;max-width:320px"><img class="ph-img" src="/img/recherche-ordinateur.jpg" alt="Personne qui effectue une recherche Google sur un ordinateur" loading="lazy" onerror="this.classList.add('ph-broken')"><span class="ph-fallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6"/><path d="M15 15 21 21"/></svg><b>Photo à venir</b></span><p class="fig-cap">Là, maintenant, quelqu'un tape le nom de votre métier sur Google.</p></div>
+      </div>
+      <form class="lead" id="lead-form" novalidate>
+        <div class="f2">
+          <label>Prénom et nom<input id="f-nom" name="nom" type="text" autocomplete="name" required></label>
+          <label>Entreprise<input id="f-entreprise" name="entreprise" type="text" autocomplete="organization" required></label>
+        </div>
+        <div class="f2">
+          <label>Métier
+            <select id="f-metier" name="metier" required>
+              <option value="">Choisir…</option>
+              <option>Plomberie / chauffage</option>
+              <option>Couverture / toiture</option>
+              <option>Électricité</option>
+              <option>Serrurerie</option>
+              <option>Rénovation générale</option>
+              <option>Autre métier du bâtiment</option>
+            </select>
+          </label>
+          <label>Ville<input id="f-ville" name="ville" type="text" autocomplete="address-level2" placeholder="Ex. : Laval" required></label>
+        </div>
+        <div class="f2">
+          <label>Téléphone<input id="f-tel" name="telephone" type="tel" autocomplete="tel" placeholder="514 555 0100" required></label>
+          <label>Courriel<input id="f-courriel" name="courriel" type="email" autocomplete="email" required></label>
+        </div>
+        <fieldset>
+          <legend>Vous avez déjà</legend>
+          <label class="ck"><input id="f-a-site" type="checkbox" name="deja" value="site web"> Un site web</label>
+          <label class="ck"><input id="f-a-fiche" type="checkbox" name="deja" value="fiche Google"> Une fiche Google</label>
+          <label class="ck"><input id="f-a-avis" type="checkbox" name="deja" value="avis Google"> Des avis Google</label>
+          <label class="ck"><input id="f-a-rien" type="checkbox" name="deja" value="rien"> Rien de tout ça</label>
+        </fieldset>
+        <fieldset>
+          <legend>Ce que vous voulez</legend>
+          <label class="ck"><input id="f-v-google" type="checkbox" name="veut" value="être trouvé sur Google"> Être trouvé sur Google dans ma ville</label>
+          <label class="ck"><input id="f-v-site" type="checkbox" name="veut" value="site web"> Un site web qui ramène des appels</label>
+          <label class="ck"><input id="f-v-avis" type="checkbox" name="veut" value="avis"> Plus d'avis clients</label>
+          <label class="ck"><input id="f-v-pub" type="checkbox" name="veut" value="publicité urgences"> Des appels d'urgence tout de suite (publicité)</label>
+        </fieldset>
+        <label>Un mot sur votre situation <span class="opt">(facultatif)</span><textarea id="f-message" name="message" rows="3" placeholder="Ex. : je suis seul, je fais surtout du dépannage, mon téléphone sonne moins depuis l'hiver."></textarea></label>
+        <button class="btn btn-primary" type="submit" id="f-submit">Demander ma soumission gratuite</button>
+        <p class="consent">En envoyant ce formulaire, vous acceptez qu'on vous rappelle au sujet de votre demande. Vos coordonnées ne sont jamais revendues.</p>
+        <p class="status" id="f-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap footer">
+  <span>SEO Québec · freelances vérifiés pour artisans du bâtiment, Québec</span>
+  <span>&copy; 2026 SEO Québec</span>
+</footer>
+<script>
+(function(){
+  var form=document.getElementById('lead-form');
+  var status=document.getElementById('f-status');
+  var submit=document.getElementById('f-submit');
+  var LEAD_URL='/api/lead';
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function vals(name){return Array.prototype.map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(c){return c.value;});}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();status.className='status err';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
+    var data={
+      nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),metier:form.metier.value,ville:form.ville.value.trim(),
+      telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
+      deja:vals('deja'),veut:vals('veut'),message:form.message.value.trim(),
+      envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
+    };
+    submit.disabled=true;status.textContent='Envoi en cours…';
+    fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(res){ if(!res.ok){throw new Error('http '+res.status);} return res.json().catch(function(){return {};}); })
+      .then(function(){
+        form.innerHTML='<div class="done"><div class="display">Demande reçue.</div><p>Merci '+esc(data.nom.split(' ')[0])+'. On vous rappelle sous 24 h ouvrables au '+esc(data.telephone)+' avec votre diagnostic gratuit, puis votre soumission.</p><p class="consent">Un numéro inconnu vous appelle ? C\'est probablement nous. On vous écrit aussi à '+esc(data.courriel)+'.</p></div>';
+        form.scrollIntoView({block:'nearest'});
+      })
+      .catch(function(){
+        submit.disabled=false;status.className='status err';
+        status.textContent="L'envoi a échoué. Réessayez dans un instant, ou appelez-nous directement si ça persiste.";
+      });
+  });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.count');if(!els.length)return;
+  var fmt=function(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'\u202f');};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var run=function(el){var t=+el.getAttribute('data-count'),d=1400,s0=null;
+    if(reduce||!window.requestAnimationFrame){el.textContent=fmt(t);return;}
+    var step=function(ts){if(!s0)s0=ts;var k=Math.min(1,(ts-s0)/d);k=1-Math.pow(1-k,3);el.textContent=fmt(t*k);if(k<1)requestAnimationFrame(step);};
+    requestAnimationFrame(step);};
+  if(!('IntersectionObserver' in window)){els.forEach(run);return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target);}});},{threshold:.4});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
