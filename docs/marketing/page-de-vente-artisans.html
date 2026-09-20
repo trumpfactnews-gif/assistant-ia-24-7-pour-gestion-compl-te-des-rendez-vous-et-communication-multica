@@ -175,7 +175,7 @@
         </div>
         <div class="relative" data-aos="fade-left">
           <div class="absolute -inset-4 bg-brand-200/40 rounded-3xl blur-2xl"></div>
-          <video src="/video/seo-explication.mp4" autoplay muted loop playsinline aria-label="Le référencement expliqué simplement" class="relative rounded-2xl shadow-soft w-full object-cover bg-ink"></video>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&auto=format" alt="Recherche Google sur un écran" class="relative rounded-2xl shadow-soft w-full object-cover">
         </div>
       </div>
     </div>
@@ -412,7 +412,7 @@
   <!-- Results / Stats -->
   <section id="resultats" class="relative py-24 lg:py-32 bg-ink overflow-hidden">
     <div class="absolute inset-0 opacity-20">
-      <img src="/img/search-console.jpg" alt="Tableau de bord Google Search Console" class="w-full h-full object-cover">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop&auto=format" alt="Graphiques de croissance" class="w-full h-full object-cover">
     </div>
     <div class="absolute inset-0 bg-gradient-to-b from-ink via-ink/95 to-ink"></div>
 
@@ -447,7 +447,7 @@
         </div>
         <div data-aos="fade-left" class="relative p-3 bg-white/10 rounded-3xl border border-white/20 backdrop-blur-sm">
           <div class="absolute -inset-2 bg-brand-500/40 rounded-3xl blur-xl -z-10"></div>
-          <img src="/img/search-console.jpg" alt="Tableau de bord Google Search Console : clics, impressions et position moyenne" class="relative rounded-2xl shadow-2xl shadow-brand-500/40 w-full min-h-[400px] object-cover border-4 border-white/30 bg-stone-800" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=700&fit=crop&auto=format" alt="Billets de dollars canadiens" class="relative rounded-2xl shadow-2xl shadow-brand-500/40 w-full min-h-[400px] object-cover border-4 border-white/30 bg-stone-800" loading="lazy" onerror="this.style.display='none'">
         </div>
       </div>
     </div>
@@ -530,7 +530,7 @@
   <!-- Contact CTA -->
   <section id="contact" class="py-24 lg:py-32 bg-ink relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
-      <img src="/img/couvreur.jpg" alt="Couvreur au travail sur un toit" class="w-full h-full object-cover">
+      <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&h=900&fit=crop&auto=format" alt="Bureau moderne" class="w-full h-full object-cover">
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-ink via-ink to-slate-900"></div>
 
@@ -576,27 +576,9 @@
               <label for="courriel" class="block text-sm font-medium text-slate-700 mb-1.5">Courriel</label>
               <input type="email" id="courriel" name="courriel" required class="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
             </div>
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label for="entreprise" class="block text-sm font-medium text-slate-700 mb-1.5">Entreprise</label>
-                <input type="text" id="entreprise" name="entreprise" required class="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
-              </div>
-              <div>
-                <label for="ville" class="block text-sm font-medium text-slate-700 mb-1.5">Ville</label>
-                <input type="text" id="ville" name="ville" required placeholder="Ex. : Laval" class="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
-              </div>
-            </div>
             <div>
-              <label for="metier" class="block text-sm font-medium text-slate-700 mb-1.5">Votre métier</label>
-              <select id="metier" name="metier" required class="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
-                <option value="">Choisir…</option>
-                <option>Plomberie / chauffage</option>
-                <option>Couverture / toiture</option>
-                <option>Électricité</option>
-                <option>Serrurerie</option>
-                <option>Rénovation générale</option>
-                <option>Autre métier du bâtiment</option>
-              </select>
+              <label for="entreprise" class="block text-sm font-medium text-slate-700 mb-1.5">Entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" class="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white text-slate-900 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-slate-700 mb-1.5">Votre situation</label>
@@ -723,7 +705,7 @@
     if(!form.checkValidity()){form.reportValidity();status.className='text-sm text-red-600';status.textContent='Il manque une information. Vérifiez les champs en rouge.';return;}
     var data={
       nom:form.nom.value.trim(),entreprise:form.entreprise.value.trim(),
-      metier:form.metier.value,ville:form.ville.value.trim(),
+      metier:'',ville:'',
       telephone:form.telephone.value.trim(),courriel:form.courriel.value.trim(),
       deja:[],veut:[],message:form.message.value.trim(),
       envoye_le:new Date().toISOString(),statut:'nouvelle',source:'page artisans'
