@@ -424,20 +424,20 @@
             Ce qui change sur le téléphone et sur le compte en banque
           </h2>
           <p class="text-lg text-slate-300 leading-relaxed mb-8">
-            Le référencement ne se paie pas en mots compliqués : il se mesure en appels, en demandes de soumission et en contrats signés. Voici un exemple type pour une entreprise de plomberie de trois personnes, après six mois.
+            Le référencement ne se paie pas en mots compliqués : il se mesure en appels, en demandes de soumission et en contrats signés. Chaque dossier est confié à un freelance vérifié, trié sur son historique et ses avis clients.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div class="p-5 rounded-xl glass text-center" x-data="counter(500, '+', '')" x-init="start($el)">
+              <div class="font-display text-3xl lg:text-4xl text-white mb-1" x-text="prefix + Math.round(current) + suffix"></div>
+              <div class="text-sm text-slate-400">avis clients cumulés<br><span class="text-slate-500">par nos freelances</span></div>
+            </div>
             <div class="p-5 rounded-xl glass text-center" x-data="counter(38, '', '')" x-init="start($el)">
               <div class="font-display text-3xl lg:text-4xl text-white mb-1" x-text="prefix + Math.round(current) + suffix"></div>
-              <div class="text-sm text-slate-400">appels par mois venant de Google<br><span class="text-slate-500">au lieu de 4</span></div>
+              <div class="text-sm text-slate-400">appels par mois<br><span class="text-slate-500">exemple type, au lieu de 4</span></div>
             </div>
-            <div class="p-5 rounded-xl glass text-center" x-data="counter(2900, '', '')" x-init="start($el)">
-              <div class="font-display text-3xl lg:text-4xl text-white mb-1" x-text="prefix + Math.round(current) + suffix"></div>
-              <div class="text-sm text-slate-400">vues de la fiche Google par mois<br><span class="text-slate-500">au lieu de 210</span></div>
-            </div>
-            <div class="p-5 rounded-xl glass text-center" x-data="counter(11, '', '')" x-init="start($el)">
-              <div class="font-display text-3xl lg:text-4xl text-white mb-1" x-text="prefix + Math.round(current) + suffix"></div>
-              <div class="text-sm text-slate-400">chantiers signés par mois<br><span class="text-slate-500">au lieu de 1</span></div>
+            <div class="p-5 rounded-xl glass text-center" x-data="counter(4.9, '', '/5')" x-init="start($el)">
+              <div class="font-display text-3xl lg:text-4xl text-white mb-1" x-text="prefix + current.toFixed(1) + suffix"></div>
+              <div class="text-sm text-slate-400">note moyenne<br><span class="text-slate-500">de nos freelances</span></div>
             </div>
             <div class="p-5 rounded-xl glass text-center" x-data="counter(24, '', 'h')" x-init="start($el)">
               <div class="font-display text-3xl lg:text-4xl text-white mb-1" x-text="prefix + Math.round(current) + suffix"></div>
